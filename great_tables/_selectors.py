@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from functools import singledispatch
+from functools import cache, singledispatch
 
 from ._tbl_data import (
     DataFrameLike,
@@ -42,9 +42,13 @@ class every_n_row(GTRowSelector):
         return _every_n_row(data, self.n, self.offset)
 
 
-def _get_bool_list(n_rows: int, n: int, offset: int) -> list[bool]:
+def _check_every_n_row(n_rows: int, n: int) -> None:
     if n > n_rows:
         raise ValueError("`n` must not exceed `n_rows`.")
+
+
+@cache
+def _get_bool_list(n_rows: int, n: int, offset: int) -> list[bool]:
     return [True if ((i % n) == offset) else False for i in range(n_rows)]
 
 
@@ -58,7 +62,9 @@ def _(data: PdDataFrame, n: int, offset: int) -> PdSeries:
     import pandas as pd
 
     n_rows = data.shape[0]
-    return pd.Series(_get_bool_list(n_rows, n, offset))
+    _check_every_n_row(n_rows, n)
+    bool_list = _get_bool_list(n_rows, n, offset)
+    return pd.Series(bool_list)
 
 
 @_every_n_row.register(PlDataFrame)
@@ -66,7 +72,9 @@ def _(data: PlDataFrame, n: int, offset: int) -> PlSeries:
     import polars as pl
 
     n_rows = data.height
-    return pl.Series(_get_bool_list(n_rows, n, offset))
+    _check_every_n_row(n_rows, n)
+    bool_list = _get_bool_list(n_rows, n, offset)
+    return pl.Series(bool_list)
 
 
 @_every_n_row.register(PyArrowTable)
@@ -74,4 +82,6 @@ def _(data: PyArrowTable, n: int, offset: int) -> PyArrowArray:
     import pyarrow as pa
 
     n_rows = data.num_rows
-    return pa.array(_get_bool_list(n_rows, n, offset), type=pa.bool_())
+    _check_every_n_row(n_rows, n)
+    bool_list = _get_bool_list(n_rows, n, offset)
+    return pa.array(bool_list, type=pa.bool_())
