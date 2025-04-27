@@ -33,7 +33,6 @@ def df(request) -> pd.DataFrame:
         (every_n_row(3), [0, 3]),
         (every_n_row(3, 1), [1, 4]),
         (every_n_row(4), [0, 4]),
-        (every_n_row(5), [0]),
     ],
 )
 def test_every_n_row(df: DataFrameLike, row_selector, expected):
@@ -45,6 +44,10 @@ def test_every_n_row(df: DataFrameLike, row_selector, expected):
 def test_every_n_row_raise(df: DataFrameLike):
     with pytest.raises(ValueError) as exc_info:
         res = GT(df).fmt_integer(columns="col1", rows=every_n_row(-1))
+    assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=every_n_row(0))
     assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
 
     with pytest.raises(ValueError) as exc_info:
@@ -60,5 +63,9 @@ def test_every_n_row_raise(df: DataFrameLike):
     assert "`offset` must be less than `n_rows`." in exc_info.value.args[0]
 
     with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=every_n_row(5))
+    assert "`n` must be less than `n_rows`." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
         res = GT(df).fmt_integer(columns="col1", rows=every_n_row(100))
-    assert "`n` must not exceed `n_rows`." in exc_info.value.args[0]
+    assert "`n` must be less than `n_rows`." in exc_info.value.args[0]

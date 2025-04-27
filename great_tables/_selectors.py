@@ -43,8 +43,8 @@ class every_n_row(GTRowSelector):
 
 
 def _check_every_n_row(n_rows: int, n: int) -> None:
-    if n > n_rows:
-        raise ValueError("`n` must not exceed `n_rows`.")
+    if n >= n_rows:
+        raise ValueError("`n` must be less than `n_rows`.")
 
 
 @cache
