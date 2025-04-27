@@ -18,6 +18,7 @@ from ._gt_data import (
     Spanners,
     StyleInfo,
 )
+from ._selectors import GTRowSelector
 from ._styles import CellStyle
 from ._tbl_data import PlDataFrame, PlExpr, eval_select, eval_transform
 
@@ -811,13 +812,18 @@ def resolve_rows_i(
         result = meth_row_number(name="__row_number__").filter(expr)
         return [(row_names[ii], ii) for ii in result["__row_number__"]]
 
+    elif isinstance(expr, GTRowSelector):
+        res: list[bool] = expr(data._tbl_data)
+        return [(row_names[ii], ii) for ii, val in enumerate(res) if val]
+
     elif callable(expr):
-        res: "list[bool]" = eval_transform(data._tbl_data, expr)
+        res: list[bool] = eval_transform(data._tbl_data, expr)
         if not all(map(lambda x: isinstance(x, bool), res)):
             raise ValueError(
                 "If you select rows using a callable, it must take a DataFrame, "
                 "and return a boolean Series."
             )
+
         return [(row_names[ii], ii) for ii, val in enumerate(res) if val]
 
     # TODO: identify filter-like selectors using some backend check

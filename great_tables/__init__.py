@@ -9,6 +9,7 @@ del _v
 
 from .gt import GT
 from . import vals, loc, style
+from ._selectors import every_n_row
 from ._styles import FromColumn as from_column
 from ._helpers import (
     letters,
@@ -43,6 +44,7 @@ __all__ = (
     "vals",
     "loc",
     "style",
+    "every_n_row",
 )
 
 
