@@ -1,4 +1,6 @@
+from dataclasses import dataclass
 from functools import singledispatch
+
 from ._tbl_data import (
     DataFrameLike,
     PdDataFrame,
@@ -20,22 +22,24 @@ class GTRowSelector(GTSelector): ...
 class GTColumnSelector(GTSelector): ...
 
 
+@dataclass
 class every_n_row(GTRowSelector):
-    def __init__(self, n: int, offset: int = 0):
-        self._n = n
-        self._offset = offset
+    n: int
+    offset: int = 0
+
+    def __post_init__(self):
         self._check()
 
     def _check(self):
-        if self._n <= 0:
+        if self.n <= 0:
             raise ValueError("`n` must be a positive integer greater than 0.")
-        if self._offset < 0:
+        if self.offset < 0:
             raise ValueError("`offset` must not be a negative integer.")
-        if self._offset > (self._n - 1):
+        if self.offset > (self.n - 1):
             raise ValueError("`offset` must be less than `n_rows`.")
 
     def __call__(self, data: DataFrameLike):
-        return _every_n_row(data, self._n, self._offset)
+        return _every_n_row(data, self.n, self.offset)
 
 
 def _get_bool_list(n_rows: int, n: int, offset: int) -> list[bool]:
