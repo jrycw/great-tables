@@ -33,6 +33,7 @@ def df(request) -> pd.DataFrame:
         (every_n_row(3), [0, 3]),
         (every_n_row(3, 1), [1, 4]),
         (every_n_row(4), [0, 4]),
+        (every_n_row(5), [0]),
     ],
 )
 def test_every_n_row(df: DataFrameLike, row_selector, expected):
