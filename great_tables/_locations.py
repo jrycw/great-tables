@@ -29,7 +29,9 @@ if TYPE_CHECKING:
 # Misc Types ===========================================================================
 
 PlacementOptions: TypeAlias = Literal["auto", "left", "right"]
-RowSelectExpr: TypeAlias = 'list[int] | PlExpr | Callable[["TblData"], bool] | None'
+RowSelectExpr: TypeAlias = (
+    'int | list[int] | PlExpr | GTRowSelector | Callable[["TblData"], bool] | None'
+)
 
 # Locations ============================================================================
 # TODO: these are called cells_* in gt. I prefixed them with Loc just to keep things
