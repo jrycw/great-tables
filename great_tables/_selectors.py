@@ -50,6 +50,41 @@ class GTColumnSelector(GTSelector): ...
 # === every_n_row ===
 @dataclass
 class every_n_row(GTRowSelector):
+    """
+    Utility function to select rows based on their index.
+
+    This function can be passed to the `row=` parameter in **Great Tables** when selecting rows.
+    Users can specify the number of groups via `n=` and retrieve rows from a desired group using
+    `offset=`.
+
+    Parameters
+    ----------
+    n
+        The number of groups into which the rows are divided.
+    offset
+        The group index to select rows from.
+
+    -------
+    every_n_row
+        An instance of `every_n_row` that can be used by **Great Tables** to produce a boolean Series,
+        indicating which rows should be selected.
+
+    Examples
+    --------
+    Suppose we want to style the background of a table using the `exibble` dataset,
+    alternating between `lightgray` and `darkgray`. We can achieve this with two calls to `every_n_row`:
+    ```{python}
+    from great_tables import GT, every_n_row, loc, style
+    from great_tables.data import exibble
+
+    (
+        GT(exibble)
+        .tab_style(style=style.fill("lightgray"), locations=loc.body(rows=every_n_row(2)))
+        .tab_style(style=style.fill("darkgray"), locations=loc.body(rows=every_n_row(2, 1)))
+    )
+    ```
+    """
+
     n: int
     offset: int = 0
 
@@ -106,6 +141,36 @@ def _(data: PyArrowTable, n: int, offset: int) -> PyArrowArray:
 # === first_n_row ===
 @dataclass
 class first_n_row(GTRowSelector):
+    """
+    Utility function to select the first few rows based on their index.
+
+    This function can be passed to the `row=` parameter in **Great Tables** when selecting rows.
+    Users can specify the number of rows to select from the beginning.
+
+    Parameters
+    ----------
+    n
+        The number of rows to select starting from the beginning.
+
+    -------
+    first_n_row
+        An instance of `first_n_row` that can be used by **Great Tables** to produce a boolean Series,
+        indicating which rows should be selected.
+
+    Examples
+    --------
+    Suppose we want to style the background of the first three rows with `darkgray` using the
+    `exibble` dataset. We can do the following:
+    ```{python}
+    from great_tables import GT, first_n_row, style, loc
+    from great_tables.data import exibble
+
+    (
+        GT(exibble)
+        .tab_style(style=style.fill("darkgray"), locations=loc.body(rows=first_n_row(3)))
+    )
+    """
+
     n: int
 
     def __post_init__(self):
@@ -157,6 +222,36 @@ def _(data: PyArrowTable, n: int) -> PyArrowArray:
 # === last_n_row ===
 @dataclass
 class last_n_row(GTRowSelector):
+    """
+    Utility function to select the last few rows based on their index.
+
+    This function can be passed to the `row=` parameter in **Great Tables** when selecting rows.
+    Users can specify the number of rows to select from the end.
+
+    Parameters
+    ----------
+    n
+        The number of rows to select starting from the end.
+
+    -------
+    last_n_row
+        An instance of `last_n_row` that can be used by **Great Tables** to produce a boolean Series,
+        indicating which rows should be selected.
+
+    Examples
+    --------
+    Suppose we want to style the background of the last three rows with `darkgray` using the
+    `exibble` dataset. We can do the following:
+    ```{python}
+    from great_tables import GT, last_n_row, style, loc
+    from great_tables.data import exibble
+
+    (
+        GT(exibble)
+        .tab_style(style=style.fill("darkgray"), locations=loc.body(rows=last_n_row(3)))
+    )
+    """
+
     n: int
 
     def __post_init__(self):
