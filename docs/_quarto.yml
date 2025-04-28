@@ -181,6 +181,13 @@ quartodoc:
         - style.text
         - style.borders
         - style.css
+    - title: Row selectors
+    - desc: >
+         These row selectors help users select rows based on their index.
+      contents:
+       - every_n_row
+       - first_n_row
+       - last_n_row
     - title: Helper functions
       desc: >
         An assortment of helper functions is available in the **Great Tables** package. The
