@@ -3,7 +3,7 @@ import pyarrow as pa
 import polars as pl
 import pytest
 
-from great_tables import GT, every_n_row
+from great_tables import GT, every_n_row, first_n_row, last_n_row
 from great_tables._tbl_data import DataFrameLike
 
 params_frames = [
@@ -69,3 +69,63 @@ def test_every_n_row_raise(df: DataFrameLike):
     with pytest.raises(ValueError) as exc_info:
         res = GT(df).fmt_integer(columns="col1", rows=every_n_row(100))
     assert "`n` must be less than `n_rows`." in exc_info.value.args[0]
+
+
+@pytest.mark.parametrize(
+    "row_selector, expected",
+    [
+        (first_n_row(1), [0]),
+        (first_n_row(2), [0, 1]),
+        (first_n_row(3), [0, 1, 2]),
+        (first_n_row(4), [0, 1, 2, 3]),
+        (first_n_row(5), [0, 1, 2, 3, 4]),
+    ],
+)
+def test_first_n_row(df: DataFrameLike, row_selector, expected):
+    res = GT(df).fmt_integer(columns="col1", rows=row_selector)
+    assert len(res._formats) == 1
+    assert res._formats[0].cells.rows == expected
+
+
+def test_first_n_row_raise(df: DataFrameLike):
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=first_n_row(-1))
+    assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=first_n_row(0))
+    assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=first_n_row(100))
+    assert "`n` must be less than or equal to `n_rows`." in exc_info.value.args[0]
+
+
+@pytest.mark.parametrize(
+    "row_selector, expected",
+    [
+        (last_n_row(1), [4]),
+        (last_n_row(2), [3, 4]),
+        (last_n_row(3), [2, 3, 4]),
+        (last_n_row(4), [1, 2, 3, 4]),
+        (last_n_row(5), [0, 1, 2, 3, 4]),
+    ],
+)
+def test_last_n_row(df: DataFrameLike, row_selector, expected):
+    res = GT(df).fmt_integer(columns="col1", rows=row_selector)
+    assert len(res._formats) == 1
+    assert res._formats[0].cells.rows == expected
+
+
+def test_last_n_row_raise(df: DataFrameLike):
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=last_n_row(-1))
+    assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=last_n_row(0))
+    assert "`n` must be a positive integer greater than 0." in exc_info.value.args[0]
+
+    with pytest.raises(ValueError) as exc_info:
+        res = GT(df).fmt_integer(columns="col1", rows=last_n_row(100))
+    assert "`n` must be less than or equal to `n_rows`." in exc_info.value.args[0]
