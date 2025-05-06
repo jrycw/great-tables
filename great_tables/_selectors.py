@@ -25,17 +25,17 @@ def _check_n_le_nrow(n_rows: int, n: int) -> None:
 
 @cache
 def _get_bool_list_every_n_row(n_rows: int, n: int, offset: int) -> list[bool]:
-    return [True if ((i % n) == offset) else False for i in range(n_rows)]
+    return [(i % n) == offset for i in range(n_rows)]
 
 
 @cache
 def _get_bool_list_first_n_row(n_rows: int, n: int) -> list[bool]:
-    return [True if i <= n else False for i in range(1, n_rows + 1)]
+    return [i <= n for i in range(1, n_rows + 1)]
 
 
 @cache
 def _get_bool_list_last_n_row(n_rows: int, n: int) -> list[bool]:
-    return [True if i > (n_rows - n) else False for i in range(1, n_rows + 1)]
+    return [i > (n_rows - n) for i in range(1, n_rows + 1)]
 
 
 class GTSelector: ...
