@@ -24,7 +24,9 @@ def _check_n_le_nrow(n_rows: int, n: int) -> None:
 
 
 @cache
-def _get_bool_list_every_n_row(n_rows: int, n: int, offset: int) -> list[bool]:
+def _get_bool_list_every_n_row(n_rows: int, n: int, offset: int, is_revert: bool) -> list[bool]:
+    if is_revert:
+        return [not ((i % n) == offset) for i in range(n_rows)]
     return [(i % n) == offset for i in range(n_rows)]
 
 
@@ -87,6 +89,7 @@ class every_n_row(GTRowSelector):
 
     n: int
     offset: int = 0
+    is_revert: bool = False
 
     def __post_init__(self):
         self._check()
@@ -100,7 +103,16 @@ class every_n_row(GTRowSelector):
             raise ValueError("`offset` must be less than `n_rows`.")
 
     def __call__(self, data: DataFrameLike) -> PdSeries | PlSeries | PyArrowArray:
-        return _every_n_row(data, self.n, self.offset)
+        return self._call_every_n_row(data, self.is_revert)
+
+    def __invert__(self) -> "every_n_row":
+        cls = type(self)
+        return cls(self.n, self.offset, ~self.is_revert)
+
+    def _call_every_n_row(
+        self, data: DataFrameLike, is_revert
+    ) -> PdSeries | PlSeries | PyArrowArray:
+        return _every_n_row(data, self.n, self.offset, is_revert)
 
 
 @singledispatch
@@ -109,32 +121,32 @@ def _every_n_row(data: DataFrameLike, n: int, offset: int) -> DataFrameLike:
 
 
 @_every_n_row.register(PdDataFrame)
-def _(data: PdDataFrame, n: int, offset: int) -> PdSeries:
+def _(data: PdDataFrame, n: int, offset: int, is_revert: bool) -> PdSeries:
     import pandas as pd
 
     n_rows = data.shape[0]
     _check_n_lt_nrow(n_rows, n)
-    bool_list = _get_bool_list_every_n_row(n_rows, n, offset)
+    bool_list = _get_bool_list_every_n_row(n_rows, n, offset, is_revert)
     return pd.Series(bool_list)
 
 
 @_every_n_row.register(PlDataFrame)
-def _(data: PlDataFrame, n: int, offset: int) -> PlSeries:
+def _(data: PlDataFrame, n: int, offset: int, is_revert: bool) -> PlSeries:
     import polars as pl
 
     n_rows = data.height
     _check_n_lt_nrow(n_rows, n)
-    bool_list = _get_bool_list_every_n_row(n_rows, n, offset)
+    bool_list = _get_bool_list_every_n_row(n_rows, n, offset, is_revert)
     return pl.Series(bool_list)
 
 
 @_every_n_row.register(PyArrowTable)
-def _(data: PyArrowTable, n: int, offset: int) -> PyArrowArray:
+def _(data: PyArrowTable, n: int, offset: int, is_revert: bool) -> PyArrowArray:
     import pyarrow as pa
 
     n_rows = data.num_rows
     _check_n_lt_nrow(n_rows, n)
-    bool_list = _get_bool_list_every_n_row(n_rows, n, offset)
+    bool_list = _get_bool_list_every_n_row(n_rows, n, offset, is_revert)
     return pa.array(bool_list, type=pa.bool_())
 
 

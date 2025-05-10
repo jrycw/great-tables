@@ -41,6 +41,21 @@ def test_every_n_row(df: DataFrameLike, row_selector, expected):
     assert res._formats[0].cells.rows == expected
 
 
+@pytest.mark.parametrize(
+    "row_selector, expected",
+    [
+        (~every_n_row(1), []),
+        (~every_n_row(2), [1, 3]),
+        (~every_n_row(3), [1, 2, 4]),
+        (~every_n_row(4), [1, 2, 3]),
+    ],
+)
+def test_every_n_row_invert(df: DataFrameLike, row_selector, expected):
+    res = GT(df).fmt_integer(columns="col1", rows=row_selector)
+    assert len(res._formats) == 1
+    assert res._formats[0].cells.rows == expected
+
+
 def test_every_n_row_raise(df: DataFrameLike):
     with pytest.raises(ValueError) as exc_info:
         res = GT(df).fmt_integer(columns="col1", rows=every_n_row(-1))
