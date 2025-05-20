@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 from ._locations import Loc, PlacementOptions, set_footnote, set_style
 from ._styles import CellStyle
 from ._helpers import GoogleFont
-
+from ._tbl_data import SelectExpr
 
 if TYPE_CHECKING:
     from ._types import GTSelf
@@ -148,6 +148,60 @@ def tab_style(
 
     for loc in locations:
         new_data = set_style(loc, new_data, style)
+
+    return new_data
+
+
+def tab_body_style(
+    self: GTSelf, style: CellStyle | list[CellStyle], columns: SelectExpr = None
+) -> GTSelf:
+    from functools import partial
+    from ._locations import resolve_cols_c, LocBody
+
+    if not isinstance(style, list):
+        style = [style]
+
+    col_res = resolve_cols_c(self, columns)
+
+    # Only handle .color for all kinds of CellStyle for now
+    new_style = []
+    for s in style:
+        for column in col_res:
+            cellstyle_cls = type(s)
+            cellstyle = cellstyle_cls(color=partial(s.color, column=column))
+            cellstyle.column = column
+            new_style.append(cellstyle)
+
+    new_data = self
+
+    # Intercept `font` in CellStyleText to capture Google Fonts and:
+    # 1. transform dictionary to string (with Google Font name)
+    # 2. add Google Font import statement via tab_options(table_additional_css)
+    if any(isinstance(s, CellStyle) for s in new_style):
+        for s in new_style:
+            if (
+                isinstance(s, CellStyle)
+                and hasattr(s, "font")
+                and s.font is not None
+                and isinstance(s.font, GoogleFont)
+            ):
+                # Obtain font name and import statement as local variables
+                font_name = s.font.get_font_name()
+                font_import_stmt = s.font.make_import_stmt()
+
+                # Replace GoogleFont class with font name
+                s.font = font_name
+
+                # Append the import statement to the `table_additional_css` list
+                existing_additional_css = self._options.table_additional_css.value + [
+                    font_import_stmt
+                ]
+
+                # Add revised CSS list via the `tab_options()` method
+                new_data = new_data.tab_options(table_additional_css=existing_additional_css)
+
+    for s in new_style:
+        new_data = set_style(LocBody(columns=s.column), new_data, [s])
 
     return new_data
 
