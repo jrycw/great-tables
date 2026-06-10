@@ -1,0 +1,30 @@
+[
+  {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/septa-timetables/index.html",
+      "/blog/introduction-0.18.0/index.html",
+      "/blog/plots-in-tables/index.html",
+      "/blog/marimo-and-great-tables/index.html",
+      "/blog/polars-dot-style/index.html",
+      "/blog/pointblank-intro/index.html",
+      "/blog/locbody-mask/index.html",
+      "/blog/introduction-0.15.0/index.html",
+      "/blog/open-transit-tools/index.html",
+      "/blog/rendering-images/index.html",
+      "/blog/latex-output-tables/index.html",
+      "/blog/introduction-0.13.0/index.html",
+      "/blog/introduction-0.12.0/index.html",
+      "/blog/tables-for-scientific-publishing/index.html",
+      "/blog/pycon-2024-great-tables-are-possible/index.html",
+      "/blog/bring-your-own-df/index.html",
+      "/blog/design-philosophy/index.html",
+      "/blog/introduction-0.4.0/index.html",
+      "/blog/introduction-0.3.0/index.html",
+      "/blog/superbowl-squares/index.html",
+      "/blog/introduction-0.2.0/index.html",
+      "/blog/polars-styling/index.html",
+      "/blog/introduction_great_tables.html"
+    ]
+  }
+]
