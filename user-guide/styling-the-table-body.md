@@ -1,5 +1,7 @@
 # Styling the Table Body
 
+Visual styling helps draw attention to important values and makes patterns in your data easier to spot. **Great Tables** provides a flexible system for applying fills, borders, and text styles to cells in the table body. This page covers the fundamentals of cell-level styling, from targeting specific cells to using column values and expressions to drive dynamic styles.
+
 **Great Tables** can add styles--like color, text properties, and borders--on many different parts of the displayed table. The following set of examples shows how to set styles on the body of table, where the data cells are located.
 
 For the examples on this page, we'll use the included airquality dataset to set up [GT](../reference/GT.md#great_tables.GT) objects for both **Pandas** and **Polars** DataFrames.
@@ -75,6 +77,9 @@ gt_air.tab_style(
 |       |         | 14.3 | 56   | 5     | 5   |
 
 
+The red dashed border appears above rows 1 and 2, providing a visual separator. You can control the side (`"top"`, `"bottom"`, `"left"`, `"right"`), color, style, and weight of the border.
+
+
 ## Customizing Text
 
 We can style text with by using the [style.text()](../reference/style.text.md#great_tables.style.text) function. This gives us many customization possibilities for any text we target. For example, the `Solar_R` column below has green, bolded text in a custom font.
@@ -95,6 +100,9 @@ gt_air.tab_style(
 | 12.0  | 149.0   | 12.6 | 74   | 5     | 3   |
 | 18.0  | 313.0   | 11.5 | 62   | 5     | 4   |
 |       |         | 14.3 | 56   | 5     | 5   |
+
+
+The `Solar_R` column text appears in green, bold, and in the Times New Roman font. The [style.text()](../reference/style.text.md#great_tables.style.text) function supports additional options like `size=`, `style=` (italic), and `decorate=` (underline, line-through).
 
 
 # Column-based Styles
@@ -215,6 +223,9 @@ gt_pl_air.tab_style(
 | None  | None    | 14.3 | 56   | 5     | 5   |
 
 
+The Polars expression evaluates per row and produces a color string for each cell. This approach avoids creating and hiding an extra column, keeping the code concise.
+
+
 ## Using functions
 
 You can also use a function, that takes the DataFrame and returns a Series with a style value for each row.
@@ -243,6 +254,9 @@ gt_air.tab_style(
 | 12.0  | 149.0   | 12.6 | 74   | 5     | 3   |
 | 18.0  | 313.0   | 11.5 | 62   | 5     | 4   |
 |       |         | 14.3 | 56   | 5     | 5   |
+
+
+The function receives the full DataFrame and returns a Series of color values aligned with the rows. This pattern works well with Pandas when you want to derive styles from data logic without Polars expressions.
 
 
 # Specifying columns and rows
@@ -301,6 +315,9 @@ gt_air.tab_style(
 | 12.0  | 149.0   | 12.6 | 74   | 5     | 3   |
 | 18.0  | 313.0   | 11.5 | 62   | 5     | 4   |
 |       |         | 14.3 | 56   | 5     | 5   |
+
+
+The function-based row selection gives you full flexibility: any callable that takes a DataFrame and returns a boolean Series can serve as a row filter.
 
 
 # Multiple styles and locations
@@ -395,7 +412,14 @@ gt_pl_air.tab_style(
 | None  | None    | 14.3 | 56   | 5     | 5   |
 
 
+The `mask=` argument applies row/column logic jointly, highlighting only the cells where a column's value equals its own maximum. This is a powerful way to perform per-column conditional formatting in a single statement.
+
+
 # Learning more
+
+The combination of [tab_style()](../reference/GT.tab_style.md#great_tables.GT.tab_style), location specifiers, and the various style functions gives you precise control over the visual presentation of your table body. Whether you are highlighting outliers, applying conditional formatting, or using column-driven styles, these tools let you communicate data insights through visual cues that complement the numeric values themselves.
+
+For further reference, consult the API documentation:
 
 - API Docs:
   - [tab_style()](../reference/GT.tab_style.md#great_tables.GT.tab_style)

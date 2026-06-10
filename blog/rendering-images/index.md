@@ -129,7 +129,7 @@ metro_mini1
 >
 > Local file paths can vary depending on the operating system, which makes it easy to accidentally construct invalid paths. A good practice to mitigate this is to use Python's built-in [pathlib](https://docs.python.org/3/library/pathlib.html) module to construct paths first and then convert them to strings. In this example, `img_local_paths` is actually an instance of `pathlib.Path`.
 >
-> <div id="3361c2b3" class="cell" execution_count="4">
+> <div id="a9b87b74" class="cell" execution_count="4">
 >
 > ``` python
 > from pathlib import Path
@@ -141,7 +141,7 @@ metro_mini1
 >
 > For now, let's use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render images by passing `"case1"` as the first argument:
 >
-> <div id="3e596dee" class="cell" execution_count="5">
+> <div id="dd193b39" class="cell" execution_count="5">
 >
 > ``` python
 > GT(metro_mini1).fmt_image("case1").cols_align(align="right", columns="case1")
@@ -149,7 +149,7 @@ metro_mini1
 >
 > <div class="cell-output cell-output-display" execution_count="4">
 >
-> <div id="xvschfrsld" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="fohgbeahrg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 >
 > | name | lines | case1 |
 > |----|----|----|
@@ -171,7 +171,7 @@ metro_mini1
 >
 > **Case 2** demonstrates how to simulate a column containing strings representing HTTP/HTTPS URLs. We'll use the same images as in **Case 1**, but this time, retrieve them from the Great Tables GitHub repository:
 >
-> <div id="33d0b02c" class="cell" execution_count="6">
+> <div id="d714fc9b" class="cell" execution_count="6">
 >
 > ``` python
 > img_url_paths = "https://raw.githubusercontent.com/posit-dev/great-tables/refs/heads/main/great_tables/data/metro_images"
@@ -181,7 +181,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini2`, where the `case2` column contains full HTTP/HTTPS URLs that we aim to render as images.
 >
-> <div id="b58fe3f8" class="cell" execution_count="7">
+> <div id="371aac30" class="cell" execution_count="7">
 >
 > Show the Code
 >
@@ -220,7 +220,7 @@ metro_mini1
 >
 > Similarly, we can use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render images by passing `"case2"` as the first argument:
 >
-> <div id="1c9441e0" class="cell" execution_count="8">
+> <div id="f3decce2" class="cell" execution_count="8">
 >
 > ``` python
 > GT(metro_mini2).fmt_image("case2").cols_align(align="right", columns="case2")
@@ -228,7 +228,7 @@ metro_mini1
 >
 > <div class="cell-output cell-output-display" execution_count="7">
 >
-> <div id="zrzamatvmm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="wyjmvujctl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 >
 > | name | lines | case2 |
 > |----|----|----|
@@ -252,7 +252,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini3`, where the `case3` column contains file names that we aim to render as images.
 >
-> <div id="38b3cd93" class="cell" execution_count="9">
+> <div id="51f063f1" class="cell" execution_count="9">
 >
 > Show the Code
 >
@@ -288,7 +288,7 @@ metro_mini1
 >
 > Now we can use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render the images by passing `"case3"` as the first argument and specifying either `img_local_paths` or `img_url_paths` as the `path=` argument:
 >
-> <div id="b3d89bf4" class="cell" execution_count="10">
+> <div id="74bce80d" class="cell" execution_count="10">
 >
 > ``` python
 > # equivalent to `Case 1`
@@ -308,7 +308,7 @@ metro_mini1
 >
 > <div class="cell-output cell-output-display" execution_count="9">
 >
-> <div id="mjviugrlsc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="dztrcucmqc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 >
 > | name | lines | case3 |
 > |----|----|----|
@@ -334,7 +334,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini4`, where the `case4` column contains a copy of `data["lines"]`, which we aim to render as images.
 >
-> <div id="9b3d7410" class="cell" execution_count="11">
+> <div id="025a592e" class="cell" execution_count="11">
 >
 > Show the Code
 >
@@ -363,7 +363,7 @@ metro_mini1
 >
 > First, define a string pattern to illustrate the file naming convention, using `{}` to indicate the variable portion:
 >
-> <div id="55f0f022" class="cell" execution_count="12">
+> <div id="4e18e2ce" class="cell" execution_count="12">
 >
 > ``` python
 > file_pattern = "metro_{}.svg"
@@ -373,7 +373,7 @@ metro_mini1
 >
 > Next, pass `"case4"` as the first argument, along with `img_local_paths` or `img_url_paths` as the `path=` argument, and `file_pattern` as the `file_pattern=` argument. This allows [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render the images:
 >
-> <div id="e04b87ff" class="cell" execution_count="13">
+> <div id="5ddd31b3" class="cell" execution_count="13">
 >
 > ``` python
 > # equivalent to `Case 1`
@@ -393,7 +393,7 @@ metro_mini1
 >
 > <div class="cell-output cell-output-display" execution_count="12">
 >
-> <div id="nnvlzovcyt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="xibtwdpiys" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 >
 > | name | lines | case4 |
 > |----|----|----|
@@ -413,7 +413,7 @@ metro_mini1
 > >
 > > The `file_pattern=` argument is typically used in conjunction with the `path=` argument, but this is not a strict rule. If your local file paths or HTTP/HTTPS URLs follow a pattern, you can use `file_pattern=` alone without `path=`. This allows you to include the shared portion of the file paths or URLs directly in `file_pattern`, as shown below:
 > >
-> > <div id="ca65213a" class="cell" execution_count="14">
+> > <div id="84c5879a" class="cell" execution_count="14">
 > >
 > > ``` python
 > > file_pattern = str(img_local_paths / "metro_{}.svg")
@@ -426,7 +426,7 @@ metro_mini1
 > >
 > > <div class="cell-output cell-output-display" execution_count="13">
 > >
-> > <div id="plvjyjhiyr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="hvzzaknbtn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 > >
 > > | name | lines | case4 |
 > > |----|----|----|
@@ -452,7 +452,7 @@ metro_mini1
 > >
 > > We will create a `Pandas` DataFrame named `metro_mini` using the `data` dictionary. This will be used for demonstration in the following examples:
 > >
-> > <div id="c8c9029b" class="cell" execution_count="15">
+> > <div id="9d93932c" class="cell" execution_count="15">
 > >
 > > Show the Code
 > >
@@ -485,7 +485,7 @@ metro_mini1
 > >
 > > This example shows how to render a valid URL as an image in the title of the table header:
 > >
-> > <div id="ed575cba" class="cell" execution_count="16">
+> > <div id="c8513cb4" class="cell" execution_count="16">
 > >
 > > ``` python
 > > gt_logo_url = "https://posit-dev.github.io/great-tables/assets/GT_logo.svg"
@@ -511,7 +511,7 @@ metro_mini1
 > >
 > > <div class="cell-output cell-output-display" execution_count="15">
 > >
-> > <div id="cmefzqffpk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="ifinlzacxx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 > >
 > > <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 > > <thead>
@@ -559,7 +559,7 @@ metro_mini1
 > >
 > > This example demonstrates how to render two valid URLs as images in the title and subtitle of the table header:
 > >
-> > <div id="629468ce" class="cell" execution_count="17">
+> > <div id="ee6a6284" class="cell" execution_count="17">
 > >
 > > ``` python
 > > metro_logo_url = "https://raw.githubusercontent.com/rstudio/gt/master/images/dataset_metro.svg"
@@ -586,7 +586,7 @@ metro_mini1
 > >
 > > <div class="cell-output cell-output-display" execution_count="16">
 > >
-> > <div id="zfnbxbqfay" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="ohbmrpvuvw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 > >
 > > <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 > > <thead>
@@ -637,7 +637,7 @@ metro_mini1
 > >
 > > Remember, you can always use [html()](../../reference/html.md#great_tables.html) to manually construct your desired output. For example, the previous table can be created without relying on [vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image) like this:
 > >
-> > <div id="62c126dc" class="cell" execution_count="18">
+> > <div id="c7f71f21" class="cell" execution_count="18">
 > >
 > > ``` python
 > > (

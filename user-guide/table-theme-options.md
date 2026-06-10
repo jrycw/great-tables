@@ -1,9 +1,11 @@
 # Table Theme Options
 
+When you need to apply broad visual changes across an entire table, [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) is the right tool. Rather than styling individual cells or specific locations, this method lets you set colors, fonts, borders, and spacing for entire table parts in a single call. This page explains the structure of option names, demonstrates how to style different parts, and shows how to build a complete table theme.
+
 Great Tables exposes options to customize the appearance of tables via two methods:
 
-- [tab_style()](../reference/GT.tab_style.md#great_tables.GT.tab_style) - targeted styles (e.g. color a specific cell of data, or a specific group label).
-- [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) - broad styles (e.g. color the header and source notes).
+- [tab_style()](../reference/GT.tab_style.md#great_tables.GT.tab_style): targeted styles (e.g. color a specific cell of data, or a specific group label).
+- [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options): broad styles (e.g. color the header and source notes).
 
 Both methods target parts of the table, as shown in the diagram below.
 
@@ -253,7 +255,7 @@ Notice two important pieces:
 
 # Finding options: part, type, attribute
 
-Option names follow this format:
+Option names in [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) follow a consistent naming convention. Understanding the pattern makes it easy to find the exact option you need without searching through documentation. The format is:
 
 ``` python
 {part name}_{type}_{attribute}
@@ -385,6 +387,9 @@ gt_ex.tab_options(
 </table>
 
 
+The column labels section now has a thick blue border on top. Each border option follows the same triplet of [color](../reference/style.text.md#great_tables.style.text.color), [style](../reference/style.text.md#great_tables.style.text.style), and `width` attributes, which you can combine to create the exact look you want.
+
+
 # Styling background color
 
 
@@ -489,6 +494,9 @@ gt_ex.tab_options(
 </tfoot>
 
 </table>
+
+
+The heading area (title and subtitle) is now purple. Background color options are available for every table part, letting you assign a distinct visual identity to each region.
 
 
 # Styling body cells
@@ -710,6 +718,9 @@ gt_ex.tab_options(
 </table>
 
 
+With both `hlines` and `vlines` set to solid, the table body displays a classic grid appearance. Setting either to `"none"` removes those lines entirely for a cleaner, minimal look.
+
+
 # Set options across table parts
 
 Some options starting with `table_` apply to all parts of the table. For example, fonts and background color apply everywhere.
@@ -928,6 +939,9 @@ gt_ex.tab_options(
 </table>
 
 
+The orange background applies everywhere except the heading, which overrides it with pink. This layered approach means you can set sensible table-wide defaults and then customize individual parts as needed.
+
+
 # A basic theme
 
 Based on the sections above, we can design an overall theme for a table.
@@ -1097,3 +1111,6 @@ from great_tables import GT, exibble
 </tfoot>
 
 </table>
+
+
+With [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options), you can define the visual identity of your tables at a broad level. The structured naming convention makes it straightforward to find and set the options you need, and by combining multiple options together, you can build reusable themes that give all your tables a consistent, polished appearance.

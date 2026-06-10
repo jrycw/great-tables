@@ -1,5 +1,10 @@
 # Column Labels
 
+Column labels are the primary way readers identify what data each column contains. Beyond simple labels, **Great Tables** lets you group related columns together under spanner labels, reorder columns for clarity, and customize label text with rich formatting. This page walks through each of these capabilities.
+
+
+# Working with Column Data
+
 The table's **Column Labels** part contains, at a minimum, columns and their *column labels*. The last example had a single column: [size](../reference/style.text.md#great_tables.style.text.size). Just as in the **Stub**, we can create groupings called *spanner labels* that encompass one or more columns.
 
 To better demonstrate how **Column Labels** work and are displayed, let's use an input data table with more columns. In this case, that input table will be `airquality`. It has the following columns:
@@ -35,6 +40,9 @@ airquality_mini
 | 7   | 19.0  | 99.0    | 13.8 | 59   | 5     | 8   | 1973 |
 | 8   | 8.0   | 19.0    | 20.1 | 61   | 5     | 9   | 1973 |
 | 9   | NaN   | 194.0   | 8.6  | 69   | 5     | 10  | 1973 |
+
+
+This ten-row subset of the New York air quality dataset has both measurement and time columns, making it a good candidate for organizing with column spanners.
 
 
 # Adding Column Spanners
@@ -369,3 +377,5 @@ For example, you can use a lambda function:
 
 
 Inputs like strings, integers, and polars selectors are also supported. For more information, see [Column Selection](column-selection.md).
+
+Between spanners, relabeling, and reordering, you have full control over how your column labels communicate the structure of your data. These tools let you transform raw DataFrame column names into polished, informative headers that guide readers through the table.

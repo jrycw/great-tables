@@ -1,5 +1,7 @@
 # Premade Themes
 
+Building a complete table theme from scratch with [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) requires setting many individual options. For common styling needs, **Great Tables** offers a collection of `opt_*()` convenience methods that bundle these options into simple, one-line calls. This page demonstrates how to use premade themes and the various convenience methods available for quick table customization.
+
 Great Tables provides convenience methods starting with `opt_` (e.g. [opt_row_striping()](../reference/GT.opt_row_striping.md#great_tables.GT.opt_row_striping)), as a shortcut for various styles that can be set via [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options).
 
 There are two important kinds of `GT.opt_*()` methods:
@@ -643,6 +645,9 @@ gt_ex.opt_align_table_header(align="left")
 </table>
 
 
+The title and subtitle are now left-aligned rather than centered, which works well for tables embedded in text-heavy documents.
+
+
 ## Make text ALL CAPS
 
 
@@ -705,6 +710,9 @@ gt_ex.opt_all_caps()
 </tfoot>
 
 </table>
+
+
+Column labels and row group labels are rendered in uppercase, giving the table a more formal, structured appearance.
 
 
 ## Reduce or expand padding
@@ -771,6 +779,9 @@ gt_ex.opt_vertical_padding(scale=0.3)
 </table>
 
 
+Reducing vertical padding creates a more compact table that fits more data into less vertical space.
+
+
 ``` python
 gt_ex.opt_horizontal_padding(scale=3)
 ```
@@ -830,6 +841,9 @@ gt_ex.opt_horizontal_padding(scale=3)
 </tfoot>
 
 </table>
+
+
+Increasing horizontal padding adds breathing room between columns, which improves readability when columns contain long values.
 
 
 ## Set table outline
@@ -894,3 +908,6 @@ gt_ex.opt_table_outline()
 </tfoot>
 
 </table>
+
+
+The `opt_*()` methods give you quick access to common styling patterns without needing to remember the specific [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) argument names. For full control, you can always drop down to [tab_options()](../reference/GT.tab_options.md#great_tables.GT.tab_options) directly, but these convenience methods cover the most frequent customization needs in just a single method call.

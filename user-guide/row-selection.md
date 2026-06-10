@@ -1,5 +1,10 @@
 # Row Selection
 
+Just as you can target specific columns, **Great Tables** also provides flexible ways to select rows. The `rows=` argument appears in formatting methods, location specifiers, and styling calls, allowing you to apply operations to a precise subset of your data. This page covers each of the available selection mechanisms.
+
+
+# Selection Options
+
 Location and formatter functions (e.g. [loc.body()](../reference/loc.body.md#great_tables.loc.body) and [fmt_number()](../reference/GT.fmt_number.md#great_tables.GT.fmt_number)) can be applied to specific rows, using the `rows=` argument.
 
 Rows may be specified using any of the following:
@@ -55,6 +60,9 @@ gt_ex.fmt_currency("currency", rows=[0, -1], decimals=1)
 | 33.33  | coconut | \$1.4    |
 
 
+The first and last rows now show currency formatting, while the middle row remains unchanged. Negative indices count backward from the end, just as with Python lists.
+
+
 # Using polars expressions
 
 The `rows=` argument accepts polars expressions, which return a boolean Series, indicating which rows to operate on.
@@ -101,6 +109,9 @@ gt_polars.tab_style(
 | 33.33  | coconut | 1.39     |
 
 
+The row with the maximum currency value is highlighted with a yellow background. Using expressions for row selection keeps the logic declarative and close to the styling call.
+
+
 # Using a function
 
 Since libraries like `pandas` don't have lazy expressions, the `rows=` argument also accepts a function for selecting rows. The function should take a DataFrame and return a boolean series.
@@ -141,3 +152,6 @@ gt_ex.tab_style(
 | 0.1111 | apricot | 49.95    |
 | 2.222  | banana  | 17.95    |
 | 33.33  | coconut | 1.39     |
+
+
+Whether you prefer integer indexing for quick positional access, Polars expressions for declarative filtering, or functions for compatibility with pandas, the `rows=` argument adapts to your data workflow. Combined with column selection, these tools give you fine-grained control over exactly which cells your formatting and styling operations affect.
