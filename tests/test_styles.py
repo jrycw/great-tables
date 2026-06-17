@@ -98,3 +98,38 @@ def test_cell_style_text_multiple_properties_with_google_font():
     assert "font-size: 16px;" in res
     assert "font-weight: bold;" in res
     assert "text-align: center;" in res
+
+
+def test_tab_style_spanner_id_differs_from_label():
+    # Regression test for #829: a style targeting a spanner by its `id` should be
+    # applied to the spanner header cell, even when the `id` differs from the
+    # displayed `label`.
+    from great_tables import GT, loc, style
+
+    df = pl.DataFrame({"a": [1], "b": [2]})
+    gt_table = (
+        GT(df)
+        .tab_spanner(label="Displayed Group", id="internal_id", columns=["a", "b"])
+        .tab_style(style=style.text(color="red"), locations=loc.spanner_labels(ids=["internal_id"]))
+    )
+
+    html = gt_table.as_raw_html()
+
+    assert "color: red" in html
+
+
+def test_tab_style_multilevel_spanner_id_differs_from_label():
+    # Regression test for #829 covering higher-level (nested) spanners.
+    from great_tables import GT, loc, style
+
+    df = pl.DataFrame({"a": [1], "b": [2]})
+    gt_table = (
+        GT(df)
+        .tab_spanner(label="Inner", id="inner_id", columns=["a", "b"])
+        .tab_spanner(label="Outer", id="outer_id", columns=["a", "b"])
+        .tab_style(style=style.text(color="red"), locations=loc.spanner_labels(ids=["outer_id"]))
+    )
+
+    html = gt_table.as_raw_html()
+
+    assert "color: red" in html
