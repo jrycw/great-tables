@@ -351,6 +351,39 @@ def test_tab_footnote_footer_rendering():
     assert re.search(r"<span[^>]*>†</span>\s*Second footnote text", footer_html)
 
 
+def test_tab_footnote_spanner_id_differs_from_label():
+    # Test that a footnote targeting a spanner by its `id` should render a mark on the spanner
+    # header cell, even when the `id` differs from the displayed `label`.
+    df = pl.DataFrame({"a": [1], "b": [2]})
+    gt_table = (
+        GT(df)
+        .tab_spanner(label="Displayed Group", id="internal_id", columns=["a", "b"])
+        .tab_footnote(footnote="Spanner note", locations=loc.spanner_labels(ids=["internal_id"]))
+    )
+
+    html = gt_table._render_as_html()
+
+    # The footnote mark should appear directly after the displayed spanner label
+    assert re.search(r"Displayed Group<span[^>]*gt_footnote_marks", html)
+    # And the footnote text should appear in the footer
+    assert "Spanner note" in html
+
+
+def test_tab_footnote_multilevel_spanner_id_differs_from_label():
+    df = pl.DataFrame({"a": [1], "b": [2]})
+    gt_table = (
+        GT(df)
+        .tab_spanner(label="Inner", id="inner_id", columns=["a", "b"])
+        .tab_spanner(label="Outer", id="outer_id", columns=["a", "b"])
+        .tab_footnote(footnote="Outer note", locations=loc.spanner_labels(ids=["outer_id"]))
+    )
+
+    html = gt_table._render_as_html()
+
+    assert re.search(r"Outer<span[^>]*gt_footnote_marks", html)
+    assert "Outer note" in html
+
+
 def test_tab_footnote_with_text_object():
     # Test a footnote with the Text object
     gt_table = _create_base_gt().tab_footnote(
