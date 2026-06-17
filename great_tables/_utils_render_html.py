@@ -337,6 +337,13 @@ def create_columns_component_h(data: GTData) -> str:
             spanners=data._spanners, boxhead=boxhead, include_hidden=False, ids=False
         )
 
+        # Build a parallel matrix of spanner IDs (same shape/ordering as the label
+        # matrix above). Styles and footnotes targeting spanners are stored by ID,
+        # which can differ from the displayed label, so filtering must compare IDs.
+        spanner_id_matrix, _ = spanners_print_matrix(
+            spanners=data._spanners, boxhead=boxhead, include_hidden=False, ids=True
+        )
+
         # Last is column labels
         # So take second to last
         level_1_index = -2
@@ -371,6 +378,8 @@ def create_columns_component_h(data: GTData) -> str:
 
         spanner_ids_level_1 = spanner_ids[level_1_index]
         spanner_ids_level_1_index = list(spanner_ids_level_1.values())
+        # Parallel list of spanner IDs for the first level (used for filtering)
+        spanner_id_level_1_index = list(spanner_id_matrix[level_1_index].values())
         spanners_rle = seq_groups(seq=spanner_ids_level_1_index)
 
         # `colspans` matches `spanners` in length; each element is the number of columns that the
@@ -420,8 +429,8 @@ def create_columns_component_h(data: GTData) -> str:
                     styles_i = [
                         x
                         for x in styles_spanner_label
-                        if spanner_ids_level_1_index[ii]
-                        and spanner_ids_level_1_index[ii] in x.grpname
+                        if spanner_id_level_1_index[ii]
+                        and spanner_id_level_1_index[ii] in x.grpname
                     ]
 
                     # Filter footnotes for this spanner label - similar to styles filtering
@@ -429,8 +438,8 @@ def create_columns_component_h(data: GTData) -> str:
                         x
                         for x in data._footnotes
                         if isinstance(x.locname, loc.LocSpannerLabels)
-                        and spanner_ids_level_1_index[ii]
-                        and x.grpname == spanner_ids_level_1_index[ii]
+                        and spanner_id_level_1_index[ii]
+                        and x.grpname == spanner_id_level_1_index[ii]
                     ]
 
                     level_1_spanners.append(
@@ -520,8 +529,9 @@ def create_columns_component_h(data: GTData) -> str:
         # We can skip the last (column labels) and second to last (first spanner)
         higher_spanner_rows = TagList()
 
-        for spanners_row in spanner_ids[:-2]:
+        for spanners_row, spanner_id_row in zip(spanner_ids[:-2], spanner_id_matrix[:-2]):
             spanners_row = {k: "" if v is None else v for k, v in spanners_row.items()}
+            spanner_id_row = {k: "" if v is None else v for k, v in spanner_id_row.items()}
 
             spanner_ids_index = spanners_row.values()
             spanners_rle = seq_groups(seq=spanner_ids_index)
@@ -529,20 +539,21 @@ def create_columns_component_h(data: GTData) -> str:
             colspans = list(chain.from_iterable(group_spans))
             level_i_spanners = []
 
-            for colspan, span_label in zip(colspans, spanners_row.values()):
+            for colspan, span_label, span_id in zip(
+                colspans, spanners_row.values(), spanner_id_row.values()
+            ):
                 if colspan > 0:
-                    # Filter by spanner label / id, join with overall column labels style
-                    styles_i = [
-                        x for x in styles_spanner_label if span_label and span_label in x.grpname
-                    ]
+                    # Filter by spanner id (styles/footnotes are stored by ID, which
+                    # may differ from the displayed label)
+                    styles_i = [x for x in styles_spanner_label if span_id and span_id in x.grpname]
 
                     # Filter footnotes for this spanner label - similar to styles filtering
                     footnotes_i = [
                         x
                         for x in data._footnotes
                         if isinstance(x.locname, loc.LocSpannerLabels)
-                        and span_label
-                        and x.grpname == span_label
+                        and span_id
+                        and x.grpname == span_id
                     ]
 
                     if span_label:
@@ -1197,7 +1208,7 @@ def create_footer_component_h(data: GTData) -> str:
     if not footer_rows:
         return ""
 
-    return f'<tfoot>{"".join(footer_rows)}</tfoot>'
+    return f"<tfoot>{''.join(footer_rows)}</tfoot>"
 
 
 def _should_display_footnote(data: GTData, footnote: FootnoteInfo) -> bool:
@@ -1287,9 +1298,9 @@ def _process_footnotes_for_display(
         # For numbers, sort by numeric mark value to handle any edge cases
         sorted_texts = sorted(
             footnote_order,
-            key=lambda text: int(footnote_data[text])
-            if footnote_data[text].isdigit()
-            else float("inf"),
+            key=lambda text: (
+                int(footnote_data[text]) if footnote_data[text].isdigit() else float("inf")
+            ),
         )
     else:
         # For letters/symbols, maintain visual order (don't sort alphabetically)
