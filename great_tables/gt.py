@@ -68,6 +68,7 @@ from ._options import (
 from ._pipe import pipe
 from ._render import infer_render_env_defaults
 from ._render_checks import _render_check
+from ._rm import rm_footnotes, rm_header, rm_source_notes, rm_spanners, rm_stubhead
 from ._source_notes import tab_source_note
 from ._spanners import (
     cols_hide,
@@ -423,6 +424,12 @@ class GT(
     tab_stubhead = tab_stubhead
     tab_style = tab_style
     tab_options = tab_options
+
+    rm_header = rm_header
+    rm_stubhead = rm_stubhead
+    rm_source_notes = rm_source_notes
+    rm_footnotes = rm_footnotes
+    rm_spanners = rm_spanners
     text_transform = text_transform
     text_replace = text_replace
     text_case_match = text_case_match
