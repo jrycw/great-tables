@@ -34,6 +34,7 @@ website:
             - get-started/basic-header.qmd
             - get-started/basic-stub.qmd
             - get-started/basic-column-labels.qmd
+            - get-started/removing-parts.qmd
         - section: Format
           contents:
             - get-started/basic-formatting.qmd
