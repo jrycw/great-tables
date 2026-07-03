@@ -1,0 +1,77 @@
+---
+title: Removing Table Parts
+jupyter: python3
+html-table-processing: none
+---
+
+Just as the `tab_*()` family of methods lets us *add* components to a table, the `rm_*()` family lets us *remove* them. This is especially handy when you're handed a `GT` object that already has a header, footnotes, or spanners (perhaps from a shared function or a template) and you'd like to strip a component out rather than rebuild the table from scratch. Each `rm_*()` method returns the `GT` object, so calls can be chained like any other.
+
+Let's build up a table that uses several components so we have something to remove. We'll use a small slice of the `gtcars` dataset with a header, a stubhead label, a spanner, a footnote, and two source notes.
+
+```{python}
+from great_tables import GT, md
+from great_tables.data import gtcars
+from great_tables.loc import body
+
+gtcars_mini = gtcars[["model", "mfr", "hp", "trq", "msrp"]].head(5)
+
+gt_tbl = (
+    GT(gtcars_mini, rowname_col="model")
+    .tab_header(title="Five Cars", subtitle="From the gtcars dataset")
+    .tab_stubhead(label="car")
+    .tab_spanner(label="performance", columns=["hp", "trq"], id="performance")
+    .tab_footnote(footnote="Horsepower.", locations=body(columns="hp", rows=[0]))
+    .tab_source_note(source_note="Source: the gtcars dataset.")
+    .tab_source_note(source_note=md("Prices in *USD*."))
+)
+
+gt_tbl
+```
+
+### Removing the header
+
+The **Table Header** (the *title* and *subtitle*) can be removed with the `~~GT.rm_header()` method. It takes no arguments and clears the entire header.
+
+```{python}
+gt_tbl.rm_header()
+```
+
+### Removing the stubhead label
+
+The *stubhead label* (the label sitting above the table stub) is removed with `~~GT.rm_stubhead()`. This leaves the stub itself intact, removing only the label.
+
+```{python}
+gt_tbl.rm_stubhead()
+```
+
+### Removing source notes
+
+Source notes live in the **Table Footer**. Calling `~~GT.rm_source_notes()` with no arguments removes all of them:
+
+```{python}
+gt_tbl.rm_source_notes()
+```
+
+To remove only *some* of them, supply the `source_notes=` argument with a `0`-based index (or a list of indices) reflecting the order in which the notes were added. Here we drop just the first source note, keeping the second:
+
+```{python}
+gt_tbl.rm_source_notes(source_notes=0)
+```
+
+### Removing footnotes
+
+Footnotes work the same way through the `~~GT.rm_footnotes()` method. Called without arguments, all footnotes are removed; the `footnotes=` argument accepts a `0`-based index or list of indices to remove specific ones.
+
+```{python}
+gt_tbl.rm_footnotes()
+```
+
+### Removing spanners
+
+Spanners are removed with `~~GT.rm_spanners()` while leaving the underlying columns in place. With no arguments, all spanners are removed. To target specific ones, pass their ID values to the `spanners=` argument:
+
+```{python}
+gt_tbl.rm_spanners(spanners="performance")
+```
+
+Spanners can also be removed by *level* using the `levels=` argument. Levels start at `0` for the row of spanners closest to the column labels and increase upward. This is useful when a table has stacked (nested) spanners and you want to remove an entire tier at once. When both `spanners=` and `levels=` are supplied, only the spanners that match *both* are removed.
