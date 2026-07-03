@@ -127,6 +127,11 @@ quartodoc:
         - GT.tab_stubhead
         - GT.tab_footnote
         - GT.tab_source_note
+        - GT.rm_header
+        - GT.rm_stubhead
+        - GT.rm_spanners
+        - GT.rm_footnotes
+        - GT.rm_source_notes
         - GT.tab_style
         - GT.text_transform
         - GT.text_replace
