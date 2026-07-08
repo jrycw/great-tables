@@ -1056,6 +1056,16 @@ def _create_row_component_h(
         classes_str = " ".join(classes)
         cell_styles = _flatten_styles(_body_styles + _rowname_styles, wrap=True)
 
+        # Apply stub indent padding for regular (non-summary) data rows
+        if colinfo.is_stub and not is_summary_row and data is not None and row_index is not None:
+            indent_level = data._stub.rows[row_index].indent
+            if indent_level > 0:
+                indent_css = f"padding-left: {indent_level * 10}px;"
+                if cell_styles:
+                    cell_styles = cell_styles[:-1] + f' {indent_css}"'
+                else:
+                    cell_styles = f' style="{indent_css}"'
+
         body_cells.append(
             f"""    <{el_name}{cell_styles} class="{classes_str}">{cell_str}</{el_name}>"""
         )
