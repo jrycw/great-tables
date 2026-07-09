@@ -1397,6 +1397,7 @@ class Options:
     stub_border_style: OptionsInfo = OptionsInfo(True, "stub", "value", "solid")
     stub_border_width: OptionsInfo = OptionsInfo(True, "stub", "px", "2px")
     stub_border_color: OptionsInfo = OptionsInfo(True, "stub", "value", "#D3D3D3")
+    stub_indent_length: OptionsInfo = OptionsInfo(True, "stub", "px", "5px")
     stub_row_group_background_color: OptionsInfo = OptionsInfo(True, "stub", "value", None)
     stub_row_group_font_size: OptionsInfo = OptionsInfo(True, "stub", "px", "100%")
     stub_row_group_font_weight: OptionsInfo = OptionsInfo(True, "stub", "value", "initial")
