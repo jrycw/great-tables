@@ -15,6 +15,16 @@ def gt_with_stub():
     return gt.GT(df, rowname_col="row", groupname_col="group")
 
 
+def test_tab_stub_indent_rows_true_selects_all(gt_with_stub):
+    result = gt_with_stub.tab_stub_indent(rows=True, indent=2)
+    assert all(row.indent == 2 for row in result._stub.rows)
+
+
+def test_tab_stub_indent_rows_false_selects_none(gt_with_stub):
+    result = gt_with_stub.tab_stub_indent(rows=False, indent=2)
+    assert all(row.indent == 0 for row in result._stub.rows)
+
+
 def test_tab_stub_indent_integer(gt_with_stub):
     result = gt_with_stub.tab_stub_indent(rows=[0, 1], indent=3)
     assert result._stub.rows[0].indent == 3
