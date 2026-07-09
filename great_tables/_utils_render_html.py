@@ -1053,18 +1053,14 @@ def _create_row_component_h(
             if apply_body_striping:
                 classes.append("gt_striped")
 
-        classes_str = " ".join(classes)
-        cell_styles = _flatten_styles(_body_styles + _rowname_styles, wrap=True)
-
-        # Apply stub indent padding for regular (non-summary) data rows
+        # Apply stub indent CSS class for regular (non-summary) data rows
         if colinfo.is_stub and not is_summary_row and data is not None and row_index is not None:
             indent_level = data._stub.rows[row_index].indent
-            if indent_level > 0:
-                indent_css = f"padding-left: {indent_level * 10}px;"
-                if cell_styles:
-                    cell_styles = cell_styles[:-1] + f' {indent_css}"'
-                else:
-                    cell_styles = f' style="{indent_css}"'
+            if 1 <= indent_level <= 5:
+                classes.append(f"gt_indent_{indent_level}")
+
+        classes_str = " ".join(classes)
+        cell_styles = _flatten_styles(_body_styles + _rowname_styles, wrap=True)
 
         body_cells.append(
             f"""    <{el_name}{cell_styles} class="{classes_str}">{cell_str}</{el_name}>"""
