@@ -57,6 +57,48 @@ def tab_stub_indent(
         .tab_stub_indent(rows=True, indent=2)
     )
     ```
+
+    Here's a more advanced example using the `constants` dataset. We filter for three groups of
+    physical constants and rename the sub-entries to start with `"..."` so it's clear they belong
+    to a parent constant. Then `tab_stub_indent()` targets those sub-rows (via a Polars expression)
+    and indents them by 4 levels.
+
+    ```{python}
+    from great_tables import GT, stub
+    from great_tables.data import constants
+    import polars as pl
+
+    constants_mini = (
+        pl.from_pandas(constants)
+        .select(["name", "value", "uncert", "units"])
+        .filter(
+            pl.col("name").str.starts_with("atomic mass constant")
+            | pl.col("name").str.starts_with("Rydberg constant")
+            | pl.col("name").str.starts_with("Bohr magneton")
+        )
+        .with_columns(
+            name=pl.when(
+                pl.col("name").str.contains("constant ")
+                | pl.col("name").str.contains("magneton ")
+            )
+            .then(pl.col("name").str.replace(r".*?(?:constant |magneton )", "..."))
+            .otherwise(pl.col("name"))
+        )
+    )
+
+    (
+        GT(constants_mini, rowname_col="name")
+        .tab_stubhead(label="Physical Constant")
+        .tab_stub_indent(
+            rows=pl.col("name").str.starts_with("..."),
+            indent=4,
+        )
+        .fmt_scientific(columns=["value", "uncert"])
+        .fmt_units(columns="units")
+        .cols_label(value="Value", uncert="Uncertainty", units="Units")
+        .cols_width(cases={stub: "250px", "value": "150px", "uncert": "150px", "units": "80px"})
+    )
+    ```
     """
 
     row_res = resolve_rows_i(self, rows)
