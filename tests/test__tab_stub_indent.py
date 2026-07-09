@@ -73,28 +73,17 @@ def test_tab_stub_indent_increase_at_max(gt_with_stub):
 def test_tab_stub_indent_html_output(gt_with_stub):
     result = gt_with_stub.tab_stub_indent(rows=[0], indent=2)
     html = result.as_raw_html()
-    # 2 levels * 10px = 20px padding-left
-    assert "padding-left: 20px" in html
+    assert "gt_indent_2" in html
 
 
-def test_tab_stub_indent_zero_no_inline_style(gt_with_stub):
+def test_tab_stub_indent_zero_no_class(gt_with_stub):
     result = gt_with_stub.tab_stub_indent(rows=[0], indent=0)
     html = result.as_raw_html()
-    # Stub cells should not have a stub-indent padding-left style applied at level 0
-    assert "padding-left: 0px" not in html
+    assert "gt_indent_0" not in html
 
 
-@pytest.mark.parametrize(
-    "indent,expected",
-    [
-        (1, 10),
-        (2, 20),
-        (3, 30),
-        (4, 40),
-        (5, 50),
-    ],
-)
-def test_tab_stub_indent_pixel_values(gt_with_stub, indent, expected):
+@pytest.mark.parametrize("indent", [1, 2, 3, 4, 5])
+def test_tab_stub_indent_css_classes(gt_with_stub, indent):
     result = gt_with_stub.tab_stub_indent(rows=[0], indent=indent)
     html = result.as_raw_html()
-    assert f"padding-left: {expected}px" in html
+    assert f"gt_indent_{indent}" in html
