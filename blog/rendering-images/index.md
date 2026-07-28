@@ -91,7 +91,7 @@ Attentive readers may have noticed that the values for the key `lines` are lists
 
 
 1  
-<span code-cell="annotated-cell-2" code-lines="1" code-annotation="1">These image files follow a patterned naming convention, such as `metro_1.svg`, `metro_2.svg`, and so on.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">These image files follow a patterned naming convention, such as `metro_1.svg`, `metro_2.svg`, and so on.</span>
 
 
 Below is a `Pandas` DataFrame called `metro_mini1`, where the `case1` column contains local file paths that we want to render as images.
@@ -118,18 +118,18 @@ metro_mini1
 
 |  | name | lines | case1 |
 |----|----|----|----|
-| 0 | Argentine | 1 | /home/runner/work/great-tables/great-tables/great_tables/data/metro_images/metro_1.svg |
-| 1 | Bastille | 1, 5, 8 | /home/runner/work/great-tables/great-tables/great_tables/data/metro_images/metro_1.svg, /home/runner/work/great-tables/great-tables/great_tables/d... |
-| 2 | Bérault | 1 | /home/runner/work/great-tables/great-tables/great_tables/data/metro_images/metro_1.svg |
-| 3 | Champs-Élysées--Clemenceau | 1, 13 | /home/runner/work/great-tables/great-tables/great_tables/data/metro_images/metro_1.svg, /home/runner/work/great-tables/great-tables/great_tables/d... |
-| 4 | Charles de Gaulle--Étoile | 1, 2, 6 | /home/runner/work/great-tables/great-tables/great_tables/data/metro_images/metro_1.svg, /home/runner/work/great-tables/great-tables/great_tables/d... |
+| 0 | Argentine | 1 | /Users/riannone/py_projects/great-tables/great_tables/data/metro_images/metro_1.svg |
+| 1 | Bastille | 1, 5, 8 | /Users/riannone/py_projects/great-tables/great_tables/data/metro_images/metro_1.svg, /Users/riannone/py_projects/great-tables/great_tables/data/me... |
+| 2 | Bérault | 1 | /Users/riannone/py_projects/great-tables/great_tables/data/metro_images/metro_1.svg |
+| 3 | Champs-Élysées--Clemenceau | 1, 13 | /Users/riannone/py_projects/great-tables/great_tables/data/metro_images/metro_1.svg, /Users/riannone/py_projects/great-tables/great_tables/data/me... |
+| 4 | Charles de Gaulle--Étoile | 1, 2, 6 | /Users/riannone/py_projects/great-tables/great_tables/data/metro_images/metro_1.svg, /Users/riannone/py_projects/great-tables/great_tables/data/me... |
 
 
 > **Tip: Use the `pathlib` Module to Construct Paths**
 >
 > Local file paths can vary depending on the operating system, which makes it easy to accidentally construct invalid paths. A good practice to mitigate this is to use Python's built-in [pathlib](https://docs.python.org/3/library/pathlib.html) module to construct paths first and then convert them to strings. In this example, `img_local_paths` is actually an instance of `pathlib.Path`.
 >
-> <div id="029a257d" class="cell" execution_count="4">
+> <div id="6fcee582" class="cell" data-execution_count="4">
 >
 > ``` python
 > from pathlib import Path
@@ -141,15 +141,78 @@ metro_mini1
 >
 > For now, let's use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render images by passing `"case1"` as the first argument:
 >
-> <div id="15d185ef" class="cell" execution_count="5">
+> <div id="a8a8808b" class="cell" data-execution_count="5">
 >
 > ``` python
 > GT(metro_mini1).fmt_image("case1").cols_align(align="right", columns="case1")
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="4">
+> <div class="cell-output cell-output-display" data-execution_count="4">
 >
-> <div id="hdmxmthdkq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="smupxkhlud" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+>
+> <style>
+> #smupxkhlud table {
+>           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+>           -webkit-font-smoothing: antialiased;
+>           -moz-osx-font-smoothing: grayscale;
+>         }
+>
+> #smupxkhlud thead, tbody, tfoot, tr, td, th { border-style: none; }
+>  tr { background-color: transparent; }
+> #smupxkhlud p { margin: 0; padding: 0; }
+>  #smupxkhlud .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+>  #smupxkhlud .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+>  #smupxkhlud .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+>  #smupxkhlud .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+>  #smupxkhlud .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #smupxkhlud .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #smupxkhlud .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #smupxkhlud .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+>  #smupxkhlud .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+>  #smupxkhlud .gt_column_spanner_outer:first-child { padding-left: 0; }
+>  #smupxkhlud .gt_column_spanner_outer:last-child { padding-right: 0; }
+>  #smupxkhlud .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+>  #smupxkhlud .gt_spanner_row { border-bottom-style: hidden; }
+>  #smupxkhlud .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+>  #smupxkhlud .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+>  #smupxkhlud .gt_from_md> :first-child { margin-top: 0; }
+>  #smupxkhlud .gt_from_md> :last-child { margin-bottom: 0; }
+>  #smupxkhlud .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+>  #smupxkhlud .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+>  #smupxkhlud .gt_indent_1 { text-indent: 5px; }
+>  #smupxkhlud .gt_indent_2 { text-indent: calc(5px * 2); }
+>  #smupxkhlud .gt_indent_3 { text-indent: calc(5px * 3); }
+>  #smupxkhlud .gt_indent_4 { text-indent: calc(5px * 4); }
+>  #smupxkhlud .gt_indent_5 { text-indent: calc(5px * 5); }
+>  #smupxkhlud .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+>  #smupxkhlud .gt_row_group_first td { border-top-width: 2px; }
+>  #smupxkhlud .gt_row_group_first th { border-top-width: 2px; }
+>  #smupxkhlud .gt_striped { color: #333333; background-color: #F4F4F4; }
+>  #smupxkhlud .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #smupxkhlud .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #smupxkhlud .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+>  #smupxkhlud .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #smupxkhlud .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #smupxkhlud .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+>  #smupxkhlud .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+>  #smupxkhlud .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #smupxkhlud .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #smupxkhlud .gt_left { text-align: left; }
+>  #smupxkhlud .gt_center { text-align: center; }
+>  #smupxkhlud .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+>  #smupxkhlud .gt_font_normal { font-weight: normal; }
+>  #smupxkhlud .gt_font_bold { font-weight: bold; }
+>  #smupxkhlud .gt_font_italic { font-style: italic; }
+>  #smupxkhlud .gt_super { font-size: 65%; }
+>  #smupxkhlud .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #smupxkhlud .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+>  #smupxkhlud .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #smupxkhlud .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #smupxkhlud .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+>  #smupxkhlud .gt_asterisk { font-size: 100%; vertical-align: 0; }
+>  
+> </style>
 >
 > | name | lines | case1 |
 > |----|----|----|
@@ -171,7 +234,7 @@ metro_mini1
 >
 > **Case 2** demonstrates how to simulate a column containing strings representing HTTP/HTTPS URLs. We'll use the same images as in **Case 1**, but this time, retrieve them from the Great Tables GitHub repository:
 >
-> <div id="d3cb79c9" class="cell" execution_count="6">
+> <div id="8ebf84c9" class="cell" data-execution_count="6">
 >
 > ``` python
 > img_url_paths = "https://raw.githubusercontent.com/posit-dev/great-tables/refs/heads/main/great_tables/data/metro_images"
@@ -181,7 +244,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini2`, where the `case2` column contains full HTTP/HTTPS URLs that we aim to render as images.
 >
-> <div id="9e272d01" class="cell" execution_count="7">
+> <div id="08f6d2ba" class="cell" data-execution_count="7">
 >
 > Show the Code
 >
@@ -198,7 +261,7 @@ metro_mini1
 > metro_mini2
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="6">
+> <div class="cell-output cell-output-display" data-execution_count="6">
 >
 > <div>
 >
@@ -220,15 +283,78 @@ metro_mini1
 >
 > Similarly, we can use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render images by passing `"case2"` as the first argument:
 >
-> <div id="5b823277" class="cell" execution_count="8">
+> <div id="5eaca417" class="cell" data-execution_count="8">
 >
 > ``` python
 > GT(metro_mini2).fmt_image("case2").cols_align(align="right", columns="case2")
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="7">
+> <div class="cell-output cell-output-display" data-execution_count="7">
 >
-> <div id="tlcfqvtcsh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="nzeclscned" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+>
+> <style>
+> #nzeclscned table {
+>           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+>           -webkit-font-smoothing: antialiased;
+>           -moz-osx-font-smoothing: grayscale;
+>         }
+>
+> #nzeclscned thead, tbody, tfoot, tr, td, th { border-style: none; }
+>  tr { background-color: transparent; }
+> #nzeclscned p { margin: 0; padding: 0; }
+>  #nzeclscned .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+>  #nzeclscned .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+>  #nzeclscned .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+>  #nzeclscned .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+>  #nzeclscned .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #nzeclscned .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #nzeclscned .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #nzeclscned .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+>  #nzeclscned .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+>  #nzeclscned .gt_column_spanner_outer:first-child { padding-left: 0; }
+>  #nzeclscned .gt_column_spanner_outer:last-child { padding-right: 0; }
+>  #nzeclscned .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+>  #nzeclscned .gt_spanner_row { border-bottom-style: hidden; }
+>  #nzeclscned .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+>  #nzeclscned .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+>  #nzeclscned .gt_from_md> :first-child { margin-top: 0; }
+>  #nzeclscned .gt_from_md> :last-child { margin-bottom: 0; }
+>  #nzeclscned .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+>  #nzeclscned .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+>  #nzeclscned .gt_indent_1 { text-indent: 5px; }
+>  #nzeclscned .gt_indent_2 { text-indent: calc(5px * 2); }
+>  #nzeclscned .gt_indent_3 { text-indent: calc(5px * 3); }
+>  #nzeclscned .gt_indent_4 { text-indent: calc(5px * 4); }
+>  #nzeclscned .gt_indent_5 { text-indent: calc(5px * 5); }
+>  #nzeclscned .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+>  #nzeclscned .gt_row_group_first td { border-top-width: 2px; }
+>  #nzeclscned .gt_row_group_first th { border-top-width: 2px; }
+>  #nzeclscned .gt_striped { color: #333333; background-color: #F4F4F4; }
+>  #nzeclscned .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #nzeclscned .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #nzeclscned .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+>  #nzeclscned .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #nzeclscned .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #nzeclscned .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+>  #nzeclscned .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+>  #nzeclscned .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #nzeclscned .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #nzeclscned .gt_left { text-align: left; }
+>  #nzeclscned .gt_center { text-align: center; }
+>  #nzeclscned .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+>  #nzeclscned .gt_font_normal { font-weight: normal; }
+>  #nzeclscned .gt_font_bold { font-weight: bold; }
+>  #nzeclscned .gt_font_italic { font-style: italic; }
+>  #nzeclscned .gt_super { font-size: 65%; }
+>  #nzeclscned .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #nzeclscned .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+>  #nzeclscned .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #nzeclscned .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #nzeclscned .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+>  #nzeclscned .gt_asterisk { font-size: 100%; vertical-align: 0; }
+>  
+> </style>
 >
 > | name | lines | case2 |
 > |----|----|----|
@@ -252,7 +378,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini3`, where the `case3` column contains file names that we aim to render as images.
 >
-> <div id="9b35b6d4" class="cell" execution_count="9">
+> <div id="40eb14f5" class="cell" data-execution_count="9">
 >
 > Show the Code
 >
@@ -268,7 +394,7 @@ metro_mini1
 > metro_mini3
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="8">
+> <div class="cell-output cell-output-display" data-execution_count="8">
 >
 > <div>
 >
@@ -288,7 +414,7 @@ metro_mini1
 >
 > Now we can use [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render the images by passing `"case3"` as the first argument and specifying either `img_local_paths` or `img_url_paths` as the `path=` argument:
 >
-> <div id="929d1a1a" class="cell" execution_count="10">
+> <div id="81296270" class="cell" data-execution_count="10">
 >
 > ``` python
 > # equivalent to `Case 1`
@@ -306,9 +432,72 @@ metro_mini1
 > )
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="9">
+> <div class="cell-output cell-output-display" data-execution_count="9">
 >
-> <div id="ebxwgyfata" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="kiqtmjbmul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+>
+> <style>
+> #kiqtmjbmul table {
+>           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+>           -webkit-font-smoothing: antialiased;
+>           -moz-osx-font-smoothing: grayscale;
+>         }
+>
+> #kiqtmjbmul thead, tbody, tfoot, tr, td, th { border-style: none; }
+>  tr { background-color: transparent; }
+> #kiqtmjbmul p { margin: 0; padding: 0; }
+>  #kiqtmjbmul .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+>  #kiqtmjbmul .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+>  #kiqtmjbmul .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+>  #kiqtmjbmul .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+>  #kiqtmjbmul .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+>  #kiqtmjbmul .gt_column_spanner_outer:first-child { padding-left: 0; }
+>  #kiqtmjbmul .gt_column_spanner_outer:last-child { padding-right: 0; }
+>  #kiqtmjbmul .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+>  #kiqtmjbmul .gt_spanner_row { border-bottom-style: hidden; }
+>  #kiqtmjbmul .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+>  #kiqtmjbmul .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+>  #kiqtmjbmul .gt_from_md> :first-child { margin-top: 0; }
+>  #kiqtmjbmul .gt_from_md> :last-child { margin-bottom: 0; }
+>  #kiqtmjbmul .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+>  #kiqtmjbmul .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+>  #kiqtmjbmul .gt_indent_1 { text-indent: 5px; }
+>  #kiqtmjbmul .gt_indent_2 { text-indent: calc(5px * 2); }
+>  #kiqtmjbmul .gt_indent_3 { text-indent: calc(5px * 3); }
+>  #kiqtmjbmul .gt_indent_4 { text-indent: calc(5px * 4); }
+>  #kiqtmjbmul .gt_indent_5 { text-indent: calc(5px * 5); }
+>  #kiqtmjbmul .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+>  #kiqtmjbmul .gt_row_group_first td { border-top-width: 2px; }
+>  #kiqtmjbmul .gt_row_group_first th { border-top-width: 2px; }
+>  #kiqtmjbmul .gt_striped { color: #333333; background-color: #F4F4F4; }
+>  #kiqtmjbmul .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #kiqtmjbmul .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #kiqtmjbmul .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #kiqtmjbmul .gt_left { text-align: left; }
+>  #kiqtmjbmul .gt_center { text-align: center; }
+>  #kiqtmjbmul .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+>  #kiqtmjbmul .gt_font_normal { font-weight: normal; }
+>  #kiqtmjbmul .gt_font_bold { font-weight: bold; }
+>  #kiqtmjbmul .gt_font_italic { font-style: italic; }
+>  #kiqtmjbmul .gt_super { font-size: 65%; }
+>  #kiqtmjbmul .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+>  #kiqtmjbmul .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #kiqtmjbmul .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #kiqtmjbmul .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+>  #kiqtmjbmul .gt_asterisk { font-size: 100%; vertical-align: 0; }
+>  
+> </style>
 >
 > | name | lines | case3 |
 > |----|----|----|
@@ -334,7 +523,7 @@ metro_mini1
 >
 > Below is a `Pandas` DataFrame called `metro_mini4`, where the `case4` column contains a copy of `data["lines"]`, which we aim to render as images.
 >
-> <div id="a71319c4" class="cell" execution_count="11">
+> <div id="5b06cd02" class="cell" data-execution_count="11">
 >
 > Show the Code
 >
@@ -343,7 +532,7 @@ metro_mini1
 > metro_mini4
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="10">
+> <div class="cell-output cell-output-display" data-execution_count="10">
 >
 > <div>
 >
@@ -363,7 +552,7 @@ metro_mini1
 >
 > First, define a string pattern to illustrate the file naming convention, using `{}` to indicate the variable portion:
 >
-> <div id="2c28caed" class="cell" execution_count="12">
+> <div id="7d0f979f" class="cell" data-execution_count="12">
 >
 > ``` python
 > file_pattern = "metro_{}.svg"
@@ -373,7 +562,7 @@ metro_mini1
 >
 > Next, pass `"case4"` as the first argument, along with `img_local_paths` or `img_url_paths` as the `path=` argument, and `file_pattern` as the `file_pattern=` argument. This allows [GT.fmt_image()](../../reference/GT.fmt_image.md#great_tables.GT.fmt_image) to render the images:
 >
-> <div id="fbc86f40" class="cell" execution_count="13">
+> <div id="b06b1fdd" class="cell" data-execution_count="13">
 >
 > ``` python
 > # equivalent to `Case 1`
@@ -391,9 +580,72 @@ metro_mini1
 > )
 > ```
 >
-> <div class="cell-output cell-output-display" execution_count="12">
+> <div class="cell-output cell-output-display" data-execution_count="12">
 >
-> <div id="ruqbvraegk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> <div id="bezstthztt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+>
+> <style>
+> #bezstthztt table {
+>           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+>           -webkit-font-smoothing: antialiased;
+>           -moz-osx-font-smoothing: grayscale;
+>         }
+>
+> #bezstthztt thead, tbody, tfoot, tr, td, th { border-style: none; }
+>  tr { background-color: transparent; }
+> #bezstthztt p { margin: 0; padding: 0; }
+>  #bezstthztt .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+>  #bezstthztt .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+>  #bezstthztt .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+>  #bezstthztt .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+>  #bezstthztt .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #bezstthztt .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #bezstthztt .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+>  #bezstthztt .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+>  #bezstthztt .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+>  #bezstthztt .gt_column_spanner_outer:first-child { padding-left: 0; }
+>  #bezstthztt .gt_column_spanner_outer:last-child { padding-right: 0; }
+>  #bezstthztt .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+>  #bezstthztt .gt_spanner_row { border-bottom-style: hidden; }
+>  #bezstthztt .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+>  #bezstthztt .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+>  #bezstthztt .gt_from_md> :first-child { margin-top: 0; }
+>  #bezstthztt .gt_from_md> :last-child { margin-bottom: 0; }
+>  #bezstthztt .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+>  #bezstthztt .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+>  #bezstthztt .gt_indent_1 { text-indent: 5px; }
+>  #bezstthztt .gt_indent_2 { text-indent: calc(5px * 2); }
+>  #bezstthztt .gt_indent_3 { text-indent: calc(5px * 3); }
+>  #bezstthztt .gt_indent_4 { text-indent: calc(5px * 4); }
+>  #bezstthztt .gt_indent_5 { text-indent: calc(5px * 5); }
+>  #bezstthztt .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+>  #bezstthztt .gt_row_group_first td { border-top-width: 2px; }
+>  #bezstthztt .gt_row_group_first th { border-top-width: 2px; }
+>  #bezstthztt .gt_striped { color: #333333; background-color: #F4F4F4; }
+>  #bezstthztt .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #bezstthztt .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #bezstthztt .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+>  #bezstthztt .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+>  #bezstthztt .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+>  #bezstthztt .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+>  #bezstthztt .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+>  #bezstthztt .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #bezstthztt .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #bezstthztt .gt_left { text-align: left; }
+>  #bezstthztt .gt_center { text-align: center; }
+>  #bezstthztt .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+>  #bezstthztt .gt_font_normal { font-weight: normal; }
+>  #bezstthztt .gt_font_bold { font-weight: bold; }
+>  #bezstthztt .gt_font_italic { font-style: italic; }
+>  #bezstthztt .gt_super { font-size: 65%; }
+>  #bezstthztt .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #bezstthztt .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+>  #bezstthztt .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+>  #bezstthztt .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+>  #bezstthztt .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+>  #bezstthztt .gt_asterisk { font-size: 100%; vertical-align: 0; }
+>  
+> </style>
 >
 > | name | lines | case4 |
 > |----|----|----|
@@ -413,7 +665,7 @@ metro_mini1
 > >
 > > The `file_pattern=` argument is typically used in conjunction with the `path=` argument, but this is not a strict rule. If your local file paths or HTTP/HTTPS URLs follow a pattern, you can use `file_pattern=` alone without `path=`. This allows you to include the shared portion of the file paths or URLs directly in `file_pattern`, as shown below:
 > >
-> > <div id="e20fa02d" class="cell" execution_count="14">
+> > <div id="6d968065" class="cell" data-execution_count="14">
 > >
 > > ``` python
 > > file_pattern = str(img_local_paths / "metro_{}.svg")
@@ -424,9 +676,72 @@ metro_mini1
 > > )
 > > ```
 > >
-> > <div class="cell-output cell-output-display" execution_count="13">
+> > <div class="cell-output cell-output-display" data-execution_count="13">
 > >
-> > <div id="ywaxdzdouo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="kaprxqfhiz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> >
+> > <style>
+> > #kaprxqfhiz table {
+> >           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+> >           -webkit-font-smoothing: antialiased;
+> >           -moz-osx-font-smoothing: grayscale;
+> >         }
+> >
+> > #kaprxqfhiz thead, tbody, tfoot, tr, td, th { border-style: none; }
+> >  tr { background-color: transparent; }
+> > #kaprxqfhiz p { margin: 0; padding: 0; }
+> >  #kaprxqfhiz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+> >  #kaprxqfhiz .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+> >  #kaprxqfhiz .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+> >  #kaprxqfhiz .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+> >  #kaprxqfhiz .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+> >  #kaprxqfhiz .gt_column_spanner_outer:first-child { padding-left: 0; }
+> >  #kaprxqfhiz .gt_column_spanner_outer:last-child { padding-right: 0; }
+> >  #kaprxqfhiz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+> >  #kaprxqfhiz .gt_spanner_row { border-bottom-style: hidden; }
+> >  #kaprxqfhiz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+> >  #kaprxqfhiz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+> >  #kaprxqfhiz .gt_from_md> :first-child { margin-top: 0; }
+> >  #kaprxqfhiz .gt_from_md> :last-child { margin-bottom: 0; }
+> >  #kaprxqfhiz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+> >  #kaprxqfhiz .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+> >  #kaprxqfhiz .gt_indent_1 { text-indent: 5px; }
+> >  #kaprxqfhiz .gt_indent_2 { text-indent: calc(5px * 2); }
+> >  #kaprxqfhiz .gt_indent_3 { text-indent: calc(5px * 3); }
+> >  #kaprxqfhiz .gt_indent_4 { text-indent: calc(5px * 4); }
+> >  #kaprxqfhiz .gt_indent_5 { text-indent: calc(5px * 5); }
+> >  #kaprxqfhiz .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+> >  #kaprxqfhiz .gt_row_group_first td { border-top-width: 2px; }
+> >  #kaprxqfhiz .gt_row_group_first th { border-top-width: 2px; }
+> >  #kaprxqfhiz .gt_striped { color: #333333; background-color: #F4F4F4; }
+> >  #kaprxqfhiz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #kaprxqfhiz .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #kaprxqfhiz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #kaprxqfhiz .gt_left { text-align: left; }
+> >  #kaprxqfhiz .gt_center { text-align: center; }
+> >  #kaprxqfhiz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+> >  #kaprxqfhiz .gt_font_normal { font-weight: normal; }
+> >  #kaprxqfhiz .gt_font_bold { font-weight: bold; }
+> >  #kaprxqfhiz .gt_font_italic { font-style: italic; }
+> >  #kaprxqfhiz .gt_super { font-size: 65%; }
+> >  #kaprxqfhiz .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+> >  #kaprxqfhiz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #kaprxqfhiz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #kaprxqfhiz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+> >  #kaprxqfhiz .gt_asterisk { font-size: 100%; vertical-align: 0; }
+> >  
+> > </style>
 > >
 > > | name | lines | case4 |
 > > |----|----|----|
@@ -452,7 +767,7 @@ metro_mini1
 > >
 > > We will create a `Pandas` DataFrame named `metro_mini` using the `data` dictionary. This will be used for demonstration in the following examples:
 > >
-> > <div id="769de37a" class="cell" execution_count="15">
+> > <div id="37dc9c33" class="cell" data-execution_count="15">
 > >
 > > Show the Code
 > >
@@ -461,7 +776,7 @@ metro_mini1
 > > metro_mini
 > > ```
 > >
-> > <div class="cell-output cell-output-display" execution_count="14">
+> > <div class="cell-output cell-output-display" data-execution_count="14">
 > >
 > > <div>
 > >
@@ -485,7 +800,7 @@ metro_mini1
 > >
 > > This example shows how to render a valid URL as an image in the title of the table header:
 > >
-> > <div id="12ad334c" class="cell" execution_count="16">
+> > <div id="ee85c576" class="cell" data-execution_count="16">
 > >
 > > ``` python
 > > gt_logo_url = "https://posit-dev.github.io/great-tables/assets/GT_logo.svg"
@@ -505,13 +820,76 @@ metro_mini1
 > > <div class="cell-annotation">
 > >
 > > 1  
-> > <span code-cell="annotated-cell-14" code-lines="3" code-annotation="1">[vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image) returns a list of strings. Here, we use tuple unpacking to extract the first item from the list.</span>
+> > <span data-code-cell="annotated-cell-14" data-code-lines="3" data-code-annotation="1">[vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image) returns a list of strings. Here, we use tuple unpacking to extract the first item from the list.</span>
 > >
 > > </div>
 > >
-> > <div class="cell-output cell-output-display" execution_count="15">
+> > <div class="cell-output cell-output-display" data-execution_count="15">
 > >
-> > <div id="htvatjwtgs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="wrwjfsbiyy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> >
+> > <style>
+> > #wrwjfsbiyy table {
+> >           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+> >           -webkit-font-smoothing: antialiased;
+> >           -moz-osx-font-smoothing: grayscale;
+> >         }
+> >
+> > #wrwjfsbiyy thead, tbody, tfoot, tr, td, th { border-style: none; }
+> >  tr { background-color: transparent; }
+> > #wrwjfsbiyy p { margin: 0; padding: 0; }
+> >  #wrwjfsbiyy .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D5D5D5; border-right-style: solid; border-right-width: 3px; border-right-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D5D5D5; border-left-style: solid; border-left-width: 3px; border-left-color: #D5D5D5; }
+> >  #wrwjfsbiyy .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+> >  #wrwjfsbiyy .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+> >  #wrwjfsbiyy .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+> >  #wrwjfsbiyy .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; }
+> >  #wrwjfsbiyy .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_col_heading { color: #FFFFFF; background-color: #5F5F5F; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+> >  #wrwjfsbiyy .gt_column_spanner_outer { color: #FFFFFF; background-color: #5F5F5F; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+> >  #wrwjfsbiyy .gt_column_spanner_outer:first-child { padding-left: 0; }
+> >  #wrwjfsbiyy .gt_column_spanner_outer:last-child { padding-right: 0; }
+> >  #wrwjfsbiyy .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+> >  #wrwjfsbiyy .gt_spanner_row { border-bottom-style: hidden; }
+> >  #wrwjfsbiyy .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+> >  #wrwjfsbiyy .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; vertical-align: middle; }
+> >  #wrwjfsbiyy .gt_from_md> :first-child { margin-top: 0; }
+> >  #wrwjfsbiyy .gt_from_md> :last-child { margin-bottom: 0; }
+> >  #wrwjfsbiyy .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: dashed; border-top-width: 1px; border-top-color: #D5D5D5; border-left-style: dashed; border-left-width: 1px; border-left-color: #D5D5D5; border-right-style: dashed; border-right-width: 1px; border-right-color: #D5D5D5; vertical-align: middle; overflow-x: hidden; }
+> >  #wrwjfsbiyy .gt_stub { color: #333333; background-color: #929292; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: dashed; border-right-width: 2px; border-right-color: #D5D5D5; padding-left: 5px; padding-right: 5px; }
+> >  #wrwjfsbiyy .gt_indent_1 { text-indent: 5px; }
+> >  #wrwjfsbiyy .gt_indent_2 { text-indent: calc(5px * 2); }
+> >  #wrwjfsbiyy .gt_indent_3 { text-indent: calc(5px * 3); }
+> >  #wrwjfsbiyy .gt_indent_4 { text-indent: calc(5px * 4); }
+> >  #wrwjfsbiyy .gt_indent_5 { text-indent: calc(5px * 5); }
+> >  #wrwjfsbiyy .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+> >  #wrwjfsbiyy .gt_row_group_first td { border-top-width: 2px; }
+> >  #wrwjfsbiyy .gt_row_group_first th { border-top-width: 2px; }
+> >  #wrwjfsbiyy .gt_striped { color: #333333; background-color: #F4F4F4; }
+> >  #wrwjfsbiyy .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; }
+> >  #wrwjfsbiyy .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #wrwjfsbiyy .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_grand_summary_row { color: #FFFFFF; background-color: #5F5F5F; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #wrwjfsbiyy .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #wrwjfsbiyy .gt_left { text-align: left; }
+> >  #wrwjfsbiyy .gt_center { text-align: center; }
+> >  #wrwjfsbiyy .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+> >  #wrwjfsbiyy .gt_font_normal { font-weight: normal; }
+> >  #wrwjfsbiyy .gt_font_bold { font-weight: bold; }
+> >  #wrwjfsbiyy .gt_font_italic { font-style: italic; }
+> >  #wrwjfsbiyy .gt_super { font-size: 65%; }
+> >  #wrwjfsbiyy .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+> >  #wrwjfsbiyy .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #wrwjfsbiyy .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #wrwjfsbiyy .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+> >  #wrwjfsbiyy .gt_asterisk { font-size: 100%; vertical-align: 0; }
+> >  
+> > </style>
 > >
 > > <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 > > <thead>
@@ -559,7 +937,7 @@ metro_mini1
 > >
 > > This example demonstrates how to render two valid URLs as images in the title and subtitle of the table header:
 > >
-> > <div id="b02350d2" class="cell" execution_count="17">
+> > <div id="015df659" class="cell" data-execution_count="17">
 > >
 > > ``` python
 > > metro_logo_url = "https://raw.githubusercontent.com/rstudio/gt/master/images/dataset_metro.svg"
@@ -580,13 +958,76 @@ metro_mini1
 > > <div class="cell-annotation">
 > >
 > > 1  
-> > <span code-cell="annotated-cell-15" code-lines="4" code-annotation="1">Note that if you need to render images with different `height` or `width`, you might need to make two separate calls to [vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image).</span>
+> > <span data-code-cell="annotated-cell-15" data-code-lines="4" data-code-annotation="1">Note that if you need to render images with different `height` or `width`, you might need to make two separate calls to [vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image).</span>
 > >
 > > </div>
 > >
-> > <div class="cell-output cell-output-display" execution_count="16">
+> > <div class="cell-output cell-output-display" data-execution_count="16">
 > >
-> > <div id="gsfrjoxlof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> > <div id="bohiwxfvdc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+> >
+> > <style>
+> > #bohiwxfvdc table {
+> >           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+> >           -webkit-font-smoothing: antialiased;
+> >           -moz-osx-font-smoothing: grayscale;
+> >         }
+> >
+> > #bohiwxfvdc thead, tbody, tfoot, tr, td, th { border-style: none; }
+> >  tr { background-color: transparent; }
+> > #bohiwxfvdc p { margin: 0; padding: 0; }
+> >  #bohiwxfvdc .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D5D5D5; border-right-style: solid; border-right-width: 3px; border-right-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D5D5D5; border-left-style: solid; border-left-width: 3px; border-left-color: #D5D5D5; }
+> >  #bohiwxfvdc .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+> >  #bohiwxfvdc .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+> >  #bohiwxfvdc .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+> >  #bohiwxfvdc .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; }
+> >  #bohiwxfvdc .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_col_heading { color: #FFFFFF; background-color: #5F5F5F; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+> >  #bohiwxfvdc .gt_column_spanner_outer { color: #FFFFFF; background-color: #5F5F5F; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+> >  #bohiwxfvdc .gt_column_spanner_outer:first-child { padding-left: 0; }
+> >  #bohiwxfvdc .gt_column_spanner_outer:last-child { padding-right: 0; }
+> >  #bohiwxfvdc .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+> >  #bohiwxfvdc .gt_spanner_row { border-bottom-style: hidden; }
+> >  #bohiwxfvdc .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+> >  #bohiwxfvdc .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; vertical-align: middle; }
+> >  #bohiwxfvdc .gt_from_md> :first-child { margin-top: 0; }
+> >  #bohiwxfvdc .gt_from_md> :last-child { margin-bottom: 0; }
+> >  #bohiwxfvdc .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: dashed; border-top-width: 1px; border-top-color: #D5D5D5; border-left-style: dashed; border-left-width: 1px; border-left-color: #D5D5D5; border-right-style: dashed; border-right-width: 1px; border-right-color: #D5D5D5; vertical-align: middle; overflow-x: hidden; }
+> >  #bohiwxfvdc .gt_stub { color: #333333; background-color: #929292; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: dashed; border-right-width: 2px; border-right-color: #D5D5D5; padding-left: 5px; padding-right: 5px; }
+> >  #bohiwxfvdc .gt_indent_1 { text-indent: 5px; }
+> >  #bohiwxfvdc .gt_indent_2 { text-indent: calc(5px * 2); }
+> >  #bohiwxfvdc .gt_indent_3 { text-indent: calc(5px * 3); }
+> >  #bohiwxfvdc .gt_indent_4 { text-indent: calc(5px * 4); }
+> >  #bohiwxfvdc .gt_indent_5 { text-indent: calc(5px * 5); }
+> >  #bohiwxfvdc .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+> >  #bohiwxfvdc .gt_row_group_first td { border-top-width: 2px; }
+> >  #bohiwxfvdc .gt_row_group_first th { border-top-width: 2px; }
+> >  #bohiwxfvdc .gt_striped { color: #333333; background-color: #F4F4F4; }
+> >  #bohiwxfvdc .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D5D5D5; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D5D5D5; }
+> >  #bohiwxfvdc .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #bohiwxfvdc .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_grand_summary_row { color: #FFFFFF; background-color: #5F5F5F; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+> >  #bohiwxfvdc .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #bohiwxfvdc .gt_left { text-align: left; }
+> >  #bohiwxfvdc .gt_center { text-align: center; }
+> >  #bohiwxfvdc .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+> >  #bohiwxfvdc .gt_font_normal { font-weight: normal; }
+> >  #bohiwxfvdc .gt_font_bold { font-weight: bold; }
+> >  #bohiwxfvdc .gt_font_italic { font-style: italic; }
+> >  #bohiwxfvdc .gt_super { font-size: 65%; }
+> >  #bohiwxfvdc .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+> >  #bohiwxfvdc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+> >  #bohiwxfvdc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+> >  #bohiwxfvdc .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+> >  #bohiwxfvdc .gt_asterisk { font-size: 100%; vertical-align: 0; }
+> >  
+> > </style>
 > >
 > > <table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 > > <thead>
@@ -637,7 +1078,7 @@ metro_mini1
 > >
 > > Remember, you can always use [html()](../../reference/html.md#great_tables.html) to manually construct your desired output. For example, the previous table can be created without relying on [vals.fmt_image()](../../reference/vals.fmt_image.md#great_tables.vals.fmt_image) like this:
 > >
-> > <div id="075fc4ef" class="cell" execution_count="18">
+> > <div id="e509fce4" class="cell" data-execution_count="18">
 > >
 > > ``` python
 > > (
