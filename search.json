@@ -1550,21 +1550,21 @@
     "href": "citation.html#bibtex",
     "title": "Authors and Citation",
     "section": "BibTeX",
-    "text": "BibTeX\n@Manual{,\n  title = {great-tables: Make awesome display tables using Python.},\n  author = {Richard Iannone and Chow Michael},\n  year = {2026},\n  note = {Python package version 0.22.0},\n  url = {https://posit-dev.github.io/great-tables/},\n}"
+    "text": "BibTeX\n@Manual{,\n  title = {great-tables: Make awesome display tables using Python.},\n  author = {Richard Iannone and Chow Michael},\n  year = {2026},\n  note = {Python package version 0.23.0},\n  url = {https://posit-dev.github.io/great-tables/},\n}"
   },
   {
     "objectID": "citation.html#apa",
     "href": "citation.html#apa",
     "title": "Authors and Citation",
     "section": "APA",
-    "text": "APA\nIannone, R. & Michael, C. (2026). great-tables: Make awesome display tables using Python. (Version 0.22.0) [Computer software]. https://posit-dev.github.io/great-tables/"
+    "text": "APA\nIannone, R. & Michael, C. (2026). great-tables: Make awesome display tables using Python. (Version 0.23.0) [Computer software]. https://posit-dev.github.io/great-tables/"
   },
   {
     "objectID": "citation.html#ris",
     "href": "citation.html#ris",
     "title": "Authors and Citation",
     "section": "RIS",
-    "text": "RIS\nTY  - COMP\nTI  - great-tables: Make awesome display tables using Python.\nAU  - Iannone, Richard\nAU  - Michael, Chow\nPY  - 2026\nVL  - 0.22.0\nUR  - https://posit-dev.github.io/great-tables/\nAB  - Build display tables from tabular data with an easy-to-use set of methods. With its progressive approach, we can construct display tables with a cohesive set of table parts. Table values can be formatted using any of the included formatting functions. Cell styles can be precisely added through a location targeting system. The way in which Great Tables handles things for you means that you don't often have to worry about the fine details.\nER  -"
+    "text": "RIS\nTY  - COMP\nTI  - great-tables: Make awesome display tables using Python.\nAU  - Iannone, Richard\nAU  - Michael, Chow\nPY  - 2026\nVL  - 0.23.0\nUR  - https://posit-dev.github.io/great-tables/\nAB  - Build display tables from tabular data with an easy-to-use set of methods. With its progressive approach, we can construct display tables with a cohesive set of table parts. Table values can be formatted using any of the included formatting functions. Cell styles can be precisely added through a location targeting system. The way in which Great Tables handles things for you means that you don't often have to worry about the fine details.\nER  -"
   },
   {
     "objectID": "blog/tables-for-scientific-publishing/index.html",
@@ -2348,7 +2348,7 @@
     "href": "package-info.html#dev-no-pandas",
     "title": "Package Info",
     "section": "dev-no-pandas",
-    "text": "dev-no-pandas\n\n\n\nPackage\nVersion Constraint\nLast Published\nPyPI\n\n\n\n\nruff\n==0.8.0\n2026-07-23\n\n\n\njupyter\n—\n2024-08-30\n\n\n\ngt-extras\n&gt;=0.0.7\n2025-08-18\n\n\n\npolars\n—\n2026-07-27\n\n\n\npre-commit\n==2.15.0\n2026-07-21\n\n\n\npyarrow\n—\n2026-07-10\n\n\n\npyright\n&gt;=1.1.244\n2026-06-25\n\n\n\npytest\n&gt;=3\n2026-06-19\n\n\n\npytest-cov\n—\n2026-03-21\n\n\n\nshiny\n—\n2026-06-01\n\n\n\nsvg.py\n—\n2025-12-28\n\n\n\nsyrupy\n—\n2026-07-11"
+    "text": "dev-no-pandas\n\n\n\nPackage\nVersion Constraint\nLast Published\nPyPI\n\n\n\n\nruff\n==0.8.0\n2026-07-30\n\n\n\njupyter\n—\n2024-08-30\n\n\n\ngt-extras\n&gt;=0.0.7\n2025-08-18\n\n\n\npolars\n—\n2026-08-01\n\n\n\npre-commit\n==2.15.0\n2026-07-21\n\n\n\npyarrow\n—\n2026-07-10\n\n\n\npyright\n&gt;=1.1.244\n2026-06-25\n\n\n\npytest\n&gt;=3\n2026-06-19\n\n\n\npytest-cov\n—\n2026-03-21\n\n\n\nshiny\n—\n2026-07-29\n\n\n\nsvg.py\n—\n2025-12-28\n\n\n\nsyrupy\n—\n2026-07-11"
   },
   {
     "objectID": "package-info.html#extra",
