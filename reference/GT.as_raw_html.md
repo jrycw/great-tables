@@ -24,7 +24,7 @@ By default, the method returns an HTML fragment containing just the table and it
 
 
 `inline_css: bool = ``False`  
-If `True`, all CSS styles are inlined into the HTML elements as [style](style.borders.md#great_tables.style.borders.style) attributes. This is essential for email clients, which often strip out `<style>` blocks but preserve inline styles.
+If `True`, all CSS styles are inlined into the HTML elements as `style` attributes. This is essential for email clients, which often strip out `<style>` blocks but preserve inline styles.
 
 `make_page: bool = ``False`  
 If `True`, the table will be wrapped in a complete HTML page with proper `<html>`, `<head>`, and `<body>` tags. This is useful when you want to display the table in a web browser or save it as a standalone HTML file.
