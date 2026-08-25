@@ -1,4 +1,4 @@
-## style.borders
+# style.borders
 
 
 A style specification for cell borders.

@@ -1,4 +1,4 @@
-## style.text
+# style.text
 
 
 A style specification for cell text.
