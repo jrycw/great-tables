@@ -9,7 +9,7 @@
 <meta name="author" content="Rich Iannone and Michael Chow">
 <meta name="dcterms.date" content="2024-04-04">
 
-<title>The Design Philosophy of Great Tables – Great Tables | Great Tables</title>
+<title>The Design Philosophy of Great Tables | Great Tables</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a548297dc882640771aadabfda74b676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-5c2e1c2319620f34f593bb3f97380b39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,12 +135,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <link rel="canonical" href="https://posit-dev.github.io/great-tables/blog/design-philosophy/">
   <meta name="description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The Design Philosophy of Great Tables – Great Tables | Great Tables">
+  <meta property="og:title" content="The Design Philosophy of Great Tables | Great Tables">
   <meta property="og:description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:url" content="https://posit-dev.github.io/great-tables/blog/design-philosophy/">
   <meta property="og:site_name" content="Great Tables">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="The Design Philosophy of Great Tables – Great Tables | Great Tables">
+  <meta name="twitter:title" content="The Design Philosophy of Great Tables | Great Tables">
   <meta name="twitter:description" content="Easily generate information-rich, publication-quality tables from Python.">
 </head>
 
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v0.24.0</code><br>Released 2026-08-24">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v1.0.0</code><br>Released 2026-09-25">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo light-content">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo dark-content">
     </a>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <span class="nav-link">
-<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2723" data-forks="129"></div>
+<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2873" data-forks="136"></div>
     </span>
   </li>  
 </ul>
@@ -662,9 +662,9 @@ A table of named individuals redone, <strong>Great Tables</strong> style!
 <p>Table structuring is important, but not the only thing. Tables in different disciplines have a certain set of display requirements specific for any values shown. Even something as simple as a number can be formatted in many different ways depending on a community’s norms and expectations. This extends to a very wide area when we consider that dates, times, and currencies also need to be formatted.</p>
 <p>Depending on your display requirements, a raw value like 134,000 could presented as:</p>
 <ul>
-<li>scientific notation (<a href="../../reference/GT.fmt_scientific.html#great_tables.GT.fmt_scientific" class="gdls-link gdls-code">fmt_scientific()</a>): 1.34 × 10<sup style="font-size: 65%;">5</sup></li>
-<li>a number in the German locale (<a href="../../reference/GT.fmt_number.html#great_tables.GT.fmt_number" class="gdls-link gdls-code">fmt_number()</a>): 134.000,00</li>
-<li>a compact integer value (<a href="../../reference/GT.fmt_integer.html#great_tables.GT.fmt_integer" class="gdls-link gdls-code">fmt_integer()</a>): 134K</li>
+<li>scientific notation (<code>fmt_scientific()</code>): 1.34 × 10<sup style="font-size: 65%;">5</sup></li>
+<li>a number in the German locale (<code>fmt_number()</code>): 134.000,00</li>
+<li>a compact integer value (<code>fmt_integer()</code>): 134K</li>
 </ul>
 <p>The problem grows worse when values need to be conveyed as images or plots. If you’re a medical analyst, for example, you might need to effectively convey whether test results for a patient are improving or worsening over time. Reading such data as a sequence of numbers across a row can slow interpretation. But by using <em>nanoplots</em>, available as the <a href="../../reference/GT.fmt_nanoplot.html#great_tables.GT.fmt_nanoplot" class="gdls-link gdls-code">fmt_nanoplot()</a> formatting method, readers can spot trends right away. Here’s an example that provides test results over a series of days.</p>
 <div id="33e73e38" class="cell" data-execution_count="3">
@@ -814,7 +814,7 @@ A table of named individuals redone, <strong>Great Tables</strong> style!
 </div>
 </div>
 <p>Notice that if you hover over the data points, you still get values for each of the days. We designed nanoplots to be stripped down plotting visualizations that balance the quick visual interpretation of a plot against the compactness of a table.</p>
-<p><a href="https://github.com/posit-dev/great-tables"><strong>Great Tables</strong></a> contains a lot of functionality for formatting. If you peeked at the code in the above table displays you might have noticed there are methods beginning with <code>fmt_</code> (i.e., <a href="../../reference/GT.fmt_date.html#great_tables.GT.fmt_date" class="gdls-link gdls-code">fmt_date()</a>, <a href="../../reference/GT.fmt_integer.html#great_tables.GT.fmt_integer" class="gdls-link gdls-code">fmt_integer()</a>, <a href="../../reference/GT.fmt_nanoplot.html#great_tables.GT.fmt_nanoplot" class="gdls-link gdls-code">fmt_nanoplot()</a>). We want to make many formatting methods available to serve different users’ needs. We also want them to be easy to use, but with many useful options to provide flexibility for all your formatting tasks.</p>
+<p><a href="https://github.com/posit-dev/great-tables"><strong>Great Tables</strong></a> contains a lot of functionality for formatting. If you peeked at the code in the above table displays you might have noticed there are methods beginning with <code>fmt_</code> (i.e., <code>fmt_date()</code>, <code>fmt_integer()</code>, <a href="../../reference/GT.fmt_nanoplot.html#great_tables.GT.fmt_nanoplot" class="gdls-link gdls-code">fmt_nanoplot()</a>). We want to make many formatting methods available to serve different users’ needs. We also want them to be easy to use, but with many useful options to provide flexibility for all your formatting tasks.</p>
 </section>
 <section id="great-tables-is-focused-on-display" class="level3">
 <h3 class="anchored" data-anchor-id="great-tables-is-focused-on-display">Great Tables is focused on display</h3>

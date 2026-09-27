@@ -9,7 +9,7 @@
 <meta name="author" content="Rich Iannone">
 <meta name="dcterms.date" content="2024-01-24">
 
-<title>Great Tables v0.2.0: Easy Data Coloring – Great Tables | Great Tables</title>
+<title>Great Tables v0.2.0: Easy Data Coloring | Great Tables</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a548297dc882640771aadabfda74b676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-5c2e1c2319620f34f593bb3f97380b39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,12 +135,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <link rel="canonical" href="https://posit-dev.github.io/great-tables/blog/introduction-0.2.0/">
   <meta name="description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Great Tables v0.2.0: Easy Data Coloring – Great Tables | Great Tables">
+  <meta property="og:title" content="Great Tables v0.2.0: Easy Data Coloring | Great Tables">
   <meta property="og:description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:url" content="https://posit-dev.github.io/great-tables/blog/introduction-0.2.0/">
   <meta property="og:site_name" content="Great Tables">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Great Tables v0.2.0: Easy Data Coloring – Great Tables | Great Tables">
+  <meta name="twitter:title" content="Great Tables v0.2.0: Easy Data Coloring | Great Tables">
   <meta name="twitter:description" content="Easily generate information-rich, publication-quality tables from Python.">
 </head>
 
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v0.24.0</code><br>Released 2026-08-24">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v1.0.0</code><br>Released 2026-09-25">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo light-content">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo dark-content">
     </a>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <span class="nav-link">
-<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2723" data-forks="129"></div>
+<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2873" data-forks="136"></div>
     </span>
   </li>  
 </ul>
@@ -468,7 +468,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Now the very large value is in <code>"lightgray"</code>, making all other values easier to compare. We did setting <code>domain=[0, 50]</code> and specifying <code>na_color="lightgray"</code>. This caused the out-of-bounds value of <code>65100</code> to have a light gray background. Notice that the values are also formatted as currencies, and this is thanks to <a href="../../reference/GT.fmt_currency.html#great_tables.GT.fmt_currency" class="gdls-link gdls-code">fmt_currency()</a> which never interferes with styling.</p>
+<p>Now the very large value is in <code>"lightgray"</code>, making all other values easier to compare. We did setting <code>domain=[0, 50]</code> and specifying <code>na_color="lightgray"</code>. This caused the out-of-bounds value of <code>65100</code> to have a light gray background. Notice that the values are also formatted as currencies, and this is thanks to <code>fmt_currency()</code> which never interferes with styling.</p>
 <p>Here’s a more inspirational example that uses a heavily-manipulated version of the <a href="../../reference/data.countrypops.html#great_tables.data.countrypops" class="gdls-link gdls-code">countrypops</a> dataset (thanks again, <strong>Polars</strong>!) along with a color treatment that’s mediated by <a href="../../reference/GT.data_color.html#great_tables.GT.data_color" class="gdls-link gdls-code">data_color()</a>. Here, the population values can be easily compared by the amount of <code>"purple"</code> within them.</p>
 <div id="fa50858a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> great_tables.data <span class="im">import</span> countrypops</span>

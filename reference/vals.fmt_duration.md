@@ -18,12 +18,12 @@ vals.fmt_duration(
     use_seps=True,
     sep_mark=",",
     force_sign=False,
-    locale=None
+    locale=None,
 )
 ```
 
 
-With numeric values in a list, we can transform those to values of time duration with various human readable styles. The [val_fmt_duration()](vals.fmt_duration.md#great_tables.vals.fmt_duration) function allows for formatting of duration values to narrow, wide, colon-separated, and ISO 8601 forms.
+With numeric values in a list, we can transform those to values of time duration with various human readable styles. The `val_fmt_duration()` function allows for formatting of duration values to narrow, wide, colon-separated, and ISO 8601 forms.
 
 
 ## Parameters

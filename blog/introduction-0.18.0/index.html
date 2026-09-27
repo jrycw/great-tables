@@ -9,7 +9,7 @@
 <meta name="author" content="Rich Iannone">
 <meta name="dcterms.date" content="2025-07-18">
 
-<title>Great Tables v0.18.0: Easy Column Spanners and More! – Great Tables | Great Tables</title>
+<title>Great Tables v0.18.0: Easy Column Spanners and More! | Great Tables</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -83,7 +83,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a548297dc882640771aadabfda74b676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-5c2e1c2319620f34f593bb3f97380b39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -135,12 +135,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <link rel="canonical" href="https://posit-dev.github.io/great-tables/blog/introduction-0.18.0/">
   <meta name="description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Great Tables v0.18.0: Easy Column Spanners and More! – Great Tables | Great Tables">
+  <meta property="og:title" content="Great Tables v0.18.0: Easy Column Spanners and More! | Great Tables">
   <meta property="og:description" content="Easily generate information-rich, publication-quality tables from Python.">
   <meta property="og:url" content="https://posit-dev.github.io/great-tables/blog/introduction-0.18.0/">
   <meta property="og:site_name" content="Great Tables">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Great Tables v0.18.0: Easy Column Spanners and More! – Great Tables | Great Tables">
+  <meta name="twitter:title" content="Great Tables v0.18.0: Easy Column Spanners and More! | Great Tables">
   <meta name="twitter:description" content="Easily generate information-rich, publication-quality tables from Python.">
 </head>
 
@@ -151,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v0.24.0</code><br>Released 2026-08-24">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo" data-tippy-content="<code>v1.0.0</code><br>Released 2026-09-25">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo light-content">
     <img src="../../GT_logo.svg" alt="Great Tables" class="navbar-logo dark-content">
     </a>
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <span class="nav-link">
-<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2723" data-forks="129"></div>
+<div id="github-widget" data-owner="posit-dev" data-repo="great-tables" data-stars="2873" data-forks="136"></div>
     </span>
   </li>  
 </ul>
@@ -205,10 +205,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#quick-spanner-creation-with-tab_spanner_delim" id="toc-quick-spanner-creation-with-tab_spanner_delim" class="nav-link active" data-scroll-target="#quick-spanner-creation-with-tab_spanner_delim">Quick spanner creation with <a href="../../reference/GT.tab_spanner_delim.html#great_tables.GT.tab_spanner_delim" class="gdls-link gdls-code">tab_spanner_delim()</a></a></li>
-  <li><a href="#beautiful-boolean-formatting-with-fmt_tf" id="toc-beautiful-boolean-formatting-with-fmt_tf" class="nav-link" data-scroll-target="#beautiful-boolean-formatting-with-fmt_tf">Beautiful boolean formatting with <a href="../../reference/GT.fmt_tf.html#great_tables.GT.fmt_tf" class="gdls-link gdls-code">fmt_tf()</a></a></li>
-  <li><a href="#rotating-column-labels-with-cols_label_rotate" id="toc-rotating-column-labels-with-cols_label_rotate" class="nav-link" data-scroll-target="#rotating-column-labels-with-cols_label_rotate">Rotating column labels with <a href="../../reference/GT.cols_label_rotate.html#great_tables.GT.cols_label_rotate" class="gdls-link gdls-code">cols_label_rotate()</a></a></li>
-  <li><a href="#enhanced-datetime-formatting-with-fmt_datetime" id="toc-enhanced-datetime-formatting-with-fmt_datetime" class="nav-link" data-scroll-target="#enhanced-datetime-formatting-with-fmt_datetime">Enhanced datetime formatting with <a href="../../reference/GT.fmt_datetime.html#great_tables.GT.fmt_datetime" class="gdls-link gdls-code">fmt_datetime()</a></a></li>
+  <li><a href="#quick-spanner-creation-with-tab_spanner_delim" id="toc-quick-spanner-creation-with-tab_spanner_delim" class="nav-link active" data-scroll-target="#quick-spanner-creation-with-tab_spanner_delim">Quick spanner creation with tab_spanner_delim()</a></li>
+  <li><a href="#beautiful-boolean-formatting-with-fmt_tf" id="toc-beautiful-boolean-formatting-with-fmt_tf" class="nav-link" data-scroll-target="#beautiful-boolean-formatting-with-fmt_tf">Beautiful boolean formatting with fmt_tf()</a></li>
+  <li><a href="#rotating-column-labels-with-cols_label_rotate" id="toc-rotating-column-labels-with-cols_label_rotate" class="nav-link" data-scroll-target="#rotating-column-labels-with-cols_label_rotate">Rotating column labels with cols_label_rotate()</a></li>
+  <li><a href="#enhanced-datetime-formatting-with-fmt_datetime" id="toc-enhanced-datetime-formatting-with-fmt_datetime" class="nav-link" data-scroll-target="#enhanced-datetime-formatting-with-fmt_datetime">Enhanced datetime formatting with fmt_datetime()</a></li>
   <li><a href="#acknowledgements-and-whats-next" id="toc-acknowledgements-and-whats-next" class="nav-link" data-scroll-target="#acknowledgements-and-whats-next">Acknowledgements and what’s next</a></li>
   </ul>
 </nav>

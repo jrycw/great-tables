@@ -44,6 +44,7 @@ A table can contain a few useful components for conveying additional information
 - `GT.rm_footnotes`
 - `GT.rm_source_notes`
 - `GT.tab_style`
+- `GT.tab_style_body`
 - `GT.tab_options`
 
 ### Formatting column data
@@ -60,6 +61,11 @@ Columns of data can be formatted with the `fmt_*()` methods. We can specify the 
 - `GT.fmt_partsper`
 - `GT.fmt_currency`
 - `GT.fmt_roman`
+- `GT.fmt_fraction`
+- `GT.fmt_chem`
+- `GT.fmt_index`
+- `GT.fmt_url`
+- `GT.fmt_email`
 - `GT.fmt_bytes`
 - `GT.fmt_date`
 - `GT.fmt_time`
@@ -72,6 +78,7 @@ Columns of data can be formatted with the `fmt_*()` methods. We can specify the 
 - `GT.fmt_flag`
 - `GT.fmt_icon`
 - `GT.fmt_nanoplot`
+- `GT.fmt_passthrough`
 - `GT.fmt`
 - `GT.sub_missing`
 - `GT.sub_zero`
@@ -138,6 +145,7 @@ Location targeting is a powerful feature of Great Tables. It allows for the prec
 - `loc.body`
 - `loc.footer`
 - `loc.source_notes`
+- `loc.footnotes`
 - `style.fill`
 - `style.text`
 - `style.borders`
@@ -165,6 +173,7 @@ With the `opt_*()` functions, we have an easy way to set commonly-used table opt
 
 - `GT.opt_stylize`
 - `GT.opt_footnote_marks`
+- `GT.opt_footnote_spec`
 - `GT.opt_row_striping`
 - `GT.opt_align_table_header`
 - `GT.opt_vertical_padding`
@@ -206,6 +215,11 @@ If you have single values (or lists of them) in need of formatting, we have a se
 - `vals.fmt_partsper`
 - `vals.fmt_currency`
 - `vals.fmt_roman`
+- `vals.fmt_fraction`
+- `vals.fmt_chem`
+- `vals.fmt_index`
+- `vals.fmt_url`
+- `vals.fmt_email`
 - `vals.fmt_bytes`
 - `vals.fmt_duration`
 - `vals.fmt_date`
@@ -216,9 +230,10 @@ If you have single values (or lists of them) in need of formatting, we have a se
 
 ### Built-in Datasets
 
-The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package.
+The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The `load_dataset()` function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
 
 
+- `load_dataset`: Load a dataset from the library as a specified table type
 - `data.countrypops`
 - `data.sza`
 - `data.gtcars`

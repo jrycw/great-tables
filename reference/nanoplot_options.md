@@ -37,7 +37,7 @@ nanoplot_options(
     y_val_fmt_fn=None,
     y_axis_fmt_fn=None,
     y_ref_line_fmt_fn=None,
-    currency=None
+    currency=None,
 )
 ```
 
@@ -141,4 +141,4 @@ If the values are to be displayed as currency values, supply either: (1) a 3-let
 
 ## Examples
 
-See <a href="GT.fmt_nanoplot.html#great_tables.GT.fmt_nanoplot" class="gdls-link"><code>fmt_nanoplot()</code></a>.
+See <a href="../reference/GT.fmt_nanoplot.html#great_tables.GT.fmt_nanoplot" class="gdls-link"><code>fmt_nanoplot()</code></a>.

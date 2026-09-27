@@ -4,7 +4,7 @@
 ## Table Creation
 
 
-All tables created in Great Tables begin by using `GT()`. With this class, we supply the input data table and some basic options for creating a stub and row groups (with the `rowname_col=` and `groupname_col=` arguments). All GT methods are documented on their own pages.
+All tables created in Great Tables begin by using [GT()](GT.md#great_tables.GT). With this class, we supply the input data table and some basic options for creating a stub and row groups (with the `rowname_col=` and `groupname_col=` arguments). All GT methods are documented on their own pages.
 
 
 [GT](GT.md#great_tables.GT)  
@@ -14,7 +14,7 @@ Create a **Great Tables** object.
 ## Major structural table parts
 
 
-A table can contain a few useful components for conveying additional information. These include a header (with a titles and subtitle), a footer (with source notes), and additional areas for labels (row group labels, column spanner labels, the stubhead label). We can perform styling on targeted table locations with the [`tab_style()`](%60great_tables.GT.tab_style%60) method.
+A table can contain a few useful components for conveying additional information. These include a header (with a titles and subtitle), a footer (with source notes), and additional areas for labels (row group labels, column spanner labels, the stubhead label). We can perform styling on targeted table locations with the <a href="../reference/GT.tab_style.html#great_tables.GT.tab_style" class="gdls-link"><code>tab_style()</code></a> method.
 
 
 [GT.tab_header()](GT.tab_header.md#great_tables.GT.tab_header)  
@@ -59,6 +59,9 @@ Remove table source notes.
 [GT.tab_style()](GT.tab_style.md#great_tables.GT.tab_style)  
 Add custom style to one or more cells
 
+[GT.tab_style_body()](GT.tab_style_body.md#great_tables.GT.tab_style_body)  
+Apply styles to body cells based on their data values.
+
 [GT.tab_options()](GT.tab_options.md#great_tables.GT.tab_options)  
 Modify the table output options.
 
@@ -66,7 +69,7 @@ Modify the table output options.
 ## Formatting column data
 
 
-Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the [`fmt()`](%60great_tables.GT.fmt%60) method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and `data_color()` provides a lot of power for colorizing body cells based on their data values.
+Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the <a href="../reference/GT.fmt.html#great_tables.GT.fmt" class="gdls-link"><code>fmt()</code></a> method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and [data_color()](GT.data_color.md#great_tables.GT.data_color) provides a lot of power for colorizing body cells based on their data values.
 
 
 [GT.fmt_number()](GT.fmt_number.md#great_tables.GT.fmt_number)  
@@ -95,6 +98,21 @@ Format values as currencies.
 
 [GT.fmt_roman()](GT.fmt_roman.md#great_tables.GT.fmt_roman)  
 Format values as Roman numerals.
+
+[GT.fmt_fraction()](GT.fmt_fraction.md#great_tables.GT.fmt_fraction)  
+Format values as mixed fractions.
+
+[GT.fmt_chem()](GT.fmt_chem.md#great_tables.GT.fmt_chem)  
+Format chemical formulas.
+
+[GT.fmt_index()](GT.fmt_index.md#great_tables.GT.fmt_index)  
+Format values as index characters.
+
+[GT.fmt_url()](GT.fmt_url.md#great_tables.GT.fmt_url)  
+Format values as URL links.
+
+[GT.fmt_email()](GT.fmt_email.md#great_tables.GT.fmt_email)  
+Format values as email links.
 
 [GT.fmt_bytes()](GT.fmt_bytes.md#great_tables.GT.fmt_bytes)  
 Format values as bytes.
@@ -131,6 +149,9 @@ Use icons within a table's body cells.
 
 [GT.fmt_nanoplot()](GT.fmt_nanoplot.md#great_tables.GT.fmt_nanoplot)  
 Format data for nanoplot visualizations.
+
+[GT.fmt_passthrough()](GT.fmt_passthrough.md#great_tables.GT.fmt_passthrough)  
+Format values by passing them through, optionally escaping and decorating.
 
 [GT.fmt()](GT.fmt.md#great_tables.GT.fmt)  
 Set a column format with a formatter function.
@@ -176,7 +197,7 @@ Apply a custom text transformation to cells at specified locations.
 ## Modifying columns
 
 
-The `cols_*()` methods allow for modifications that act on entire columns. This includes alignment of the data in columns ([`cols_align()`](%60great_tables.GT.cols_align%60)), hiding columns from view ([`cols_hide()`](%60great_tables.GT.cols_hide%60)), re-labeling the column labels ([`cols_label()`](%60great_tables.GT.cols_label%60)), and moving columns around (with the `cols_move*()` methods).
+The `cols_*()` methods allow for modifications that act on entire columns. This includes alignment of the data in columns (<a href="../reference/GT.cols_align.html#great_tables.GT.cols_align" class="gdls-link"><code>cols_align()</code></a>), hiding columns from view (<a href="../reference/GT.cols_hide.html#great_tables.GT.cols_hide" class="gdls-link"><code>cols_hide()</code></a>), re-labeling the column labels (<a href="../reference/GT.cols_label.html#great_tables.GT.cols_label" class="gdls-link"><code>cols_label()</code></a>), and moving columns around (with the `cols_move*()` methods).
 
 
 [GT.cols_align()](GT.cols_align.md#great_tables.GT.cols_align)  
@@ -228,7 +249,7 @@ Merge two columns to combine counts and percentages.
 ## Adding rows
 
 
-The [`summary_rows()`](%60great_tables.GT.summary_rows%60) function adds rows to summarize data within each row group, while [`grand_summary_rows()`](%60great_tables.GT.grand_summary_rows%60) summarizes across the entire table.
+The <a href="../reference/GT.summary_rows.html#great_tables.GT.summary_rows" class="gdls-link"><code>summary_rows()</code></a> function adds rows to summarize data within each row group, while <a href="../reference/GT.grand_summary_rows.html#great_tables.GT.grand_summary_rows" class="gdls-link"><code>grand_summary_rows()</code></a> summarizes across the entire table.
 
 
 [GT.summary_rows()](GT.summary_rows.md#great_tables.GT.summary_rows)  
@@ -241,7 +262,7 @@ Add grand summary rows to the table.
 ## Location Targeting and Styling Classes
 
 
-Location targeting is a powerful feature of Great Tables. It allows for the precise selection of table locations for styling (using the `tab_style()` method). The styling classes allow for the specification of the styling properties to be applied to the targeted locations.
+Location targeting is a powerful feature of Great Tables. It allows for the precise selection of table locations for styling (using the [tab_style()](GT.tab_style.md#great_tables.GT.tab_style) method). The styling classes allow for the specification of the styling properties to be applied to the targeted locations.
 
 
 [loc.header](loc.header.md#great_tables.loc.header)  
@@ -281,10 +302,13 @@ Target the data cells in grand summary rows.
 Target data cells in the table body.
 
 [loc.footer](loc.footer.md#great_tables.loc.footer)  
-Target the table footer.
+Target the entire table footer.
 
 [loc.source_notes](loc.source_notes.md#great_tables.loc.source_notes)  
 Target the source notes.
+
+[loc.footnotes](loc.footnotes.md#great_tables.loc.footnotes)  
+Target the footnotes section of the footer.
 
 [style.fill](style.fill.md#great_tables.style.fill)  
 A style specification for the background fill of targeted cells.
@@ -302,7 +326,7 @@ A style specification for custom CSS rules.
 ## Helper Functions
 
 
-An assortment of helper functions is available in the Great Tables package. The `md()` and `html()` helper functions can be used during label creation with the `tab_header()`, `tab_spanner()`, `tab_stubhead()`, and `tab_source_note()` methods.
+An assortment of helper functions is available in the Great Tables package. The [md()](md.md#great_tables.md) and [html()](html.md#great_tables.html) helper functions can be used during label creation with the [tab_header()](GT.tab_header.md#great_tables.GT.tab_header), [tab_spanner()](GT.tab_spanner.md#great_tables.GT.tab_spanner), [tab_stubhead()](GT.tab_stubhead.md#great_tables.GT.tab_stubhead), and [tab_source_note()](GT.tab_source_note.md#great_tables.GT.tab_source_note) methods.
 
 
 [GT.with_id()](GT.with_id.md#great_tables.GT.with_id)  
@@ -327,7 +351,7 @@ Specify a font from the *Google Fonts* service.
 Get a themed font stack that works well across systems.
 
 [define_units()](define_units.md#great_tables.define_units)  
-With `define_units()` you can work with a specially-crafted units notation string and emit the
+With [define_units()](define_units.md#great_tables.define_units) you can work with a specially-crafted units notation string and emit the
 
 [nanoplot_options()](nanoplot_options.md#great_tables.nanoplot_options)  
 Helper for setting the options for a nanoplot.
@@ -336,7 +360,7 @@ Helper for setting the options for a nanoplot.
 ## Table options
 
 
-With the `opt_*()` functions, we have an easy way to set commonly-used table options without having to use `tab_options()` directly.
+With the `opt_*()` functions, we have an easy way to set commonly-used table options without having to use [tab_options()](GT.tab_options.md#great_tables.GT.tab_options) directly.
 
 
 [GT.opt_stylize()](GT.opt_stylize.md#great_tables.GT.opt_stylize)  
@@ -344,6 +368,9 @@ Stylize your table with a colorful look.
 
 [GT.opt_footnote_marks()](GT.opt_footnote_marks.md#great_tables.GT.opt_footnote_marks)  
 Option to modify the set of footnote marks.
+
+[GT.opt_footnote_spec()](GT.opt_footnote_spec.md#great_tables.GT.opt_footnote_spec)  
+Option to modify the formatting of footnote marks.
 
 [GT.opt_row_striping()](GT.opt_row_striping.md#great_tables.GT.opt_row_striping)  
 Option to add or remove row striping.
@@ -373,7 +400,7 @@ Option to add custom CSS for the table.
 ## Export
 
 
-There may come a day when you need to export a table to some specific format. A great method for that is `gtsave()`, which allows us to save the table as a standalone image file or PDF. You can also get the table code as an HTML fragment with the `*_raw_html()` methods.
+There may come a day when you need to export a table to some specific format. A great method for that is [gtsave()](GT.gtsave.md#great_tables.GT.gtsave), which allows us to save the table as a standalone image file or PDF. You can also get the table code as an HTML fragment with the `*_raw_html()` methods.
 
 
 [GT.gtsave()](GT.gtsave.md#great_tables.GT.gtsave)  
@@ -395,7 +422,7 @@ Output a GT object as LaTeX
 ## Pipeline
 
 
-Sometimes, you might want to programmatically manipulate the table while still benefiting from the chained API that **Great Tables** offers. `pipe()` is designed to tackle this issue.
+Sometimes, you might want to programmatically manipulate the table while still benefiting from the chained API that **Great Tables** offers. [pipe()](GT.pipe.md#great_tables.GT.pipe) is designed to tackle this issue.
 
 
 [GT.pipe()](GT.pipe.md#great_tables.GT.pipe)  
@@ -435,6 +462,21 @@ Format values as currencies.
 [vals.fmt_roman()](vals.fmt_roman.md#great_tables.vals.fmt_roman)  
 Format values as Roman numerals.
 
+[vals.fmt_fraction()](vals.fmt_fraction.md#great_tables.vals.fmt_fraction)  
+Format values as mixed fractions.
+
+[vals.fmt_chem()](vals.fmt_chem.md#great_tables.vals.fmt_chem)  
+Format chemical formulas.
+
+[vals.fmt_index()](vals.fmt_index.md#great_tables.vals.fmt_index)  
+Format values as index characters.
+
+[vals.fmt_url()](vals.fmt_url.md#great_tables.vals.fmt_url)  
+Format values as URL links.
+
+[vals.fmt_email()](vals.fmt_email.md#great_tables.vals.fmt_email)  
+Format values as email links.
+
 [vals.fmt_bytes()](vals.fmt_bytes.md#great_tables.vals.fmt_bytes)  
 Format values as bytes.
 
@@ -460,8 +502,11 @@ Format image paths to generate images in cells.
 ## Built-in Datasets
 
 
-The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package.
+The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The [load_dataset()](load_dataset.md#great_tables.load_dataset) function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
 
+
+[load_dataset()](load_dataset.md#great_tables.load_dataset)  
+Load a dataset from the library as a specified table type.
 
 [data.countrypops](data.countrypops.md#great_tables.data.countrypops)  
 Yearly populations of countries from 1960 to 2022.

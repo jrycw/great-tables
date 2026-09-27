@@ -30,6 +30,7 @@
 - [GT.rm_footnotes](https://posit-dev.github.io/great-tables/reference/GT.rm_footnotes.html)
 - [GT.rm_source_notes](https://posit-dev.github.io/great-tables/reference/GT.rm_source_notes.html)
 - [GT.tab_style](https://posit-dev.github.io/great-tables/reference/GT.tab_style.html)
+- [GT.tab_style_body](https://posit-dev.github.io/great-tables/reference/GT.tab_style_body.html)
 - [GT.tab_options](https://posit-dev.github.io/great-tables/reference/GT.tab_options.html)
 
 #### Formatting column data
@@ -45,6 +46,11 @@
 - [GT.fmt_partsper](https://posit-dev.github.io/great-tables/reference/GT.fmt_partsper.html)
 - [GT.fmt_currency](https://posit-dev.github.io/great-tables/reference/GT.fmt_currency.html)
 - [GT.fmt_roman](https://posit-dev.github.io/great-tables/reference/GT.fmt_roman.html)
+- [GT.fmt_fraction](https://posit-dev.github.io/great-tables/reference/GT.fmt_fraction.html)
+- [GT.fmt_chem](https://posit-dev.github.io/great-tables/reference/GT.fmt_chem.html)
+- [GT.fmt_index](https://posit-dev.github.io/great-tables/reference/GT.fmt_index.html)
+- [GT.fmt_url](https://posit-dev.github.io/great-tables/reference/GT.fmt_url.html)
+- [GT.fmt_email](https://posit-dev.github.io/great-tables/reference/GT.fmt_email.html)
 - [GT.fmt_bytes](https://posit-dev.github.io/great-tables/reference/GT.fmt_bytes.html)
 - [GT.fmt_date](https://posit-dev.github.io/great-tables/reference/GT.fmt_date.html)
 - [GT.fmt_time](https://posit-dev.github.io/great-tables/reference/GT.fmt_time.html)
@@ -57,6 +63,7 @@
 - [GT.fmt_flag](https://posit-dev.github.io/great-tables/reference/GT.fmt_flag.html)
 - [GT.fmt_icon](https://posit-dev.github.io/great-tables/reference/GT.fmt_icon.html)
 - [GT.fmt_nanoplot](https://posit-dev.github.io/great-tables/reference/GT.fmt_nanoplot.html)
+- [GT.fmt_passthrough](https://posit-dev.github.io/great-tables/reference/GT.fmt_passthrough.html)
 - [GT.fmt](https://posit-dev.github.io/great-tables/reference/GT.fmt.html)
 - [GT.sub_missing](https://posit-dev.github.io/great-tables/reference/GT.sub_missing.html)
 - [GT.sub_zero](https://posit-dev.github.io/great-tables/reference/GT.sub_zero.html)
@@ -119,6 +126,7 @@
 - [loc.body](https://posit-dev.github.io/great-tables/reference/loc.body.html)
 - [loc.footer](https://posit-dev.github.io/great-tables/reference/loc.footer.html)
 - [loc.source_notes](https://posit-dev.github.io/great-tables/reference/loc.source_notes.html)
+- [loc.footnotes](https://posit-dev.github.io/great-tables/reference/loc.footnotes.html)
 - [style.fill](https://posit-dev.github.io/great-tables/reference/style.fill.html)
 - [style.text](https://posit-dev.github.io/great-tables/reference/style.text.html)
 - [style.borders](https://posit-dev.github.io/great-tables/reference/style.borders.html)
@@ -144,6 +152,7 @@
 
 - [GT.opt_stylize](https://posit-dev.github.io/great-tables/reference/GT.opt_stylize.html)
 - [GT.opt_footnote_marks](https://posit-dev.github.io/great-tables/reference/GT.opt_footnote_marks.html)
+- [GT.opt_footnote_spec](https://posit-dev.github.io/great-tables/reference/GT.opt_footnote_spec.html)
 - [GT.opt_row_striping](https://posit-dev.github.io/great-tables/reference/GT.opt_row_striping.html)
 - [GT.opt_align_table_header](https://posit-dev.github.io/great-tables/reference/GT.opt_align_table_header.html)
 - [GT.opt_vertical_padding](https://posit-dev.github.io/great-tables/reference/GT.opt_vertical_padding.html)
@@ -182,6 +191,11 @@
 - [vals.fmt_partsper](https://posit-dev.github.io/great-tables/reference/vals.fmt_partsper.html)
 - [vals.fmt_currency](https://posit-dev.github.io/great-tables/reference/vals.fmt_currency.html)
 - [vals.fmt_roman](https://posit-dev.github.io/great-tables/reference/vals.fmt_roman.html)
+- [vals.fmt_fraction](https://posit-dev.github.io/great-tables/reference/vals.fmt_fraction.html)
+- [vals.fmt_chem](https://posit-dev.github.io/great-tables/reference/vals.fmt_chem.html)
+- [vals.fmt_index](https://posit-dev.github.io/great-tables/reference/vals.fmt_index.html)
+- [vals.fmt_url](https://posit-dev.github.io/great-tables/reference/vals.fmt_url.html)
+- [vals.fmt_email](https://posit-dev.github.io/great-tables/reference/vals.fmt_email.html)
 - [vals.fmt_bytes](https://posit-dev.github.io/great-tables/reference/vals.fmt_bytes.html)
 - [vals.fmt_duration](https://posit-dev.github.io/great-tables/reference/vals.fmt_duration.html)
 - [vals.fmt_date](https://posit-dev.github.io/great-tables/reference/vals.fmt_date.html)
@@ -191,9 +205,10 @@
 - [vals.fmt_image](https://posit-dev.github.io/great-tables/reference/vals.fmt_image.html)
 
 #### Built-in Datasets
-> The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package.
+> The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The `load_dataset()` function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
 
 
+- [load_dataset](https://posit-dev.github.io/great-tables/reference/load_dataset.html): Load a dataset from the library as a specified table type
 - [data.countrypops](https://posit-dev.github.io/great-tables/reference/data.countrypops.html)
 - [data.sza](https://posit-dev.github.io/great-tables/reference/data.sza.html)
 - [data.gtcars](https://posit-dev.github.io/great-tables/reference/data.gtcars.html)
