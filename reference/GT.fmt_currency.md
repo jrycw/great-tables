@@ -15,6 +15,7 @@ GT.fmt_currency(
     decimals=None,
     drop_trailing_dec_mark=True,
     use_seps=True,
+    min_sep_threshold=1,
     accounting=False,
     scale_by=1,
     compact=False,
@@ -29,9 +30,9 @@ GT.fmt_currency(
 ```
 
 
-With numeric values in a **gt** table, we can perform currency-based formatting with the `fmt_currency()` method. This supports both automatic formatting with a three-letter currency code. We have fine control over the conversion from numeric values to currency values, where we could take advantage of the following options:
+With numeric values in a **gt** table, we can perform currency-based formatting with the <a href="../reference/GT.fmt_currency.html#great_tables.GT.fmt_currency" class="gdls-link"><code>fmt_currency()</code></a> method. This supports both automatic formatting with a three-letter currency code. We have fine control over the conversion from numeric values to currency values, where we could take advantage of the following options:
 
-- the currency: providing a currency code or common currency name will procure the correct currency symbol and number of currency subunits
+- the currency: providing a currency code will procure the correct currency symbol and number of currency subunits
 - currency symbol placement: the currency symbol can be placed before or after the values
 - decimals/subunits: choice of the number of decimal places, and a choice of the decimal symbol, and an option on whether to include or exclude the currency subunits (the decimal portion)
 - digit grouping separators: options to enable/disable digit separators and provide a choice of separator symbol
@@ -46,11 +47,11 @@ With numeric values in a **gt** table, we can perform currency-based formatting 
 `columns: SelectExpr = None`  
 The columns to target. Can either be a single column name or a series of column names provided in a list.
 
-`rows: int | list[int] | None = None`  
-In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a list of row indices.
+`rows: RowSelectExpr = None`  
+In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a row index, a list of row indices, or (for Polars DataFrames) a Polars expression such as `pl.col("x") > 0`.
 
 `currency: str | None = None`  
-The currency to use for the numeric value. This input can be supplied as a 3-letter currency code (e.g., `"USD"` for U.S. Dollars, `"EUR"` for the Euro currency).
+The currency to use for the numeric value. This input can be supplied as a 3-letter currency code (e.g., `"USD"` for U.S. Dollars, `"EUR"` for the Euro currency). In LaTeX output, currency symbols are written as Unicode characters. Some of them (e.g., `"₹"` for `"INR"`, `"₪"` for `"ILS"`, `"₽"` for `"RUB"`, or `"₺"` for `"TRY"`) aren't available in pdfLaTeX, so tables using these currencies need to be compiled with XeLaTeX or LuaLaTeX.
 
 `use_subunits: bool = ``True`  
 An option for whether the subunits portion of a currency value should be displayed. For example, with an input value of `273.81`, the default formatting will produce `"$273.81"`. Removing the subunits (with `use_subunits = False`) will give us `"$273"`.
@@ -63,6 +64,9 @@ A boolean value that determines whether decimal marks should always appear even 
 
 `use_seps: bool = ``True`  
 The `use_seps` option allows for the use of digit group separators. The type of digit group separator is set by `sep_mark` and overridden if a locale ID is provided to `locale`. This setting is `True` by default.
+
+`min_sep_threshold: int = ``1`  
+The minimum number of digits in the integer part of a number for digit grouping separators to be used. The default of `1` uses separators from 4-digit numbers onward (e.g., `1,000`), `2` starts at 5-digit numbers (`10,000`), and `3` starts at 6-digit numbers (`100,000`). When a locale is in effect (through `locale=` or a locale set in [GT()](GT.md#great_tables.GT)), the locale's own minimum grouping digits value is used instead (it's `2` for locales like `"es"` and `"pl"`).
 
 `accounting: bool = ``False`  
 Whether to use accounting style, which wraps negative numbers in parentheses instead of using a minus sign.
@@ -111,7 +115,7 @@ Note that a `locale` value provided here will override any global locale setting
 
 ## Examples
 
-Let's use the [exibble](data.exibble.md#great_tables.data.exibble) dataset to create a table. With the `fmt_currency()` method, we'll format the `currency` column to display monetary values.
+Let's use the [exibble](data.exibble.md#great_tables.data.exibble) dataset to create a table. With the <a href="../reference/GT.fmt_currency.html#great_tables.GT.fmt_currency" class="gdls-link"><code>fmt_currency()</code></a> method, we'll format the `currency` column to display monetary values.
 
 
 ``` python
@@ -129,65 +133,65 @@ from great_tables import GT, exibble
 
 
 <style>
-#vlcfdekzgc table {
+#yexhbtyjpa table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#vlcfdekzgc thead, tbody, tfoot, tr, td, th { border-style: none; }
+#yexhbtyjpa thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#vlcfdekzgc p { margin: 0; padding: 0; }
- #vlcfdekzgc .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #vlcfdekzgc .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #vlcfdekzgc .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #vlcfdekzgc .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #vlcfdekzgc .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vlcfdekzgc .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vlcfdekzgc .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vlcfdekzgc .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #vlcfdekzgc .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #vlcfdekzgc .gt_column_spanner_outer:first-child { padding-left: 0; }
- #vlcfdekzgc .gt_column_spanner_outer:last-child { padding-right: 0; }
- #vlcfdekzgc .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #vlcfdekzgc .gt_spanner_row { border-bottom-style: hidden; }
- #vlcfdekzgc .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #vlcfdekzgc .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #vlcfdekzgc .gt_from_md> :first-child { margin-top: 0; }
- #vlcfdekzgc .gt_from_md> :last-child { margin-bottom: 0; }
- #vlcfdekzgc .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #vlcfdekzgc .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #vlcfdekzgc .gt_indent_1 { text-indent: 5px; }
- #vlcfdekzgc .gt_indent_2 { text-indent: calc(5px * 2); }
- #vlcfdekzgc .gt_indent_3 { text-indent: calc(5px * 3); }
- #vlcfdekzgc .gt_indent_4 { text-indent: calc(5px * 4); }
- #vlcfdekzgc .gt_indent_5 { text-indent: calc(5px * 5); }
- #vlcfdekzgc .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #vlcfdekzgc .gt_row_group_first td { border-top-width: 2px; }
- #vlcfdekzgc .gt_row_group_first th { border-top-width: 2px; }
- #vlcfdekzgc .gt_striped { color: #333333; background-color: #F4F4F4; }
- #vlcfdekzgc .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vlcfdekzgc .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vlcfdekzgc .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #vlcfdekzgc .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vlcfdekzgc .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vlcfdekzgc .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #vlcfdekzgc .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #vlcfdekzgc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vlcfdekzgc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vlcfdekzgc .gt_left { text-align: left; }
- #vlcfdekzgc .gt_center { text-align: center; }
- #vlcfdekzgc .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #vlcfdekzgc .gt_font_normal { font-weight: normal; }
- #vlcfdekzgc .gt_font_bold { font-weight: bold; }
- #vlcfdekzgc .gt_font_italic { font-style: italic; }
- #vlcfdekzgc .gt_super { font-size: 65%; }
- #vlcfdekzgc .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vlcfdekzgc .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #vlcfdekzgc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vlcfdekzgc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vlcfdekzgc .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #vlcfdekzgc .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#yexhbtyjpa p { margin: 0; padding: 0; }
+ #yexhbtyjpa .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #yexhbtyjpa .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #yexhbtyjpa .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #yexhbtyjpa .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #yexhbtyjpa .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #yexhbtyjpa .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #yexhbtyjpa .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #yexhbtyjpa .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #yexhbtyjpa .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #yexhbtyjpa .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #yexhbtyjpa .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #yexhbtyjpa .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #yexhbtyjpa .gt_spanner_row { border-bottom-style: hidden; }
+ #yexhbtyjpa .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #yexhbtyjpa .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #yexhbtyjpa .gt_from_md> :first-child { margin-top: 0; }
+ #yexhbtyjpa .gt_from_md> :last-child { margin-bottom: 0; }
+ #yexhbtyjpa .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #yexhbtyjpa .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #yexhbtyjpa .gt_indent_1 { text-indent: 5px; }
+ #yexhbtyjpa .gt_indent_2 { text-indent: calc(5px * 2); }
+ #yexhbtyjpa .gt_indent_3 { text-indent: calc(5px * 3); }
+ #yexhbtyjpa .gt_indent_4 { text-indent: calc(5px * 4); }
+ #yexhbtyjpa .gt_indent_5 { text-indent: calc(5px * 5); }
+ #yexhbtyjpa .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #yexhbtyjpa .gt_row_group_first td { border-top-width: 2px; }
+ #yexhbtyjpa .gt_row_group_first th { border-top-width: 2px; }
+ #yexhbtyjpa .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #yexhbtyjpa .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #yexhbtyjpa .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #yexhbtyjpa .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #yexhbtyjpa .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #yexhbtyjpa .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #yexhbtyjpa .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #yexhbtyjpa .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #yexhbtyjpa .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #yexhbtyjpa .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #yexhbtyjpa .gt_left { text-align: left; }
+ #yexhbtyjpa .gt_center { text-align: center; }
+ #yexhbtyjpa .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #yexhbtyjpa .gt_font_normal { font-weight: normal; }
+ #yexhbtyjpa .gt_font_bold { font-weight: bold; }
+ #yexhbtyjpa .gt_font_italic { font-style: italic; }
+ #yexhbtyjpa .gt_super { font-size: 65%; }
+ #yexhbtyjpa .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #yexhbtyjpa .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #yexhbtyjpa .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #yexhbtyjpa .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #yexhbtyjpa .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #yexhbtyjpa .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 

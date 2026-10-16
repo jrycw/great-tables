@@ -17,9 +17,11 @@ GT.fmt_flag(
 ```
 
 
-While it is fairly straightforward to insert images into body cells (using `fmt_image()` is one way to it), there is often the need to incorporate specialized types of graphics within a table. One such group of graphics involves iconography representing different countries, and the [fmt_flag()](GT.fmt_flag.md#great_tables.GT.fmt_flag) method helps with inserting a flag icon (or multiple) in body cells. To make this work seamlessly, the input cells need to contain some reference to a country, and this can be in the form of a 2- or 3-letter ISO 3166-1 country code (e.g., Egypt has the `"EG"` country code). This method will parse the targeted body cells for those codes and insert the appropriate flag graphics.
+While it is fairly straightforward to insert images into body cells (using <a href="../reference/GT.fmt_image.html#great_tables.GT.fmt_image" class="gdls-link"><code>fmt_image()</code></a> is one way to it), there is often the need to incorporate specialized types of graphics within a table. One such group of graphics involves iconography representing different countries, and the [fmt_flag()](GT.fmt_flag.md#great_tables.GT.fmt_flag) method helps with inserting a flag icon (or multiple) in body cells. To make this work seamlessly, the input cells need to contain some reference to a country, and this can be in the form of a 2- or 3-letter ISO 3166-1 country code (e.g., Egypt has the `"EG"` country code). This method will parse the targeted body cells for those codes and insert the appropriate flag graphics.
 
 Multiple flags can be included per cell by separating country codes with commas (e.g., `"GB,TT"`). The `sep=` argument allows for a common separator to be applied between flag icons.
+
+Any code that isn't recognized as a 2- or 3-letter country code is left as is (i.e., the text is retained in place of a flag icon). This means that a column with a mix of valid and invalid codes can still be formatted, and the cells without flags can be identified and styled separately (e.g., with [tab_style()](GT.tab_style.md#great_tables.GT.tab_style)).
 
 
 ## Parameters
@@ -28,8 +30,8 @@ Multiple flags can be included per cell by separating country codes with commas 
 `columns: SelectExpr = None`  
 The columns to target. Can either be a single column name or a series of column names provided in a list.
 
-`rows: int | list[int] | None = None`  
-In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a list of row indices.
+`rows: RowSelectExpr = None`  
+In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a row index, a list of row indices, or (for Polars DataFrames) a Polars expression such as `pl.col("x") > 0`.
 
 `height: str | float | None = ``"1em"`  
 The height of the flag icons. The default value is `"1em"`. If given as a number, it is assumed to be in pixels.
@@ -82,80 +84,80 @@ countrypops_mini = (
 
 
 <style>
-#nbphnvcepq table {
+#bpfjtfitks table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#nbphnvcepq thead, tbody, tfoot, tr, td, th { border-style: none; }
+#bpfjtfitks thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#nbphnvcepq p { margin: 0; padding: 0; }
- #nbphnvcepq .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #nbphnvcepq .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #nbphnvcepq .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #nbphnvcepq .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #nbphnvcepq .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #nbphnvcepq .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #nbphnvcepq .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #nbphnvcepq .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #nbphnvcepq .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #nbphnvcepq .gt_column_spanner_outer:first-child { padding-left: 0; }
- #nbphnvcepq .gt_column_spanner_outer:last-child { padding-right: 0; }
- #nbphnvcepq .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #nbphnvcepq .gt_spanner_row { border-bottom-style: hidden; }
- #nbphnvcepq .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #nbphnvcepq .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #nbphnvcepq .gt_from_md> :first-child { margin-top: 0; }
- #nbphnvcepq .gt_from_md> :last-child { margin-bottom: 0; }
- #nbphnvcepq .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #nbphnvcepq .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #nbphnvcepq .gt_indent_1 { text-indent: 5px; }
- #nbphnvcepq .gt_indent_2 { text-indent: calc(5px * 2); }
- #nbphnvcepq .gt_indent_3 { text-indent: calc(5px * 3); }
- #nbphnvcepq .gt_indent_4 { text-indent: calc(5px * 4); }
- #nbphnvcepq .gt_indent_5 { text-indent: calc(5px * 5); }
- #nbphnvcepq .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #nbphnvcepq .gt_row_group_first td { border-top-width: 2px; }
- #nbphnvcepq .gt_row_group_first th { border-top-width: 2px; }
- #nbphnvcepq .gt_striped { color: #333333; background-color: #F4F4F4; }
- #nbphnvcepq .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #nbphnvcepq .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #nbphnvcepq .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #nbphnvcepq .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #nbphnvcepq .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #nbphnvcepq .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #nbphnvcepq .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #nbphnvcepq .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #nbphnvcepq .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #nbphnvcepq .gt_left { text-align: left; }
- #nbphnvcepq .gt_center { text-align: center; }
- #nbphnvcepq .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #nbphnvcepq .gt_font_normal { font-weight: normal; }
- #nbphnvcepq .gt_font_bold { font-weight: bold; }
- #nbphnvcepq .gt_font_italic { font-style: italic; }
- #nbphnvcepq .gt_super { font-size: 65%; }
- #nbphnvcepq .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #nbphnvcepq .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #nbphnvcepq .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #nbphnvcepq .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #nbphnvcepq .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #nbphnvcepq .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#bpfjtfitks p { margin: 0; padding: 0; }
+ #bpfjtfitks .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #bpfjtfitks .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #bpfjtfitks .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #bpfjtfitks .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #bpfjtfitks .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bpfjtfitks .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bpfjtfitks .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #bpfjtfitks .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #bpfjtfitks .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #bpfjtfitks .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #bpfjtfitks .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #bpfjtfitks .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #bpfjtfitks .gt_spanner_row { border-bottom-style: hidden; }
+ #bpfjtfitks .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #bpfjtfitks .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #bpfjtfitks .gt_from_md> :first-child { margin-top: 0; }
+ #bpfjtfitks .gt_from_md> :last-child { margin-bottom: 0; }
+ #bpfjtfitks .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #bpfjtfitks .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #bpfjtfitks .gt_indent_1 { text-indent: 5px; }
+ #bpfjtfitks .gt_indent_2 { text-indent: calc(5px * 2); }
+ #bpfjtfitks .gt_indent_3 { text-indent: calc(5px * 3); }
+ #bpfjtfitks .gt_indent_4 { text-indent: calc(5px * 4); }
+ #bpfjtfitks .gt_indent_5 { text-indent: calc(5px * 5); }
+ #bpfjtfitks .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #bpfjtfitks .gt_row_group_first td { border-top-width: 2px; }
+ #bpfjtfitks .gt_row_group_first th { border-top-width: 2px; }
+ #bpfjtfitks .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #bpfjtfitks .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bpfjtfitks .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bpfjtfitks .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #bpfjtfitks .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #bpfjtfitks .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #bpfjtfitks .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #bpfjtfitks .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #bpfjtfitks .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bpfjtfitks .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bpfjtfitks .gt_left { text-align: left; }
+ #bpfjtfitks .gt_center { text-align: center; }
+ #bpfjtfitks .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #bpfjtfitks .gt_font_normal { font-weight: normal; }
+ #bpfjtfitks .gt_font_bold { font-weight: bold; }
+ #bpfjtfitks .gt_font_italic { font-style: italic; }
+ #bpfjtfitks .gt_super { font-size: 65%; }
+ #bpfjtfitks .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bpfjtfitks .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #bpfjtfitks .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #bpfjtfitks .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #bpfjtfitks .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #bpfjtfitks .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
 |  | Country | Population (2021) |
 |----|----|----|
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2Ftb2E8L3RpdGxlPjxtYXNrIGlkPSJhIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjYSkiPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0wIDI1NiAyNTYgMGgyNTZ2NTEySDB6IiAvPjxwYXRoIGZpbGw9IiMwMDUyYjQiIGQ9Ik0wIDBoMjU2djI1NkgweiIgLz48cGF0aCBmaWxsPSIjZWVlIiBkPSJtMjA1IDE2NyA0LjIgMTIuN2gxMy40bC0xMC44IDcuOSA0LjEgMTIuNy0xMC44LTcuOC0xMC45IDcuOCA0LjEtMTIuNy0xMC44LTcuOWgxMy40ek0xMzcuOCA2Ni44bDcgMjEuMkgxNjdsLTE4LjEgMTMuMiA2LjkgMjEuMi0xOC4xLTEzLjEtMTggMTMuMSA2LjgtMjEuMi0xOC0xMy4yaDIyLjN6TTIwNC41IDg5bDYuOSAyMS4zaDIyLjNsLTE4IDEzLjEgNi45IDIxLjMtMTguMS0xMy4xLTE4LjEgMTMuMSA3LTIxLjMtMTguMi0xMy4xaDIyLjR6bS01Mi44IDg5IDYuOSAyMS4zSDE4MWwtMTguMSAxMy4yIDYuOSAyMS4yLTE4LjEtMTMuMS0xOCAxMy4xIDYuOC0yMS4yLTE4LTEzLjJoMjIuM3ptLTU4LjUtNTUuNiA2LjkgMjEuM2gyMi4zbC0xOCAxMy4xIDYuOSAyMS4zLTE4LjEtMTMuMkw3NSAxNzguMWw2LjktMjEuMy0xOC0xMy4xaDIyLjN6IiAvPjwvZz48L3N2Zz4=)</span> | Samoa | 218,764 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2FuIE1hcmlubzwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iIzMzOGFmMyIgZD0ibTAgMjU2IDI1Ni01Mi4zTDUxMiAyNTZ2MjU2SDB6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0wIDBoNTEydjI1NkgweiIgLz48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMzU3LjYgMTc2LjYgMjU2IDI3OC4zIDE1NC40IDE3Ni42YTEyMS43IDEyMS43IDAgMCAwLTIwLjggNjguM3YzMy40YzAgNTMuNiAzNC42IDk5LjIgODIuNyAxMTUuOGEzNyAzNyAwIDAgMCA0IDQwbDM2LjQtMjkuMiAzNi40IDI5LjJhMzcgMzcgMCAwIDAgMy45LTQwLjUgMTIyLjYgMTIyLjYgMCAwIDAgODEuNC0xMTUuM3YtMzMuNGMwLTI1LjMtNy42LTQ4LjctMjAuOC02OC4zeiIgLz48cGF0aCBmaWxsPSIjZmZkYTQ0IiBkPSJNMjU2IDM2Ny4zYy00OS4xIDAtODktNDAtODktODl2LTMzLjRhODkuMSA4OS4xIDAgMCAxIDE3OCAwdjMzLjRjMCA0OS0zOS45IDg5LTg5IDg5eiIgLz48cGF0aCBmaWxsPSIjMzM4YWYzIiBkPSJNMzExLjcgMjc4LjN2LTMzLjRhNTUuNyA1NS43IDAgMCAwLTExMS40IDB2MzMuNGw1NS43IDExeiIgLz48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMjAwLjMgMjc4LjNhNTUuNyA1NS43IDAgMCAwIDExMS40IDB6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0zMjIuOCAxNTUuOEEzMy40IDMzLjQgMCAwIDAgMjY3IDEzMXYtMTkuNmgxMS4yVjg5SDI2N1Y3OGgtMjJ2MTFoLTExLjJ2MjIuM0gyNDV2MTkuNmEzMy40IDMzLjQgMCAwIDAtNDQuNSA0OS44djE5LjZoMTExLjN2LTE5LjZjNi44LTYuMSAxMS0xNSAxMS0yNC45eiIgLz48L2c+PC9zdmc+)</span> | San Marino | 33,745 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2FvIFRvbWUgYW5kIFByaW5jaXBlPC90aXRsZT48bWFzayBpZD0iYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMCAwaDUxMnYxNjdsLTUyLjYgODMuOEw1MTIgMzQ1djE2N0gwbDcyLTI2NC4zeiIgLz48cGF0aCBmaWxsPSIjZmZkYTQ0IiBkPSJNMTE0LjkgMTY2LjlINTEydjE3OEgxMTQuOXoiIC8+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTAgMHY1MTJsMjU2LTI1NnoiIC8+PHBhdGggZmlsbD0iIzMzMyIgZD0ibTMyNSAyMTEuNSAxMS4xIDM0SDM3MmwtMjkgMjEgMTEuMSAzNC0yOS0yMS0yOC45IDIxIDExLTM0LTI4LjgtMjFIMzE0em0xMTEuNCAwIDExIDM0aDM1LjhsLTI5IDIxIDExLjEgMzQtMjktMjEtMjguOSAyMSAxMS4xLTM0LTI5LTIxaDM1Ljh6IiAvPjwvZz48L3N2Zz4=)</span> | Sao Tome and Principe | 223,107 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2F1ZGkgQXJhYmlhPC90aXRsZT48bWFzayBpZD0iYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjNDk2ZTJkIiBkPSJNMCAwaDUxMnY1MTJIMHoiIC8+PGcgZmlsbD0iI2VlZSI+PHBhdGggZD0iTTE0NC43IDMwNmMwIDE4LjUgMTUgMzMuNSAzMy40IDMzLjVoMTAwLjJhMjcuOCAyNy44IDAgMCAwIDI3LjggMjcuOGgzMy40YTI3LjggMjcuOCAwIDAgMCAyNy44LTI3LjhWMzA2em0yMjUuNC0xNjEuM3Y3OGMwIDEyLjItMTAgMjIuMi0yMi4zIDIyLjJ2MzMuNGMzMC43IDAgNTUuNy0yNSA1NS43LTU1Ljd2LTc3LjlIMzcwem0tMjM5LjMgNzhjMCAxMi4yLTEwIDIyLjItMjIuMyAyMi4ydjMzLjRjMzAuNyAwIDU1LjctMjUgNTUuNy01NS43di03Ny45aC0zMy40eiIgLz48cGF0aCBkPSJNMzIwIDE0NC43aDMzLjR2NzhIMzIwem0tNTAgNDQuNWE1LjYgNS42IDAgMCAxLTExLjIgMHYtNDQuNWgtMzMuNHY0NC41YTUuNiA1LjYgMCAwIDEtMTEuMSAwdi00NC41aC0zMy40djQ0LjVhMzkgMzkgMCAwIDAgMzkgMzkgMzguNyAzOC43IDAgMCAwIDIyLjItNyAzOC43IDM4LjcgMCAwIDAgMjIuMiA3YzEuNyAwIDMuNC0uMSA1LS4zYTIyLjMgMjIuMyAwIDAgMS0yMS42IDE3djMzLjRjMzAuNiAwIDU1LjYtMjUgNTUuNi01NS43di03Ny45SDI3MHoiIC8+PHBhdGggZD0iTTE4MC45IDI0NC45aDUwdjMzLjRoLTUweiIgLz48L2c+PC9nPjwvc3ZnPg==)</span> | Saudi Arabia | 35,950,396 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2VuZWdhbDwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iI2ZmZGE0NCIgZD0iTTE0NC44IDBoMjIyLjRsMzIgMjYwLTMyIDI1MkgxNDQuOGwtMzIuMS0yNTZ6IiAvPjxwYXRoIGZpbGw9IiM0OTZlMmQiIGQ9Ik0wIDBoMTQ0Ljh2NTEySDB6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0zNjcuMiAwSDUxMnY1MTJIMzY3LjJ6IiAvPjxwYXRoIGZpbGw9IiM0OTZlMmQiIGQ9Im0yNTYuMSAxNjcgMjIuMSA2OGg3MS41TDI5MiAyNzdsMjIgNjgtNTcuOC00Mi01Ny45IDQyIDIyLjEtNjgtNTcuOC00MkgyMzR6IiAvPjwvZz48L3N2Zz4=)</span> | Senegal | 16,876,720 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2VyYmlhPC90aXRsZT48bWFzayBpZD0iYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjMDA1MmI0IiBkPSJtMCAxNjcgMjUzLjgtMTkuM0w1MTIgMTY3djE3OGwtMjU0LjkgMzIuM0wwIDM0NXoiIC8+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTAgMGg1MTJ2MTY3SDB6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0wIDM0NWg1MTJ2MTY3SDB6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik02Ni4yIDE0NC43djEyNy43YzAgNzIuNiA5NC45IDk1IDk0LjkgOTVzOTQuOS0yMi40IDk0LjktOTVWMTQ0Ljd6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0xMDUuNCAxNjdoMTExLjR2LTQ0LjZsLTIyLjMgMTEuMi0zMy40LTMzLjQtMzMuNCAzMy40LTIyLjMtMTEuMnptMTI4LjMgMTIzLjItNzIuMy03Mi40TDg5IDI5MC4ybDIzLjcgMjMuNiA0OC43LTQ4LjcgNDguNyA0OC43eiIgLz48cGF0aCBmaWxsPSIjZWVlIiBkPSJNMjMzLjcgMjIyLjZIMjAwYTIyLjEgMjIuMSAwIDAgMCAzLTExLjEgMjIuMyAyMi4zIDAgMCAwLTQyLTEwLjUgMjIuMyAyMi4zIDAgMCAwLTQxLjkgMTAuNSAyMi4xIDIyLjEgMCAwIDAgMyAxMS4xSDg5YTIzIDIzIDAgMCAwIDIzIDIyLjNoLS43YzAgMTIuMyAxMCAyMi4yIDIyLjMgMjIuMiAwIDExIDcuOCAyMCAxOC4xIDIxLjlsLTE3LjUgMzkuNmE3Mi4xIDcyLjEgMCAwIDAgMjcuMiA1LjMgNzIuMSA3Mi4xIDAgMCAwIDI3LjItNS4zTDE3MS4xIDI4OWMxMC4zLTIgMTguMS0xMSAxOC4xLTIxLjkgMTIuMyAwIDIyLjMtMTAgMjIuMy0yMi4yaC0uOGEyMyAyMyAwIDAgMCAyMy0yMi4zeiIgLz48L2c+PC9zdmc+)</span> | Serbia | 6,834,326 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2V5Y2hlbGxlczwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iIzAwNTJiNCIgZD0iTTAgMHYzMzJsMTUwLjktMTM4LjVMMjI1LjIgMHoiIC8+PHBhdGggZmlsbD0iI2ZmZGE0NCIgZD0iTTI3My4xIDI1My4zIDUxMiAwSDIyNS4yTDAgMzMydjgwLjJ6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik01MTIgMCAwIDQxMi4ydjUwLjRMMjc3LjkgMzkwIDUxMiAyNTZ6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0wIDQ2Mi42IDUxMiAyNTZ2MTMzLjVsLTIyMy45IDc4LjhMMCA0ODguNHoiIC8+PHBhdGggZmlsbD0iIzZkYTU0NCIgZD0ibTUxMiAzODkuNS01MTIgOTlWNTEyaDUxMnoiIC8+PC9nPjwvc3ZnPg==)</span> | Seychelles | 99,258 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2llcnJhIExlb25lPC90aXRsZT48bWFzayBpZD0iYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjZWVlIiBkPSJtMCAxNjcgMjUzLjgtMTkuM0w1MTIgMTY3djE3OGwtMjU0LjkgMzIuM0wwIDM0NXoiIC8+PHBhdGggZmlsbD0iIzZkYTU0NCIgZD0iTTAgMGg1MTJ2MTY3SDB6IiAvPjxwYXRoIGZpbGw9IiMzMzhhZjMiIGQ9Ik0wIDM0NWg1MTJ2MTY3SDB6IiAvPjwvZz48L3N2Zz4=)</span> | Sierra Leone | 8,420,641 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2luZ2Fwb3JlPC90aXRsZT48bWFzayBpZD0iYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2EpIj48cGF0aCBmaWxsPSIjZWVlIiBkPSJtMCAyNTYgMjU3LjctNTFMNTEyIDI1NnYyNTZIMHoiIC8+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTAgMGg1MTJ2MjU2SDB6IiAvPjxnIGZpbGw9IiNlZWUiPjxwYXRoIGQ9Ik0xNTUuOCAxMzMuNkE3OCA3OCAwIDAgMSAyMTcgNTcuNWE3OC4yIDc4LjIgMCAwIDAtMTYuNy0xLjggNzggNzggMCAxIDAgMTYuNyAxNTQgNzggNzggMCAwIDEtNjEuMi03Ni4xek0yNTYgNjEuMmw1LjUgMTdoMThsLTE0LjYgMTAuNSA1LjYgMTdMMjU2IDk1LjJsLTE0LjUgMTAuNSA1LjYtMTctMTQuNS0xMC41aDE3Ljl6IiAvPjxwYXRoIGQ9Im0yMTIuNiA5NC42IDUuNiAxN0gyMzZsLTE0LjQgMTAuNSA1LjUgMTctMTQuNS0xMC41LTE0LjQgMTAuNSA1LjUtMTctMTQuNS0xMC41aDE3Ljl6bTg2LjggMCA1LjUgMTdoMTcuOWwtMTQuNSAxMC41IDUuNSAxNy0xNC40LTEwLjUtMTQuNSAxMC41IDUuNS0xNy0xNC40LTEwLjVoMTcuOHptLTE2LjcgNTAuMSA1LjUgMTdoMTcuOWwtMTQuNSAxMC41IDUuNSAxNy0xNC40LTEwLjUtMTQuNSAxMC41IDUuNS0xNy0xNC40LTEwLjVoMTcuOXptLTUzLjQgMCA1LjUgMTdoMThsLTE0LjUgMTAuNSA1LjUgMTctMTQuNS0xMC41LTE0LjQgMTAuNSA1LjUtMTctMTQuNS0xMC41aDE3Ljl6IiAvPjwvZz48L2c+PC9zdmc+)</span> | Singapore | 5,453,566 |
-| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2ludCBNYWFydGVuIChEdXRjaCBwYXJ0KTwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTAgMGg1MTJ2MjU2bC0yNjUgNDUuMnoiIC8+PHBhdGggZmlsbD0iIzAwNTJiNCIgZD0iTTIxMCAyNTZoMzAydjI1NkgweiIgLz48cGF0aCBmaWxsPSIjZWVlIiBkPSJNMCAwdjUxMmwyNTYtMjU2eiIgLz48ZyBmaWxsPSIjZmZkYTQ0Ij48cGF0aCBkPSJNMjggMjU2YTczLjEgNzMuMSAwIDAgMC0uMiA1LjYgNzIuMyA3Mi4zIDAgMSAwIDE0NC41LTUuNnoiIC8+PGNpcmNsZSBjeD0iMTAwLjIiIGN5PSIyMDAuMyIgcj0iMjIuMyI+PC9jaXJjbGU+PC9nPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik01MCAxOTQuOFYyNjdjMCAzOC40IDUwLjIgNTAgNTAuMiA1MHM1MC0xMS42IDUwLTUwdi03Mi4zaC0xMDB6IiAvPjxwYXRoIGZpbGw9IiMzMzhhZjMiIGQ9Ik0xMDAuMiAyOTRjLTkuMy0zLjQtMjgtMTItMjgtMjd2LTUwSDEyOHY1MGMwIDE1LTE4LjYgMjMuNi0yNy44IDI2Ljl6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0xMTEuMyAyNDQuOXYtMTEuMmwtMTEuMS01LjUtMTEuMiA1LjVWMjQ1bC01LjUgNS41djIyLjNoMzMuNHYtMjIuM3oiIC8+PC9nPjwvc3ZnPg==)</span> | Sint Maarten (Dutch part) | 42,846 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2Ftb2EiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+U2Ftb2E8L3RpdGxlPjxtYXNrIGlkPSJjb3VudHJ5X2NvZGVfMi0wLWEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNjb3VudHJ5X2NvZGVfMi0wLWEpIj48cGF0aCBmaWxsPSIjZDgwMDI3IiBkPSJNMCAyNTYgMjU2IDBoMjU2djUxMkgweiIgLz48cGF0aCBmaWxsPSIjMDA1MmI0IiBkPSJNMCAwaDI1NnYyNTZIMHoiIC8+PHBhdGggZmlsbD0iI2VlZSIgZD0ibTIwNSAxNjcgNC4yIDEyLjdoMTMuNGwtMTAuOCA3LjkgNC4xIDEyLjctMTAuOC03LjgtMTAuOSA3LjggNC4xLTEyLjctMTAuOC03LjloMTMuNHpNMTM3LjggNjYuOGw3IDIxLjJIMTY3bC0xOC4xIDEzLjIgNi45IDIxLjItMTguMS0xMy4xLTE4IDEzLjEgNi44LTIxLjItMTgtMTMuMmgyMi4zek0yMDQuNSA4OWw2LjkgMjEuM2gyMi4zbC0xOCAxMy4xIDYuOSAyMS4zLTE4LjEtMTMuMS0xOC4xIDEzLjEgNy0yMS4zLTE4LjItMTMuMWgyMi40em0tNTIuOCA4OSA2LjkgMjEuM0gxODFsLTE4LjEgMTMuMiA2LjkgMjEuMi0xOC4xLTEzLjEtMTggMTMuMSA2LjgtMjEuMi0xOC0xMy4yaDIyLjN6bS01OC41LTU1LjYgNi45IDIxLjNoMjIuM2wtMTggMTMuMSA2LjkgMjEuMy0xOC4xLTEzLjJMNzUgMTc4LjFsNi45LTIxLjMtMTgtMTMuMWgyMi4zeiIgLz48L2c+PC9zdmc+)</span> | Samoa | 218,764 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2FuIE1hcmlubyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5TYW4gTWFyaW5vPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzItMS1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzItMS1hKSI+PHBhdGggZmlsbD0iIzMzOGFmMyIgZD0ibTAgMjU2IDI1Ni01Mi4zTDUxMiAyNTZ2MjU2SDB6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0wIDBoNTEydjI1NkgweiIgLz48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMzU3LjYgMTc2LjYgMjU2IDI3OC4zIDE1NC40IDE3Ni42YTEyMS43IDEyMS43IDAgMCAwLTIwLjggNjguM3YzMy40YzAgNTMuNiAzNC42IDk5LjIgODIuNyAxMTUuOGEzNyAzNyAwIDAgMCA0IDQwbDM2LjQtMjkuMiAzNi40IDI5LjJhMzcgMzcgMCAwIDAgMy45LTQwLjUgMTIyLjYgMTIyLjYgMCAwIDAgODEuNC0xMTUuM3YtMzMuNGMwLTI1LjMtNy42LTQ4LjctMjAuOC02OC4zeiIgLz48cGF0aCBmaWxsPSIjZmZkYTQ0IiBkPSJNMjU2IDM2Ny4zYy00OS4xIDAtODktNDAtODktODl2LTMzLjRhODkuMSA4OS4xIDAgMCAxIDE3OCAwdjMzLjRjMCA0OS0zOS45IDg5LTg5IDg5eiIgLz48cGF0aCBmaWxsPSIjMzM4YWYzIiBkPSJNMzExLjcgMjc4LjN2LTMzLjRhNTUuNyA1NS43IDAgMCAwLTExMS40IDB2MzMuNGw1NS43IDExeiIgLz48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMjAwLjMgMjc4LjNhNTUuNyA1NS43IDAgMCAwIDExMS40IDB6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0zMjIuOCAxNTUuOEEzMy40IDMzLjQgMCAwIDAgMjY3IDEzMXYtMTkuNmgxMS4yVjg5SDI2N1Y3OGgtMjJ2MTFoLTExLjJ2MjIuM0gyNDV2MTkuNmEzMy40IDMzLjQgMCAwIDAtNDQuNSA0OS44djE5LjZoMTExLjN2LTE5LjZjNi44LTYuMSAxMS0xNSAxMS0yNC45eiIgLz48L2c+PC9zdmc+)</span> | San Marino | 33,745 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2FvIFRvbWUgYW5kIFByaW5jaXBlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld2JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjotMC4xMjVlbTtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5O2hlaWdodDoxZW07d2lkdGg6MWVtOyI+PHRpdGxlPlNhbyBUb21lIGFuZCBQcmluY2lwZTwvdGl0bGU+PG1hc2sgaWQ9ImNvdW50cnlfY29kZV8yLTItYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2NvdW50cnlfY29kZV8yLTItYSkiPjxwYXRoIGZpbGw9IiM2ZGE1NDQiIGQ9Ik0wIDBoNTEydjE2N2wtNTIuNiA4My44TDUxMiAzNDV2MTY3SDBsNzItMjY0LjN6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0xMTQuOSAxNjYuOUg1MTJ2MTc4SDExNC45eiIgLz48cGF0aCBmaWxsPSIjZDgwMDI3IiBkPSJNMCAwdjUxMmwyNTYtMjU2eiIgLz48cGF0aCBmaWxsPSIjMzMzIiBkPSJtMzI1IDIxMS41IDExLjEgMzRIMzcybC0yOSAyMSAxMS4xIDM0LTI5LTIxLTI4LjkgMjEgMTEtMzQtMjguOC0yMUgzMTR6bTExMS40IDAgMTEgMzRoMzUuOGwtMjkgMjEgMTEuMSAzNC0yOS0yMS0yOC45IDIxIDExLjEtMzQtMjktMjFoMzUuOHoiIC8+PC9nPjwvc3ZnPg==)</span> | Sao Tome and Principe | 223,107 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2F1ZGkgQXJhYmlhIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld2JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjotMC4xMjVlbTtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5O2hlaWdodDoxZW07d2lkdGg6MWVtOyI+PHRpdGxlPlNhdWRpIEFyYWJpYTwvdGl0bGU+PG1hc2sgaWQ9ImNvdW50cnlfY29kZV8yLTMtYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2NvdW50cnlfY29kZV8yLTMtYSkiPjxwYXRoIGZpbGw9IiM0OTZlMmQiIGQ9Ik0wIDBoNTEydjUxMkgweiIgLz48ZyBmaWxsPSIjZWVlIj48cGF0aCBkPSJNMTQ0LjcgMzA2YzAgMTguNSAxNSAzMy41IDMzLjQgMzMuNWgxMDAuMmEyNy44IDI3LjggMCAwIDAgMjcuOCAyNy44aDMzLjRhMjcuOCAyNy44IDAgMCAwIDI3LjgtMjcuOFYzMDZ6bTIyNS40LTE2MS4zdjc4YzAgMTIuMi0xMCAyMi4yLTIyLjMgMjIuMnYzMy40YzMwLjcgMCA1NS43LTI1IDU1LjctNTUuN3YtNzcuOUgzNzB6bS0yMzkuMyA3OGMwIDEyLjItMTAgMjIuMi0yMi4zIDIyLjJ2MzMuNGMzMC43IDAgNTUuNy0yNSA1NS43LTU1Ljd2LTc3LjloLTMzLjR6IiAvPjxwYXRoIGQ9Ik0zMjAgMTQ0LjdoMzMuNHY3OEgzMjB6bS01MCA0NC41YTUuNiA1LjYgMCAwIDEtMTEuMiAwdi00NC41aC0zMy40djQ0LjVhNS42IDUuNiAwIDAgMS0xMS4xIDB2LTQ0LjVoLTMzLjR2NDQuNWEzOSAzOSAwIDAgMCAzOSAzOSAzOC43IDM4LjcgMCAwIDAgMjIuMi03IDM4LjcgMzguNyAwIDAgMCAyMi4yIDdjMS43IDAgMy40LS4xIDUtLjNhMjIuMyAyMi4zIDAgMCAxLTIxLjYgMTd2MzMuNGMzMC42IDAgNTUuNi0yNSA1NS42LTU1Ljd2LTc3LjlIMjcweiIgLz48cGF0aCBkPSJNMTgwLjkgMjQ0LjloNTB2MzMuNGgtNTB6IiAvPjwvZz48L2c+PC9zdmc+)</span> | Saudi Arabia | 35,950,396 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2VuZWdhbCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5TZW5lZ2FsPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzItNC1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzItNC1hKSI+PHBhdGggZmlsbD0iI2ZmZGE0NCIgZD0iTTE0NC44IDBoMjIyLjRsMzIgMjYwLTMyIDI1MkgxNDQuOGwtMzIuMS0yNTZ6IiAvPjxwYXRoIGZpbGw9IiM0OTZlMmQiIGQ9Ik0wIDBoMTQ0Ljh2NTEySDB6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0zNjcuMiAwSDUxMnY1MTJIMzY3LjJ6IiAvPjxwYXRoIGZpbGw9IiM0OTZlMmQiIGQ9Im0yNTYuMSAxNjcgMjIuMSA2OGg3MS41TDI5MiAyNzdsMjIgNjgtNTcuOC00Mi01Ny45IDQyIDIyLjEtNjgtNTcuOC00MkgyMzR6IiAvPjwvZz48L3N2Zz4=)</span> | Senegal | 16,876,720 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2VyYmlhIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld2JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjotMC4xMjVlbTtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5O2hlaWdodDoxZW07d2lkdGg6MWVtOyI+PHRpdGxlPlNlcmJpYTwvdGl0bGU+PG1hc2sgaWQ9ImNvdW50cnlfY29kZV8yLTUtYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2NvdW50cnlfY29kZV8yLTUtYSkiPjxwYXRoIGZpbGw9IiMwMDUyYjQiIGQ9Im0wIDE2NyAyNTMuOC0xOS4zTDUxMiAxNjd2MTc4bC0yNTQuOSAzMi4zTDAgMzQ1eiIgLz48cGF0aCBmaWxsPSIjZDgwMDI3IiBkPSJNMCAwaDUxMnYxNjdIMHoiIC8+PHBhdGggZmlsbD0iI2VlZSIgZD0iTTAgMzQ1aDUxMnYxNjdIMHoiIC8+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTY2LjIgMTQ0Ljd2MTI3LjdjMCA3Mi42IDk0LjkgOTUgOTQuOSA5NXM5NC45LTIyLjQgOTQuOS05NVYxNDQuN3oiIC8+PHBhdGggZmlsbD0iI2ZmZGE0NCIgZD0iTTEwNS40IDE2N2gxMTEuNHYtNDQuNmwtMjIuMyAxMS4yLTMzLjQtMzMuNC0zMy40IDMzLjQtMjIuMy0xMS4yem0xMjguMyAxMjMuMi03Mi4zLTcyLjRMODkgMjkwLjJsMjMuNyAyMy42IDQ4LjctNDguNyA0OC43IDQ4Ljd6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0yMzMuNyAyMjIuNkgyMDBhMjIuMSAyMi4xIDAgMCAwIDMtMTEuMSAyMi4zIDIyLjMgMCAwIDAtNDItMTAuNSAyMi4zIDIyLjMgMCAwIDAtNDEuOSAxMC41IDIyLjEgMjIuMSAwIDAgMCAzIDExLjFIODlhMjMgMjMgMCAwIDAgMjMgMjIuM2gtLjdjMCAxMi4zIDEwIDIyLjIgMjIuMyAyMi4yIDAgMTEgNy44IDIwIDE4LjEgMjEuOWwtMTcuNSAzOS42YTcyLjEgNzIuMSAwIDAgMCAyNy4yIDUuMyA3Mi4xIDcyLjEgMCAwIDAgMjcuMi01LjNMMTcxLjEgMjg5YzEwLjMtMiAxOC4xLTExIDE4LjEtMjEuOSAxMi4zIDAgMjIuMy0xMCAyMi4zLTIyLjJoLS44YTIzIDIzIDAgMCAwIDIzLTIyLjN6IiAvPjwvZz48L3N2Zz4=)</span> | Serbia | 6,834,326 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2V5Y2hlbGxlcyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5TZXljaGVsbGVzPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzItNi1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzItNi1hKSI+PHBhdGggZmlsbD0iIzAwNTJiNCIgZD0iTTAgMHYzMzJsMTUwLjktMTM4LjVMMjI1LjIgMHoiIC8+PHBhdGggZmlsbD0iI2ZmZGE0NCIgZD0iTTI3My4xIDI1My4zIDUxMiAwSDIyNS4yTDAgMzMydjgwLjJ6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik01MTIgMCAwIDQxMi4ydjUwLjRMMjc3LjkgMzkwIDUxMiAyNTZ6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0wIDQ2Mi42IDUxMiAyNTZ2MTMzLjVsLTIyMy45IDc4LjhMMCA0ODguNHoiIC8+PHBhdGggZmlsbD0iIzZkYTU0NCIgZD0ibTUxMiAzODkuNS01MTIgOTlWNTEyaDUxMnoiIC8+PC9nPjwvc3ZnPg==)</span> | Seychelles | 99,258 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2llcnJhIExlb25lIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld2JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjotMC4xMjVlbTtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5O2hlaWdodDoxZW07d2lkdGg6MWVtOyI+PHRpdGxlPlNpZXJyYSBMZW9uZTwvdGl0bGU+PG1hc2sgaWQ9ImNvdW50cnlfY29kZV8yLTctYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2NvdW50cnlfY29kZV8yLTctYSkiPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Im0wIDE2NyAyNTMuOC0xOS4zTDUxMiAxNjd2MTc4bC0yNTQuOSAzMi4zTDAgMzQ1eiIgLz48cGF0aCBmaWxsPSIjNmRhNTQ0IiBkPSJNMCAwaDUxMnYxNjdIMHoiIC8+PHBhdGggZmlsbD0iIzMzOGFmMyIgZD0iTTAgMzQ1aDUxMnYxNjdIMHoiIC8+PC9nPjwvc3ZnPg==)</span> | Sierra Leone | 8,420,641 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2luZ2Fwb3JlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld2JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjotMC4xMjVlbTtpbWFnZS1yZW5kZXJpbmc6b3B0aW1pemVRdWFsaXR5O2hlaWdodDoxZW07d2lkdGg6MWVtOyI+PHRpdGxlPlNpbmdhcG9yZTwvdGl0bGU+PG1hc2sgaWQ9ImNvdW50cnlfY29kZV8yLTgtYSI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiNmZmYiPjwvY2lyY2xlPjwvbWFzaz48ZyBtYXNrPSJ1cmwoI2NvdW50cnlfY29kZV8yLTgtYSkiPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Im0wIDI1NiAyNTcuNy01MUw1MTIgMjU2djI1NkgweiIgLz48cGF0aCBmaWxsPSIjZDgwMDI3IiBkPSJNMCAwaDUxMnYyNTZIMHoiIC8+PGcgZmlsbD0iI2VlZSI+PHBhdGggZD0iTTE1NS44IDEzMy42QTc4IDc4IDAgMCAxIDIxNyA1Ny41YTc4LjIgNzguMiAwIDAgMC0xNi43LTEuOCA3OCA3OCAwIDEgMCAxNi43IDE1NCA3OCA3OCAwIDAgMS02MS4yLTc2LjF6TTI1NiA2MS4ybDUuNSAxN2gxOGwtMTQuNiAxMC41IDUuNiAxN0wyNTYgOTUuMmwtMTQuNSAxMC41IDUuNi0xNy0xNC41LTEwLjVoMTcuOXoiIC8+PHBhdGggZD0ibTIxMi42IDk0LjYgNS42IDE3SDIzNmwtMTQuNCAxMC41IDUuNSAxNy0xNC41LTEwLjUtMTQuNCAxMC41IDUuNS0xNy0xNC41LTEwLjVoMTcuOXptODYuOCAwIDUuNSAxN2gxNy45bC0xNC41IDEwLjUgNS41IDE3LTE0LjQtMTAuNS0xNC41IDEwLjUgNS41LTE3LTE0LjQtMTAuNWgxNy44em0tMTYuNyA1MC4xIDUuNSAxN2gxNy45bC0xNC41IDEwLjUgNS41IDE3LTE0LjQtMTAuNS0xNC41IDEwLjUgNS41LTE3LTE0LjQtMTAuNWgxNy45em0tNTMuNCAwIDUuNSAxN2gxOGwtMTQuNSAxMC41IDUuNSAxNy0xNC41LTEwLjUtMTQuNCAxMC41IDUuNS0xNy0xNC41LTEwLjVoMTcuOXoiIC8+PC9nPjwvZz48L3N2Zz4=)</span> | Singapore | 5,453,566 |
+| <span style="white-space:nowrap;">![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iU2ludCBNYWFydGVuIChEdXRjaCBwYXJ0KSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5TaW50IE1hYXJ0ZW4gKER1dGNoIHBhcnQpPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzItOS1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzItOS1hKSI+PHBhdGggZmlsbD0iI2Q4MDAyNyIgZD0iTTAgMGg1MTJ2MjU2bC0yNjUgNDUuMnoiIC8+PHBhdGggZmlsbD0iIzAwNTJiNCIgZD0iTTIxMCAyNTZoMzAydjI1NkgweiIgLz48cGF0aCBmaWxsPSIjZWVlIiBkPSJNMCAwdjUxMmwyNTYtMjU2eiIgLz48ZyBmaWxsPSIjZmZkYTQ0Ij48cGF0aCBkPSJNMjggMjU2YTczLjEgNzMuMSAwIDAgMC0uMiA1LjYgNzIuMyA3Mi4zIDAgMSAwIDE0NC41LTUuNnoiIC8+PGNpcmNsZSBjeD0iMTAwLjIiIGN5PSIyMDAuMyIgcj0iMjIuMyI+PC9jaXJjbGU+PC9nPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik01MCAxOTQuOFYyNjdjMCAzOC40IDUwLjIgNTAgNTAuMiA1MHM1MC0xMS42IDUwLTUwdi03Mi4zaC0xMDB6IiAvPjxwYXRoIGZpbGw9IiMzMzhhZjMiIGQ9Ik0xMDAuMiAyOTRjLTkuMy0zLjQtMjgtMTItMjgtMjd2LTUwSDEyOHY1MGMwIDE1LTE4LjYgMjMuNi0yNy44IDI2Ljl6IiAvPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Ik0xMTEuMyAyNDQuOXYtMTEuMmwtMTEuMS01LjUtMTEuMiA1LjVWMjQ1bC01LjUgNS41djIyLjNoMzMuNHYtMjIuM3oiIC8+PC9nPjwvc3ZnPg==)</span> | Sint Maarten (Dutch part) | 42,846 |
 
 
 Here's another example (again using [countrypops](data.countrypops.md#great_tables.data.countrypops)) where we generate a table providing populations every five years for the Benelux countries (`"BEL"`, `"NLD"`, and `"LUX"`). After some filtering and a pivot, the [fmt_flag()](GT.fmt_flag.md#great_tables.GT.fmt_flag) method is used to obtain flag icons from 3-letter country codes present in the `country_code_3` column.
@@ -186,72 +188,72 @@ countrypops_mini = (
 
 
 <style>
-#ectzgycykj table {
+#gyltvrkiow table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#ectzgycykj thead, tbody, tfoot, tr, td, th { border-style: none; }
+#gyltvrkiow thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#ectzgycykj p { margin: 0; padding: 0; }
- #ectzgycykj .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #ectzgycykj .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #ectzgycykj .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #ectzgycykj .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #ectzgycykj .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #ectzgycykj .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #ectzgycykj .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #ectzgycykj .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #ectzgycykj .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #ectzgycykj .gt_column_spanner_outer:first-child { padding-left: 0; }
- #ectzgycykj .gt_column_spanner_outer:last-child { padding-right: 0; }
- #ectzgycykj .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #ectzgycykj .gt_spanner_row { border-bottom-style: hidden; }
- #ectzgycykj .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #ectzgycykj .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #ectzgycykj .gt_from_md> :first-child { margin-top: 0; }
- #ectzgycykj .gt_from_md> :last-child { margin-bottom: 0; }
- #ectzgycykj .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #ectzgycykj .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #ectzgycykj .gt_indent_1 { text-indent: 5px; }
- #ectzgycykj .gt_indent_2 { text-indent: calc(5px * 2); }
- #ectzgycykj .gt_indent_3 { text-indent: calc(5px * 3); }
- #ectzgycykj .gt_indent_4 { text-indent: calc(5px * 4); }
- #ectzgycykj .gt_indent_5 { text-indent: calc(5px * 5); }
- #ectzgycykj .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #ectzgycykj .gt_row_group_first td { border-top-width: 2px; }
- #ectzgycykj .gt_row_group_first th { border-top-width: 2px; }
- #ectzgycykj .gt_striped { color: #333333; background-color: #F4F4F4; }
- #ectzgycykj .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #ectzgycykj .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #ectzgycykj .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #ectzgycykj .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #ectzgycykj .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #ectzgycykj .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #ectzgycykj .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #ectzgycykj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #ectzgycykj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #ectzgycykj .gt_left { text-align: left; }
- #ectzgycykj .gt_center { text-align: center; }
- #ectzgycykj .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #ectzgycykj .gt_font_normal { font-weight: normal; }
- #ectzgycykj .gt_font_bold { font-weight: bold; }
- #ectzgycykj .gt_font_italic { font-style: italic; }
- #ectzgycykj .gt_super { font-size: 65%; }
- #ectzgycykj .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #ectzgycykj .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #ectzgycykj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #ectzgycykj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #ectzgycykj .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #ectzgycykj .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#gyltvrkiow p { margin: 0; padding: 0; }
+ #gyltvrkiow .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #gyltvrkiow .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #gyltvrkiow .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #gyltvrkiow .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #gyltvrkiow .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #gyltvrkiow .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #gyltvrkiow .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #gyltvrkiow .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #gyltvrkiow .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #gyltvrkiow .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #gyltvrkiow .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #gyltvrkiow .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #gyltvrkiow .gt_spanner_row { border-bottom-style: hidden; }
+ #gyltvrkiow .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #gyltvrkiow .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #gyltvrkiow .gt_from_md> :first-child { margin-top: 0; }
+ #gyltvrkiow .gt_from_md> :last-child { margin-bottom: 0; }
+ #gyltvrkiow .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #gyltvrkiow .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #gyltvrkiow .gt_indent_1 { text-indent: 5px; }
+ #gyltvrkiow .gt_indent_2 { text-indent: calc(5px * 2); }
+ #gyltvrkiow .gt_indent_3 { text-indent: calc(5px * 3); }
+ #gyltvrkiow .gt_indent_4 { text-indent: calc(5px * 4); }
+ #gyltvrkiow .gt_indent_5 { text-indent: calc(5px * 5); }
+ #gyltvrkiow .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #gyltvrkiow .gt_row_group_first td { border-top-width: 2px; }
+ #gyltvrkiow .gt_row_group_first th { border-top-width: 2px; }
+ #gyltvrkiow .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #gyltvrkiow .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #gyltvrkiow .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #gyltvrkiow .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #gyltvrkiow .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #gyltvrkiow .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #gyltvrkiow .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #gyltvrkiow .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #gyltvrkiow .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #gyltvrkiow .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #gyltvrkiow .gt_left { text-align: left; }
+ #gyltvrkiow .gt_center { text-align: center; }
+ #gyltvrkiow .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #gyltvrkiow .gt_font_normal { font-weight: normal; }
+ #gyltvrkiow .gt_font_bold { font-weight: bold; }
+ #gyltvrkiow .gt_font_italic { font-style: italic; }
+ #gyltvrkiow .gt_super { font-size: 65%; }
+ #gyltvrkiow .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #gyltvrkiow .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #gyltvrkiow .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #gyltvrkiow .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #gyltvrkiow .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #gyltvrkiow .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="9" class="gt_heading gt_title gt_font_normal">Populations of the Benelux Countries</th>
+<th colspan="9" id="title" class="gt_heading gt_title gt_font_normal">Populations of the Benelux Countries</th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" id="country_code_3" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -270,37 +272,37 @@ countrypops_mini = (
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+QmVsZ2l1bTwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTAgMGgxNjdsMzguMiAyNTIuNkwxNjcgNTEySDB6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0zNDUgMGgxNjd2NTEySDM0NWwtMzYuNy0yNTZ6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0xNjcgMGgxNzh2NTEySDE2N3oiIC8+PC9nPjwvc3ZnPg==" /></span></td>
-<td class="gt_row gt_left">Belgium</td>
-<td class="gt_row gt_right">9,153,489</td>
-<td class="gt_row gt_right">9,655,549</td>
-<td class="gt_row gt_right">9,859,242</td>
-<td class="gt_row gt_right">9,967,379</td>
-<td class="gt_row gt_right">10,251,250</td>
-<td class="gt_row gt_right">10,895,586</td>
-<td class="gt_row gt_right">11,538,604</td>
+<td class="gt_row gt_left" headers="country_code_3"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iQmVsZ2l1bSIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5CZWxnaXVtPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzMtMC1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzMtMC1hKSI+PHBhdGggZmlsbD0iIzMzMyIgZD0iTTAgMGgxNjdsMzguMiAyNTIuNkwxNjcgNTEySDB6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0zNDUgMGgxNjd2NTEySDM0NWwtMzYuNy0yNTZ6IiAvPjxwYXRoIGZpbGw9IiNmZmRhNDQiIGQ9Ik0xNjcgMGgxNzh2NTEySDE2N3oiIC8+PC9nPjwvc3ZnPg==" /></span></td>
+<td class="gt_row gt_left" headers="country_name">Belgium</td>
+<td class="gt_row gt_right" headers="Year 1960">9,153,489</td>
+<td class="gt_row gt_right" headers="Year 1970">9,655,549</td>
+<td class="gt_row gt_right" headers="Year 1980">9,859,242</td>
+<td class="gt_row gt_right" headers="Year 1990">9,967,379</td>
+<td class="gt_row gt_right" headers="Year 2000">10,251,250</td>
+<td class="gt_row gt_right" headers="Year 2010">10,895,586</td>
+<td class="gt_row gt_right" headers="Year 2020">11,538,604</td>
 </tr>
 <tr>
-<td class="gt_row gt_left"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+THV4ZW1ib3VyZzwvdGl0bGU+PG1hc2sgaWQ9ImEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNhKSI+PHBhdGggZmlsbD0iI2VlZSIgZD0ibTAgMTY3IDI1My44LTE5LjNMNTEyIDE2N3YxNzhsLTI1NC45IDMyLjNMMCAzNDV6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0wIDBoNTEydjE2N0gweiIgLz48cGF0aCBmaWxsPSIjMzM4YWYzIiBkPSJNMCAzNDVoNTEydjE2N0gweiIgLz48L2c+PC9zdmc+" /></span></td>
-<td class="gt_row gt_left">Luxembourg</td>
-<td class="gt_row gt_right">313,970</td>
-<td class="gt_row gt_right">339,171</td>
-<td class="gt_row gt_right">364,150</td>
-<td class="gt_row gt_right">381,850</td>
-<td class="gt_row gt_right">436,300</td>
-<td class="gt_row gt_right">506,953</td>
-<td class="gt_row gt_right">630,419</td>
+<td class="gt_row gt_left" headers="country_code_3"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTHV4ZW1ib3VyZyIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHZpZXdib3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0idmVydGljYWwtYWxpZ246LTAuMTI1ZW07aW1hZ2UtcmVuZGVyaW5nOm9wdGltaXplUXVhbGl0eTtoZWlnaHQ6MWVtO3dpZHRoOjFlbTsiPjx0aXRsZT5MdXhlbWJvdXJnPC90aXRsZT48bWFzayBpZD0iY291bnRyeV9jb2RlXzMtMS1hIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjY291bnRyeV9jb2RlXzMtMS1hKSI+PHBhdGggZmlsbD0iI2VlZSIgZD0ibTAgMTY3IDI1My44LTE5LjNMNTEyIDE2N3YxNzhsLTI1NC45IDMyLjNMMCAzNDV6IiAvPjxwYXRoIGZpbGw9IiNkODAwMjciIGQ9Ik0wIDBoNTEydjE2N0gweiIgLz48cGF0aCBmaWxsPSIjMzM4YWYzIiBkPSJNMCAzNDVoNTEydjE2N0gweiIgLz48L2c+PC9zdmc+" /></span></td>
+<td class="gt_row gt_left" headers="country_name">Luxembourg</td>
+<td class="gt_row gt_right" headers="Year 1960">313,970</td>
+<td class="gt_row gt_right" headers="Year 1970">339,171</td>
+<td class="gt_row gt_right" headers="Year 1980">364,150</td>
+<td class="gt_row gt_right" headers="Year 1990">381,850</td>
+<td class="gt_row gt_right" headers="Year 2000">436,300</td>
+<td class="gt_row gt_right" headers="Year 2010">506,953</td>
+<td class="gt_row gt_right" headers="Year 2020">630,419</td>
 </tr>
 <tr>
-<td class="gt_row gt_left"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGFyaWEtaGlkZGVuPSJ0cnVlIiByb2xlPSJpbWciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+TmV0aGVybGFuZHM8L3RpdGxlPjxtYXNrIGlkPSJhIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2ZmZiI+PC9jaXJjbGU+PC9tYXNrPjxnIG1hc2s9InVybCgjYSkiPjxwYXRoIGZpbGw9IiNlZWUiIGQ9Im0wIDE2NyAyNTMuOC0xOS4zTDUxMiAxNjd2MTc4bC0yNTQuOSAzMi4zTDAgMzQ1eiIgLz48cGF0aCBmaWxsPSIjYTIwMDFkIiBkPSJNMCAwaDUxMnYxNjdIMHoiIC8+PHBhdGggZmlsbD0iIzAwNTJiNCIgZD0iTTAgMzQ1aDUxMnYxNjdIMHoiIC8+PC9nPjwvc3ZnPg==" /></span></td>
-<td class="gt_row gt_left">Netherlands</td>
-<td class="gt_row gt_right">11,486,631</td>
-<td class="gt_row gt_right">13,038,526</td>
-<td class="gt_row gt_right">14,149,800</td>
-<td class="gt_row gt_right">14,951,510</td>
-<td class="gt_row gt_right">15,925,513</td>
-<td class="gt_row gt_right">16,615,394</td>
-<td class="gt_row gt_right">17,441,500</td>
+<td class="gt_row gt_left" headers="country_code_3"><span style="white-space:nowrap;"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTmV0aGVybGFuZHMiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Ym94PSIwIDAgNTEyIDUxMiIgc3R5bGU9InZlcnRpY2FsLWFsaWduOi0wLjEyNWVtO2ltYWdlLXJlbmRlcmluZzpvcHRpbWl6ZVF1YWxpdHk7aGVpZ2h0OjFlbTt3aWR0aDoxZW07Ij48dGl0bGU+TmV0aGVybGFuZHM8L3RpdGxlPjxtYXNrIGlkPSJjb3VudHJ5X2NvZGVfMy0yLWEiPjxjaXJjbGUgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2IiBmaWxsPSIjZmZmIj48L2NpcmNsZT48L21hc2s+PGcgbWFzaz0idXJsKCNjb3VudHJ5X2NvZGVfMy0yLWEpIj48cGF0aCBmaWxsPSIjZWVlIiBkPSJtMCAxNjcgMjUzLjgtMTkuM0w1MTIgMTY3djE3OGwtMjU0LjkgMzIuM0wwIDM0NXoiIC8+PHBhdGggZmlsbD0iI2EyMDAxZCIgZD0iTTAgMGg1MTJ2MTY3SDB6IiAvPjxwYXRoIGZpbGw9IiMwMDUyYjQiIGQ9Ik0wIDM0NWg1MTJ2MTY3SDB6IiAvPjwvZz48L3N2Zz4=" /></span></td>
+<td class="gt_row gt_left" headers="country_name">Netherlands</td>
+<td class="gt_row gt_right" headers="Year 1960">11,486,631</td>
+<td class="gt_row gt_right" headers="Year 1970">13,038,526</td>
+<td class="gt_row gt_right" headers="Year 1980">14,149,800</td>
+<td class="gt_row gt_right" headers="Year 1990">14,951,510</td>
+<td class="gt_row gt_right" headers="Year 2000">15,925,513</td>
+<td class="gt_row gt_right" headers="Year 2010">16,615,394</td>
+<td class="gt_row gt_right" headers="Year 2020">17,441,500</td>
 </tr>
 </tbody>
 </table>

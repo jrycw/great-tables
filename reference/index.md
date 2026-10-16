@@ -69,7 +69,7 @@ Modify the table output options.
 ## Formatting column data
 
 
-Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the <a href="../reference/GT.fmt.html#great_tables.GT.fmt" class="gdls-link"><code>fmt()</code></a> method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and [data_color()](GT.data_color.md#great_tables.GT.data_color) provides a lot of power for colorizing body cells based on their data values.
+Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the <a href="../reference/GT.fmt.html#great_tables.GT.fmt" class="gdls-link"><code>fmt()</code></a> method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and [data_color()](GT.data_color.md#great_tables.GT.data_color) provides a lot of power for colorizing body cells based on their data values. The [col_numeric()](col_numeric.md#great_tables.col_numeric), [col_bin()](col_bin.md#great_tables.col_bin), and [col_factor()](col_factor.md#great_tables.col_factor) helpers create color-mapping functions for use with its `fn=` argument.
 
 
 [GT.fmt_number()](GT.fmt_number.md#great_tables.GT.fmt_number)  
@@ -174,6 +174,15 @@ Substitute targeted values in the table body.
 [GT.data_color()](GT.data_color.md#great_tables.GT.data_color)  
 Perform data cell colorization.
 
+[col_numeric()](col_numeric.md#great_tables.col_numeric)  
+Create a color-mapping function for continuous numeric values.
+
+[col_bin()](col_bin.md#great_tables.col_bin)  
+Create a color-mapping function for numeric values cut into bins.
+
+[col_factor()](col_factor.md#great_tables.col_factor)  
+Create a color-mapping function for categorical values.
+
 
 ## Text transformation
 
@@ -202,6 +211,9 @@ The `cols_*()` methods allow for modifications that act on entire columns. This 
 
 [GT.cols_align()](GT.cols_align.md#great_tables.GT.cols_align)  
 Set the alignment of one or more columns.
+
+[GT.cols_align_decimal()](GT.cols_align_decimal.md#great_tables.GT.cols_align_decimal)  
+Align all numeric values in a column along the decimal mark.
 
 [GT.cols_width()](GT.cols_width.md#great_tables.GT.cols_width)  
 Set the widths of columns.
@@ -502,7 +514,7 @@ Format image paths to generate images in cells.
 ## Built-in Datasets
 
 
-The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The [load_dataset()](load_dataset.md#great_tables.load_dataset) function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
+The Great Tables package is equipped with 16 datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The [load_dataset()](load_dataset.md#great_tables.load_dataset) function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
 
 
 [load_dataset()](load_dataset.md#great_tables.load_dataset)  

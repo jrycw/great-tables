@@ -79,65 +79,65 @@ gtcars_mini = gtcars[colnames].head(10)
 
 
 <style>
-#irimrbggny table {
+#nocpybxafz table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#irimrbggny thead, tbody, tfoot, tr, td, th { border-style: none; }
+#nocpybxafz thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#irimrbggny p { margin: 0; padding: 0; }
- #irimrbggny .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #irimrbggny .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #irimrbggny .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #irimrbggny .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #irimrbggny .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #irimrbggny .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #irimrbggny .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #irimrbggny .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #irimrbggny .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #irimrbggny .gt_column_spanner_outer:first-child { padding-left: 0; }
- #irimrbggny .gt_column_spanner_outer:last-child { padding-right: 0; }
- #irimrbggny .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #irimrbggny .gt_spanner_row { border-bottom-style: hidden; }
- #irimrbggny .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #irimrbggny .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #irimrbggny .gt_from_md> :first-child { margin-top: 0; }
- #irimrbggny .gt_from_md> :last-child { margin-bottom: 0; }
- #irimrbggny .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #irimrbggny .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #irimrbggny .gt_indent_1 { text-indent: 5px; }
- #irimrbggny .gt_indent_2 { text-indent: calc(5px * 2); }
- #irimrbggny .gt_indent_3 { text-indent: calc(5px * 3); }
- #irimrbggny .gt_indent_4 { text-indent: calc(5px * 4); }
- #irimrbggny .gt_indent_5 { text-indent: calc(5px * 5); }
- #irimrbggny .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #irimrbggny .gt_row_group_first td { border-top-width: 2px; }
- #irimrbggny .gt_row_group_first th { border-top-width: 2px; }
- #irimrbggny .gt_striped { color: #333333; background-color: #F4F4F4; }
- #irimrbggny .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #irimrbggny .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #irimrbggny .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #irimrbggny .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #irimrbggny .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #irimrbggny .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #irimrbggny .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #irimrbggny .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #irimrbggny .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #irimrbggny .gt_left { text-align: left; }
- #irimrbggny .gt_center { text-align: center; }
- #irimrbggny .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #irimrbggny .gt_font_normal { font-weight: normal; }
- #irimrbggny .gt_font_bold { font-weight: bold; }
- #irimrbggny .gt_font_italic { font-style: italic; }
- #irimrbggny .gt_super { font-size: 65%; }
- #irimrbggny .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #irimrbggny .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #irimrbggny .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #irimrbggny .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #irimrbggny .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #irimrbggny .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#nocpybxafz p { margin: 0; padding: 0; }
+ #nocpybxafz .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #nocpybxafz .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #nocpybxafz .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #nocpybxafz .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #nocpybxafz .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #nocpybxafz .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #nocpybxafz .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #nocpybxafz .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #nocpybxafz .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #nocpybxafz .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #nocpybxafz .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #nocpybxafz .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #nocpybxafz .gt_spanner_row { border-bottom-style: hidden; }
+ #nocpybxafz .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #nocpybxafz .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #nocpybxafz .gt_from_md> :first-child { margin-top: 0; }
+ #nocpybxafz .gt_from_md> :last-child { margin-bottom: 0; }
+ #nocpybxafz .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #nocpybxafz .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #nocpybxafz .gt_indent_1 { text-indent: 5px; }
+ #nocpybxafz .gt_indent_2 { text-indent: calc(5px * 2); }
+ #nocpybxafz .gt_indent_3 { text-indent: calc(5px * 3); }
+ #nocpybxafz .gt_indent_4 { text-indent: calc(5px * 4); }
+ #nocpybxafz .gt_indent_5 { text-indent: calc(5px * 5); }
+ #nocpybxafz .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #nocpybxafz .gt_row_group_first td { border-top-width: 2px; }
+ #nocpybxafz .gt_row_group_first th { border-top-width: 2px; }
+ #nocpybxafz .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #nocpybxafz .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #nocpybxafz .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #nocpybxafz .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #nocpybxafz .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #nocpybxafz .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #nocpybxafz .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #nocpybxafz .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #nocpybxafz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #nocpybxafz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #nocpybxafz .gt_left { text-align: left; }
+ #nocpybxafz .gt_center { text-align: center; }
+ #nocpybxafz .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #nocpybxafz .gt_font_normal { font-weight: normal; }
+ #nocpybxafz .gt_font_bold { font-weight: bold; }
+ #nocpybxafz .gt_font_italic { font-style: italic; }
+ #nocpybxafz .gt_super { font-size: 65%; }
+ #nocpybxafz .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #nocpybxafz .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #nocpybxafz .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #nocpybxafz .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #nocpybxafz .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #nocpybxafz .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -158,94 +158,94 @@ gtcars_mini = gtcars[colnames].head(10)
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">GT</td>
-<td class="gt_row gt_right">647.0</td>
-<td class="gt_row gt_right">6250.0</td>
-<td class="gt_row gt_right">550.0</td>
-<td class="gt_row gt_right">5900.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">18.0</td>
+<td class="gt_row gt_left" headers="model">GT</td>
+<td class="gt_row gt_right" headers="performance hp">647.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">6250.0</td>
+<td class="gt_row gt_right" headers="performance trq">550.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">5900.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">18.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Speciale</td>
-<td class="gt_row gt_right">597.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Speciale</td>
+<td class="gt_row gt_right" headers="performance hp">597.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Spider</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Spider</td>
+<td class="gt_row gt_right" headers="performance hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Italia</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Italia</td>
+<td class="gt_row gt_right" headers="performance hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">488 GTB</td>
-<td class="gt_row gt_right">661.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">561.0</td>
-<td class="gt_row gt_right">3000.0</td>
-<td class="gt_row gt_right">15.0</td>
-<td class="gt_row gt_right">22.0</td>
+<td class="gt_row gt_left" headers="model">488 GTB</td>
+<td class="gt_row gt_right" headers="performance hp">661.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq">561.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">3000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">15.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">22.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">553.0</td>
-<td class="gt_row gt_right">7500.0</td>
-<td class="gt_row gt_right">557.0</td>
-<td class="gt_row gt_right">4750.0</td>
-<td class="gt_row gt_right">16.0</td>
-<td class="gt_row gt_right">23.0</td>
+<td class="gt_row gt_left" headers="model">California</td>
+<td class="gt_row gt_right" headers="performance hp">553.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">7500.0</td>
+<td class="gt_row gt_right" headers="performance trq">557.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">4750.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">16.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">23.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">GTC4Lusso</td>
-<td class="gt_row gt_right">680.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">514.0</td>
-<td class="gt_row gt_right">5750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">GTC4Lusso</td>
+<td class="gt_row gt_right" headers="performance hp">680.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq">514.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">5750.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">FF</td>
-<td class="gt_row gt_right">652.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">504.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">FF</td>
+<td class="gt_row gt_right" headers="performance hp">652.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq">504.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">F12Berlinetta</td>
-<td class="gt_row gt_right">731.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">509.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">F12Berlinetta</td>
+<td class="gt_row gt_right" headers="performance hp">731.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq">509.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">LaFerrari</td>
-<td class="gt_row gt_right">949.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">664.0</td>
-<td class="gt_row gt_right">6750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">LaFerrari</td>
+<td class="gt_row gt_right" headers="performance hp">949.0</td>
+<td class="gt_row gt_right" headers="performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq">664.0</td>
+<td class="gt_row gt_right" headers="performance trq_rpm">6750.0</td>
+<td class="gt_row gt_right" headers="performance mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="performance mpg_h">16.0</td>
 </tr>
 </tbody>
 </table>
@@ -278,65 +278,65 @@ One cool feature of [tab_spanner()](GT.tab_spanner.md#great_tables.GT.tab_spanne
 
 
 <style>
-#tprrkjhxic table {
+#kecijziyjm table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#tprrkjhxic thead, tbody, tfoot, tr, td, th { border-style: none; }
+#kecijziyjm thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#tprrkjhxic p { margin: 0; padding: 0; }
- #tprrkjhxic .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #tprrkjhxic .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #tprrkjhxic .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #tprrkjhxic .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #tprrkjhxic .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #tprrkjhxic .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #tprrkjhxic .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #tprrkjhxic .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #tprrkjhxic .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #tprrkjhxic .gt_column_spanner_outer:first-child { padding-left: 0; }
- #tprrkjhxic .gt_column_spanner_outer:last-child { padding-right: 0; }
- #tprrkjhxic .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #tprrkjhxic .gt_spanner_row { border-bottom-style: hidden; }
- #tprrkjhxic .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #tprrkjhxic .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #tprrkjhxic .gt_from_md> :first-child { margin-top: 0; }
- #tprrkjhxic .gt_from_md> :last-child { margin-bottom: 0; }
- #tprrkjhxic .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #tprrkjhxic .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #tprrkjhxic .gt_indent_1 { text-indent: 5px; }
- #tprrkjhxic .gt_indent_2 { text-indent: calc(5px * 2); }
- #tprrkjhxic .gt_indent_3 { text-indent: calc(5px * 3); }
- #tprrkjhxic .gt_indent_4 { text-indent: calc(5px * 4); }
- #tprrkjhxic .gt_indent_5 { text-indent: calc(5px * 5); }
- #tprrkjhxic .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #tprrkjhxic .gt_row_group_first td { border-top-width: 2px; }
- #tprrkjhxic .gt_row_group_first th { border-top-width: 2px; }
- #tprrkjhxic .gt_striped { color: #333333; background-color: #F4F4F4; }
- #tprrkjhxic .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #tprrkjhxic .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #tprrkjhxic .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #tprrkjhxic .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #tprrkjhxic .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #tprrkjhxic .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #tprrkjhxic .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #tprrkjhxic .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #tprrkjhxic .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #tprrkjhxic .gt_left { text-align: left; }
- #tprrkjhxic .gt_center { text-align: center; }
- #tprrkjhxic .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #tprrkjhxic .gt_font_normal { font-weight: normal; }
- #tprrkjhxic .gt_font_bold { font-weight: bold; }
- #tprrkjhxic .gt_font_italic { font-style: italic; }
- #tprrkjhxic .gt_super { font-size: 65%; }
- #tprrkjhxic .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #tprrkjhxic .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #tprrkjhxic .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #tprrkjhxic .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #tprrkjhxic .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #tprrkjhxic .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#kecijziyjm p { margin: 0; padding: 0; }
+ #kecijziyjm .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #kecijziyjm .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #kecijziyjm .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #kecijziyjm .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #kecijziyjm .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #kecijziyjm .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #kecijziyjm .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #kecijziyjm .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #kecijziyjm .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #kecijziyjm .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #kecijziyjm .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #kecijziyjm .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #kecijziyjm .gt_spanner_row { border-bottom-style: hidden; }
+ #kecijziyjm .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #kecijziyjm .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #kecijziyjm .gt_from_md> :first-child { margin-top: 0; }
+ #kecijziyjm .gt_from_md> :last-child { margin-bottom: 0; }
+ #kecijziyjm .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #kecijziyjm .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #kecijziyjm .gt_indent_1 { text-indent: 5px; }
+ #kecijziyjm .gt_indent_2 { text-indent: calc(5px * 2); }
+ #kecijziyjm .gt_indent_3 { text-indent: calc(5px * 3); }
+ #kecijziyjm .gt_indent_4 { text-indent: calc(5px * 4); }
+ #kecijziyjm .gt_indent_5 { text-indent: calc(5px * 5); }
+ #kecijziyjm .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #kecijziyjm .gt_row_group_first td { border-top-width: 2px; }
+ #kecijziyjm .gt_row_group_first th { border-top-width: 2px; }
+ #kecijziyjm .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #kecijziyjm .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #kecijziyjm .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #kecijziyjm .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #kecijziyjm .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #kecijziyjm .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #kecijziyjm .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #kecijziyjm .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #kecijziyjm .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #kecijziyjm .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #kecijziyjm .gt_left { text-align: left; }
+ #kecijziyjm .gt_center { text-align: center; }
+ #kecijziyjm .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #kecijziyjm .gt_font_normal { font-weight: normal; }
+ #kecijziyjm .gt_font_bold { font-weight: bold; }
+ #kecijziyjm .gt_font_italic { font-style: italic; }
+ #kecijziyjm .gt_super { font-size: 65%; }
+ #kecijziyjm .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #kecijziyjm .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #kecijziyjm .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #kecijziyjm .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #kecijziyjm .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #kecijziyjm .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -344,12 +344,12 @@ One cool feature of [tab_spanner()](GT.tab_spanner.md#great_tables.GT.tab_spanne
 <thead>
 <tr class="gt_col_headings gt_spanner_row">
 <th class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="col"><span> </span></th>
-<th colspan="6" class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="colgroup">performance</th>
+<th colspan="6" id="performance" class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="colgroup">performance</th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" id="model" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">model</th>
-<th colspan="2" id="hp" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">hp</th>
-<th colspan="2" id="trq" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">trq</th>
+<th colspan="2" id="hp-2" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">hp</th>
+<th colspan="2" id="trq-2" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">trq</th>
 <th colspan="2" id="mpg" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">mpg</th>
 </tr>
 <tr class="gt_col_headings">
@@ -363,94 +363,94 @@ One cool feature of [tab_spanner()](GT.tab_spanner.md#great_tables.GT.tab_spanne
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">GT</td>
-<td class="gt_row gt_right">647.0</td>
-<td class="gt_row gt_right">6250.0</td>
-<td class="gt_row gt_right">550.0</td>
-<td class="gt_row gt_right">5900.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">18.0</td>
+<td class="gt_row gt_left" headers="model">GT</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">647.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">6250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">550.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">5900.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">18.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Speciale</td>
-<td class="gt_row gt_right">597.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Speciale</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">597.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Spider</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Spider</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Italia</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Italia</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">488 GTB</td>
-<td class="gt_row gt_right">661.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">561.0</td>
-<td class="gt_row gt_right">3000.0</td>
-<td class="gt_row gt_right">15.0</td>
-<td class="gt_row gt_right">22.0</td>
+<td class="gt_row gt_left" headers="model">488 GTB</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">661.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">561.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">3000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">15.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">22.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">553.0</td>
-<td class="gt_row gt_right">7500.0</td>
-<td class="gt_row gt_right">557.0</td>
-<td class="gt_row gt_right">4750.0</td>
-<td class="gt_row gt_right">16.0</td>
-<td class="gt_row gt_right">23.0</td>
+<td class="gt_row gt_left" headers="model">California</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">553.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">7500.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">557.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">4750.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">16.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">23.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">GTC4Lusso</td>
-<td class="gt_row gt_right">680.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">514.0</td>
-<td class="gt_row gt_right">5750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">GTC4Lusso</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">680.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">514.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">5750.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">FF</td>
-<td class="gt_row gt_right">652.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">504.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">FF</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">652.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">504.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">F12Berlinetta</td>
-<td class="gt_row gt_right">731.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">509.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">F12Berlinetta</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">731.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">509.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">LaFerrari</td>
-<td class="gt_row gt_right">949.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">664.0</td>
-<td class="gt_row gt_right">6750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">LaFerrari</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">949.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">664.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6750.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="performance mpg mpg_h">16.0</td>
 </tr>
 </tbody>
 </table>
@@ -480,65 +480,65 @@ Did you notice that the spanners stacked automatically? What if you want granula
 
 
 <style>
-#akhutdhbua table {
+#fzhbsmpynu table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#akhutdhbua thead, tbody, tfoot, tr, td, th { border-style: none; }
+#fzhbsmpynu thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#akhutdhbua p { margin: 0; padding: 0; }
- #akhutdhbua .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #akhutdhbua .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #akhutdhbua .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #akhutdhbua .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #akhutdhbua .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #akhutdhbua .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #akhutdhbua .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #akhutdhbua .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #akhutdhbua .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #akhutdhbua .gt_column_spanner_outer:first-child { padding-left: 0; }
- #akhutdhbua .gt_column_spanner_outer:last-child { padding-right: 0; }
- #akhutdhbua .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #akhutdhbua .gt_spanner_row { border-bottom-style: hidden; }
- #akhutdhbua .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #akhutdhbua .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #akhutdhbua .gt_from_md> :first-child { margin-top: 0; }
- #akhutdhbua .gt_from_md> :last-child { margin-bottom: 0; }
- #akhutdhbua .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #akhutdhbua .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #akhutdhbua .gt_indent_1 { text-indent: 5px; }
- #akhutdhbua .gt_indent_2 { text-indent: calc(5px * 2); }
- #akhutdhbua .gt_indent_3 { text-indent: calc(5px * 3); }
- #akhutdhbua .gt_indent_4 { text-indent: calc(5px * 4); }
- #akhutdhbua .gt_indent_5 { text-indent: calc(5px * 5); }
- #akhutdhbua .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #akhutdhbua .gt_row_group_first td { border-top-width: 2px; }
- #akhutdhbua .gt_row_group_first th { border-top-width: 2px; }
- #akhutdhbua .gt_striped { color: #333333; background-color: #F4F4F4; }
- #akhutdhbua .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #akhutdhbua .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #akhutdhbua .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #akhutdhbua .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #akhutdhbua .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #akhutdhbua .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #akhutdhbua .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #akhutdhbua .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #akhutdhbua .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #akhutdhbua .gt_left { text-align: left; }
- #akhutdhbua .gt_center { text-align: center; }
- #akhutdhbua .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #akhutdhbua .gt_font_normal { font-weight: normal; }
- #akhutdhbua .gt_font_bold { font-weight: bold; }
- #akhutdhbua .gt_font_italic { font-style: italic; }
- #akhutdhbua .gt_super { font-size: 65%; }
- #akhutdhbua .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #akhutdhbua .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #akhutdhbua .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #akhutdhbua .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #akhutdhbua .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #akhutdhbua .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#fzhbsmpynu p { margin: 0; padding: 0; }
+ #fzhbsmpynu .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #fzhbsmpynu .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #fzhbsmpynu .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #fzhbsmpynu .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #fzhbsmpynu .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fzhbsmpynu .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fzhbsmpynu .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fzhbsmpynu .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #fzhbsmpynu .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #fzhbsmpynu .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #fzhbsmpynu .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #fzhbsmpynu .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #fzhbsmpynu .gt_spanner_row { border-bottom-style: hidden; }
+ #fzhbsmpynu .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #fzhbsmpynu .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #fzhbsmpynu .gt_from_md> :first-child { margin-top: 0; }
+ #fzhbsmpynu .gt_from_md> :last-child { margin-bottom: 0; }
+ #fzhbsmpynu .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #fzhbsmpynu .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #fzhbsmpynu .gt_indent_1 { text-indent: 5px; }
+ #fzhbsmpynu .gt_indent_2 { text-indent: calc(5px * 2); }
+ #fzhbsmpynu .gt_indent_3 { text-indent: calc(5px * 3); }
+ #fzhbsmpynu .gt_indent_4 { text-indent: calc(5px * 4); }
+ #fzhbsmpynu .gt_indent_5 { text-indent: calc(5px * 5); }
+ #fzhbsmpynu .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #fzhbsmpynu .gt_row_group_first td { border-top-width: 2px; }
+ #fzhbsmpynu .gt_row_group_first th { border-top-width: 2px; }
+ #fzhbsmpynu .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #fzhbsmpynu .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fzhbsmpynu .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #fzhbsmpynu .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #fzhbsmpynu .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fzhbsmpynu .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #fzhbsmpynu .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #fzhbsmpynu .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #fzhbsmpynu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fzhbsmpynu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #fzhbsmpynu .gt_left { text-align: left; }
+ #fzhbsmpynu .gt_center { text-align: center; }
+ #fzhbsmpynu .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #fzhbsmpynu .gt_font_normal { font-weight: normal; }
+ #fzhbsmpynu .gt_font_bold { font-weight: bold; }
+ #fzhbsmpynu .gt_font_italic { font-style: italic; }
+ #fzhbsmpynu .gt_super { font-size: 65%; }
+ #fzhbsmpynu .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fzhbsmpynu .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #fzhbsmpynu .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fzhbsmpynu .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #fzhbsmpynu .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #fzhbsmpynu .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -546,13 +546,13 @@ Did you notice that the spanners stacked automatically? What if you want granula
 <thead>
 <tr class="gt_col_headings gt_spanner_row">
 <th class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="col"><span> </span></th>
-<th colspan="4" class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="colgroup">performance</th>
+<th colspan="4" id="performance" class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="colgroup">performance</th>
 <th colspan="2" class="gt_center gt_columns_bottom_border gt_columns_top_border gt_column_spanner_outer" scope="colgroup"><span> </span></th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" id="model" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">model</th>
-<th colspan="2" id="hp" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">hp</th>
-<th colspan="2" id="trq" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">trq</th>
+<th colspan="2" id="hp-2" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">hp</th>
+<th colspan="2" id="trq-2" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup">trq</th>
 <th rowspan="2" id="mpg_c" class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">mpg_c</th>
 <th rowspan="2" id="mpg_h" class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">mpg_h</th>
 </tr>
@@ -565,94 +565,94 @@ Did you notice that the spanners stacked automatically? What if you want granula
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">GT</td>
-<td class="gt_row gt_right">647.0</td>
-<td class="gt_row gt_right">6250.0</td>
-<td class="gt_row gt_right">550.0</td>
-<td class="gt_row gt_right">5900.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">18.0</td>
+<td class="gt_row gt_left" headers="model">GT</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">647.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">6250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">550.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">5900.0</td>
+<td class="gt_row gt_right" headers="mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="mpg_h">18.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Speciale</td>
-<td class="gt_row gt_right">597.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Speciale</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">597.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Spider</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Spider</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Italia</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Italia</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">562.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">398.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">488 GTB</td>
-<td class="gt_row gt_right">661.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">561.0</td>
-<td class="gt_row gt_right">3000.0</td>
-<td class="gt_row gt_right">15.0</td>
-<td class="gt_row gt_right">22.0</td>
+<td class="gt_row gt_left" headers="model">488 GTB</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">661.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">561.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">3000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">15.0</td>
+<td class="gt_row gt_right" headers="mpg_h">22.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">553.0</td>
-<td class="gt_row gt_right">7500.0</td>
-<td class="gt_row gt_right">557.0</td>
-<td class="gt_row gt_right">4750.0</td>
-<td class="gt_row gt_right">16.0</td>
-<td class="gt_row gt_right">23.0</td>
+<td class="gt_row gt_left" headers="model">California</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">553.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">7500.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">557.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">4750.0</td>
+<td class="gt_row gt_right" headers="mpg_c">16.0</td>
+<td class="gt_row gt_right" headers="mpg_h">23.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">GTC4Lusso</td>
-<td class="gt_row gt_right">680.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">514.0</td>
-<td class="gt_row gt_right">5750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">GTC4Lusso</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">680.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">514.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">5750.0</td>
+<td class="gt_row gt_right" headers="mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">FF</td>
-<td class="gt_row gt_right">652.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">504.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">FF</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">652.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">504.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">F12Berlinetta</td>
-<td class="gt_row gt_right">731.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">509.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">F12Berlinetta</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">731.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">509.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">LaFerrari</td>
-<td class="gt_row gt_right">949.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">664.0</td>
-<td class="gt_row gt_right">6750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">LaFerrari</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp">949.0</td>
+<td class="gt_row gt_right" headers="performance hp-2 hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq">664.0</td>
+<td class="gt_row gt_right" headers="performance trq-2 trq_rpm">6750.0</td>
+<td class="gt_row gt_right" headers="mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="mpg_h">16.0</td>
 </tr>
 </tbody>
 </table>
@@ -673,65 +673,65 @@ We can also use Markdown formatting for the spanner label. In this example, we'l
 
 
 <style>
-#kbjsuwajwn table {
+#sptfjkkryj table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#kbjsuwajwn thead, tbody, tfoot, tr, td, th { border-style: none; }
+#sptfjkkryj thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#kbjsuwajwn p { margin: 0; padding: 0; }
- #kbjsuwajwn .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #kbjsuwajwn .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #kbjsuwajwn .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #kbjsuwajwn .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #kbjsuwajwn .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #kbjsuwajwn .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #kbjsuwajwn .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #kbjsuwajwn .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #kbjsuwajwn .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #kbjsuwajwn .gt_column_spanner_outer:first-child { padding-left: 0; }
- #kbjsuwajwn .gt_column_spanner_outer:last-child { padding-right: 0; }
- #kbjsuwajwn .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #kbjsuwajwn .gt_spanner_row { border-bottom-style: hidden; }
- #kbjsuwajwn .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #kbjsuwajwn .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #kbjsuwajwn .gt_from_md> :first-child { margin-top: 0; }
- #kbjsuwajwn .gt_from_md> :last-child { margin-bottom: 0; }
- #kbjsuwajwn .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #kbjsuwajwn .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #kbjsuwajwn .gt_indent_1 { text-indent: 5px; }
- #kbjsuwajwn .gt_indent_2 { text-indent: calc(5px * 2); }
- #kbjsuwajwn .gt_indent_3 { text-indent: calc(5px * 3); }
- #kbjsuwajwn .gt_indent_4 { text-indent: calc(5px * 4); }
- #kbjsuwajwn .gt_indent_5 { text-indent: calc(5px * 5); }
- #kbjsuwajwn .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #kbjsuwajwn .gt_row_group_first td { border-top-width: 2px; }
- #kbjsuwajwn .gt_row_group_first th { border-top-width: 2px; }
- #kbjsuwajwn .gt_striped { color: #333333; background-color: #F4F4F4; }
- #kbjsuwajwn .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #kbjsuwajwn .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #kbjsuwajwn .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #kbjsuwajwn .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #kbjsuwajwn .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #kbjsuwajwn .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #kbjsuwajwn .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #kbjsuwajwn .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #kbjsuwajwn .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #kbjsuwajwn .gt_left { text-align: left; }
- #kbjsuwajwn .gt_center { text-align: center; }
- #kbjsuwajwn .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #kbjsuwajwn .gt_font_normal { font-weight: normal; }
- #kbjsuwajwn .gt_font_bold { font-weight: bold; }
- #kbjsuwajwn .gt_font_italic { font-style: italic; }
- #kbjsuwajwn .gt_super { font-size: 65%; }
- #kbjsuwajwn .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #kbjsuwajwn .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #kbjsuwajwn .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #kbjsuwajwn .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #kbjsuwajwn .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #kbjsuwajwn .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#sptfjkkryj p { margin: 0; padding: 0; }
+ #sptfjkkryj .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #sptfjkkryj .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #sptfjkkryj .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #sptfjkkryj .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #sptfjkkryj .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #sptfjkkryj .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #sptfjkkryj .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #sptfjkkryj .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #sptfjkkryj .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #sptfjkkryj .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #sptfjkkryj .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #sptfjkkryj .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #sptfjkkryj .gt_spanner_row { border-bottom-style: hidden; }
+ #sptfjkkryj .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #sptfjkkryj .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #sptfjkkryj .gt_from_md> :first-child { margin-top: 0; }
+ #sptfjkkryj .gt_from_md> :last-child { margin-bottom: 0; }
+ #sptfjkkryj .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #sptfjkkryj .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #sptfjkkryj .gt_indent_1 { text-indent: 5px; }
+ #sptfjkkryj .gt_indent_2 { text-indent: calc(5px * 2); }
+ #sptfjkkryj .gt_indent_3 { text-indent: calc(5px * 3); }
+ #sptfjkkryj .gt_indent_4 { text-indent: calc(5px * 4); }
+ #sptfjkkryj .gt_indent_5 { text-indent: calc(5px * 5); }
+ #sptfjkkryj .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #sptfjkkryj .gt_row_group_first td { border-top-width: 2px; }
+ #sptfjkkryj .gt_row_group_first th { border-top-width: 2px; }
+ #sptfjkkryj .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #sptfjkkryj .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #sptfjkkryj .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #sptfjkkryj .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #sptfjkkryj .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #sptfjkkryj .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #sptfjkkryj .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #sptfjkkryj .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #sptfjkkryj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #sptfjkkryj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #sptfjkkryj .gt_left { text-align: left; }
+ #sptfjkkryj .gt_center { text-align: center; }
+ #sptfjkkryj .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #sptfjkkryj .gt_font_normal { font-weight: normal; }
+ #sptfjkkryj .gt_font_bold { font-weight: bold; }
+ #sptfjkkryj .gt_font_italic { font-style: italic; }
+ #sptfjkkryj .gt_super { font-size: 65%; }
+ #sptfjkkryj .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #sptfjkkryj .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #sptfjkkryj .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #sptfjkkryj .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #sptfjkkryj .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #sptfjkkryj .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
@@ -739,7 +739,7 @@ We can also use Markdown formatting for the spanner label. In this example, we'l
 <thead>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" id="model" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">model</th>
-<th colspan="6" id="<em>Performance</em>" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup"><em>Performance</em></th>
+<th colspan="6" id="Performance" class="gt_center gt_columns_top_border gt_column_spanner_outer" scope="colgroup"><em>Performance</em></th>
 </tr>
 <tr class="gt_col_headings">
 <th id="hp" class="gt_col_heading gt_columns_bottom_border gt_right" scope="col">hp</th>
@@ -752,94 +752,94 @@ We can also use Markdown formatting for the spanner label. In this example, we'l
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">GT</td>
-<td class="gt_row gt_right">647.0</td>
-<td class="gt_row gt_right">6250.0</td>
-<td class="gt_row gt_right">550.0</td>
-<td class="gt_row gt_right">5900.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">18.0</td>
+<td class="gt_row gt_left" headers="model">GT</td>
+<td class="gt_row gt_right" headers="Performance hp">647.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">6250.0</td>
+<td class="gt_row gt_right" headers="Performance trq">550.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">5900.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">18.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Speciale</td>
-<td class="gt_row gt_right">597.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Speciale</td>
+<td class="gt_row gt_right" headers="Performance hp">597.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">398.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Spider</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Spider</td>
+<td class="gt_row gt_right" headers="Performance hp">562.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">398.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">458 Italia</td>
-<td class="gt_row gt_right">562.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">398.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">13.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">458 Italia</td>
+<td class="gt_row gt_right" headers="Performance hp">562.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">398.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">13.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">488 GTB</td>
-<td class="gt_row gt_right">661.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">561.0</td>
-<td class="gt_row gt_right">3000.0</td>
-<td class="gt_row gt_right">15.0</td>
-<td class="gt_row gt_right">22.0</td>
+<td class="gt_row gt_left" headers="model">488 GTB</td>
+<td class="gt_row gt_right" headers="Performance hp">661.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">561.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">3000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">15.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">22.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">California</td>
-<td class="gt_row gt_right">553.0</td>
-<td class="gt_row gt_right">7500.0</td>
-<td class="gt_row gt_right">557.0</td>
-<td class="gt_row gt_right">4750.0</td>
-<td class="gt_row gt_right">16.0</td>
-<td class="gt_row gt_right">23.0</td>
+<td class="gt_row gt_left" headers="model">California</td>
+<td class="gt_row gt_right" headers="Performance hp">553.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">7500.0</td>
+<td class="gt_row gt_right" headers="Performance trq">557.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">4750.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">16.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">23.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">GTC4Lusso</td>
-<td class="gt_row gt_right">680.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">514.0</td>
-<td class="gt_row gt_right">5750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">17.0</td>
+<td class="gt_row gt_left" headers="model">GTC4Lusso</td>
+<td class="gt_row gt_right" headers="Performance hp">680.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="Performance trq">514.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">5750.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">17.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">FF</td>
-<td class="gt_row gt_right">652.0</td>
-<td class="gt_row gt_right">8000.0</td>
-<td class="gt_row gt_right">504.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">FF</td>
+<td class="gt_row gt_right" headers="Performance hp">652.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">8000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">504.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">F12Berlinetta</td>
-<td class="gt_row gt_right">731.0</td>
-<td class="gt_row gt_right">8250.0</td>
-<td class="gt_row gt_right">509.0</td>
-<td class="gt_row gt_right">6000.0</td>
-<td class="gt_row gt_right">11.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">F12Berlinetta</td>
+<td class="gt_row gt_right" headers="Performance hp">731.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">8250.0</td>
+<td class="gt_row gt_right" headers="Performance trq">509.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6000.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">11.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">16.0</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">LaFerrari</td>
-<td class="gt_row gt_right">949.0</td>
-<td class="gt_row gt_right">9000.0</td>
-<td class="gt_row gt_right">664.0</td>
-<td class="gt_row gt_right">6750.0</td>
-<td class="gt_row gt_right">12.0</td>
-<td class="gt_row gt_right">16.0</td>
+<td class="gt_row gt_left" headers="model">LaFerrari</td>
+<td class="gt_row gt_right" headers="Performance hp">949.0</td>
+<td class="gt_row gt_right" headers="Performance hp_rpm">9000.0</td>
+<td class="gt_row gt_right" headers="Performance trq">664.0</td>
+<td class="gt_row gt_right" headers="Performance trq_rpm">6750.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_c">12.0</td>
+<td class="gt_row gt_right" headers="Performance mpg_h">16.0</td>
 </tr>
 </tbody>
 </table>

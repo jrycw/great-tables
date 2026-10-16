@@ -4,7 +4,7 @@ Recently, Rich and I were poking around transit data, and we were struck by the 
 
 For example, consider this weekend rail schedule table from SEPTA, Philadelphia's transit agency.
 
-<img src="./example-timetable.png" class="img-fluid" style="max-width: 700px; display: block; margin-left: auto; margin-right: auto;" />
+<img src="example-timetable.png" class="img-fluid" style="max-width: 700px; display: block; margin-left: auto; margin-right: auto;" />
 
 Notice these big pieces:
 
@@ -122,78 +122,78 @@ transit_table
 ```
 
 
-    /Users/riannone/py_projects/great-tables/great_tables/_render_checks.py:37: RenderWarning: Rendering table with .cols_width() in Quarto may result in unexpected behavior. This is because Quarto performs custom table processing. Either use all percentage widths, or set .tab_options(quarto_disable_processing=True) to disable Quarto table processing.
+    /home/runner/work/great-tables/great-tables/great_tables/_render_checks.py:37: RenderWarning: Rendering table with .cols_width() in Quarto may result in unexpected behavior. This is because Quarto performs custom table processing. Either use all percentage widths, or set .tab_options(quarto_disable_processing=True) to disable Quarto table processing.
       warnings.warn(
 
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-#vjfxklkxsr table {
+#cydyeyyphy table {
           font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#vjfxklkxsr thead, tbody, tfoot, tr, td, th { border-style: none; }
+#cydyeyyphy thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#vjfxklkxsr p { margin: 0; padding: 0; }
- #vjfxklkxsr .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D3D3D3; border-right-style: solid; border-right-width: 3px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D3D3D3; border-left-style: solid; border-left-width: 3px; border-left-color: #D3D3D3; }
- #vjfxklkxsr .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #vjfxklkxsr .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #vjfxklkxsr .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #vjfxklkxsr .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vjfxklkxsr .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vjfxklkxsr .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vjfxklkxsr .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #vjfxklkxsr .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #vjfxklkxsr .gt_column_spanner_outer:first-child { padding-left: 0; }
- #vjfxklkxsr .gt_column_spanner_outer:last-child { padding-right: 0; }
- #vjfxklkxsr .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #vjfxklkxsr .gt_spanner_row { border-bottom-style: hidden; }
- #vjfxklkxsr .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #vjfxklkxsr .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #vjfxklkxsr .gt_from_md> :first-child { margin-top: 0; }
- #vjfxklkxsr .gt_from_md> :last-child { margin-bottom: 0; }
- #vjfxklkxsr .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #vjfxklkxsr .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #vjfxklkxsr .gt_indent_1 { text-indent: 5px; }
- #vjfxklkxsr .gt_indent_2 { text-indent: calc(5px * 2); }
- #vjfxklkxsr .gt_indent_3 { text-indent: calc(5px * 3); }
- #vjfxklkxsr .gt_indent_4 { text-indent: calc(5px * 4); }
- #vjfxklkxsr .gt_indent_5 { text-indent: calc(5px * 5); }
- #vjfxklkxsr .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #vjfxklkxsr .gt_row_group_first td { border-top-width: 2px; }
- #vjfxklkxsr .gt_row_group_first th { border-top-width: 2px; }
- #vjfxklkxsr .gt_striped { color: #333333; background-color: #A9A9A9; }
- #vjfxklkxsr .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vjfxklkxsr .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vjfxklkxsr .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #vjfxklkxsr .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vjfxklkxsr .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vjfxklkxsr .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #vjfxklkxsr .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #vjfxklkxsr .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vjfxklkxsr .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vjfxklkxsr .gt_left { text-align: left; }
- #vjfxklkxsr .gt_center { text-align: center; }
- #vjfxklkxsr .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #vjfxklkxsr .gt_font_normal { font-weight: normal; }
- #vjfxklkxsr .gt_font_bold { font-weight: bold; }
- #vjfxklkxsr .gt_font_italic { font-style: italic; }
- #vjfxklkxsr .gt_super { font-size: 65%; }
- #vjfxklkxsr .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vjfxklkxsr .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #vjfxklkxsr .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vjfxklkxsr .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vjfxklkxsr .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #vjfxklkxsr .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#cydyeyyphy p { margin: 0; padding: 0; }
+ #cydyeyyphy .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D3D3D3; border-right-style: solid; border-right-width: 3px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D3D3D3; border-left-style: solid; border-left-width: 3px; border-left-color: #D3D3D3; }
+ #cydyeyyphy .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #cydyeyyphy .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #cydyeyyphy .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #cydyeyyphy .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #cydyeyyphy .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cydyeyyphy .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #cydyeyyphy .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #cydyeyyphy .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #cydyeyyphy .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #cydyeyyphy .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #cydyeyyphy .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #cydyeyyphy .gt_spanner_row { border-bottom-style: hidden; }
+ #cydyeyyphy .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #cydyeyyphy .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #cydyeyyphy .gt_from_md> :first-child { margin-top: 0; }
+ #cydyeyyphy .gt_from_md> :last-child { margin-bottom: 0; }
+ #cydyeyyphy .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #cydyeyyphy .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #cydyeyyphy .gt_indent_1 { text-indent: 5px; }
+ #cydyeyyphy .gt_indent_2 { text-indent: calc(5px * 2); }
+ #cydyeyyphy .gt_indent_3 { text-indent: calc(5px * 3); }
+ #cydyeyyphy .gt_indent_4 { text-indent: calc(5px * 4); }
+ #cydyeyyphy .gt_indent_5 { text-indent: calc(5px * 5); }
+ #cydyeyyphy .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #cydyeyyphy .gt_row_group_first td { border-top-width: 2px; }
+ #cydyeyyphy .gt_row_group_first th { border-top-width: 2px; }
+ #cydyeyyphy .gt_striped { color: #FFFFFF; background-color: #A9A9A9; }
+ #cydyeyyphy .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cydyeyyphy .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #cydyeyyphy .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #cydyeyyphy .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #cydyeyyphy .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #cydyeyyphy .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #cydyeyyphy .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #cydyeyyphy .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cydyeyyphy .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #cydyeyyphy .gt_left { text-align: left; }
+ #cydyeyyphy .gt_center { text-align: center; }
+ #cydyeyyphy .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #cydyeyyphy .gt_font_normal { font-weight: normal; }
+ #cydyeyyphy .gt_font_bold { font-weight: bold; }
+ #cydyeyyphy .gt_font_italic { font-style: italic; }
+ #cydyeyyphy .gt_super { font-size: 65%; }
+ #cydyeyyphy .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cydyeyyphy .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #cydyeyyphy .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #cydyeyyphy .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #cydyeyyphy .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #cydyeyyphy .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" style="table-layout: fixed;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" style="table-layout: fixed;" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="14" class="gt_heading gt_title gt_font_normal" style="background-color: rgb(66, 99, 128) !important; color: white !important; font-size: 24px !important; font-weight: bold !important; border-width: 0px !important">Saturdays, Sundays, and Major Holidays</th>
+<th colspan="14" id="title" class="gt_heading gt_title gt_font_normal" style="background-color: rgb(66, 99, 128) !important; color: white !important; font-size: 24px !important; font-weight: bold !important; border-width: 0px !important">Saturdays, Sundays, and Major Holidays</th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -219,215 +219,215 @@ Zone</th>
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_row_group_first">
-<th rowspan="14" class="gt_row gt_left gt_stub_row_group" style="writing-mode: sideways-lr; padding-bottom: 25% !important; font-size: 24px !important; font-weight: bold !important; text-transform: uppercase !important">To Center City</th>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Chestnut Hill West</td>
-<td class="gt_row gt_right">6:51a</td>
-<td class="gt_row gt_right">8:08a</td>
-<td class="gt_row gt_right">8:49a</td>
-<td class="gt_row gt_right">9:49a</td>
-<td class="gt_row gt_right">1:52p</td>
-<td class="gt_row gt_right">2:49p</td>
-<td class="gt_row gt_right">4:48p</td>
-<td class="gt_row gt_right">6:20p</td>
+<th rowspan="14" id="To-Center-City" class="gt_row gt_left gt_stub_row_group" style="writing-mode: sideways-lr; padding-bottom: 25% !important; font-size: 24px !important; font-weight: bold !important; text-transform: uppercase !important" scope="rowgroup">To Center City</th>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Chestnut Hill West</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:51a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:08a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:49a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:49a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:52p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:49p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:48p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:20p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Highland</td>
-<td class="gt_row gt_right gt_striped">6:52a</td>
-<td class="gt_row gt_right gt_striped">8:09a</td>
-<td class="gt_row gt_right gt_striped">8:50a</td>
-<td class="gt_row gt_right gt_striped">9:50a</td>
-<td class="gt_row gt_right gt_striped">1:53p</td>
-<td class="gt_row gt_right gt_striped">2:50p</td>
-<td class="gt_row gt_right gt_striped">4:49p</td>
-<td class="gt_row gt_right gt_striped">6:21p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Highland</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">6:52a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:09a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:50a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:50a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">1:53p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:50p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:49p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:21p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">St. Martins</td>
-<td class="gt_row gt_right">6:54a</td>
-<td class="gt_row gt_right">8:11a</td>
-<td class="gt_row gt_right">8:52a</td>
-<td class="gt_row gt_right">9:52a</td>
-<td class="gt_row gt_right">1:55p</td>
-<td class="gt_row gt_right">2:52p</td>
-<td class="gt_row gt_right">4:51p</td>
-<td class="gt_row gt_right">6:23p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">St. Martins</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:54a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:11a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:52a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:52a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:55p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:52p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:51p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:23p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Richard Allen Lane</td>
-<td class="gt_row gt_right gt_striped">6:56a</td>
-<td class="gt_row gt_right gt_striped">8:13a</td>
-<td class="gt_row gt_right gt_striped">8:54a</td>
-<td class="gt_row gt_right gt_striped">9:54a</td>
-<td class="gt_row gt_right gt_striped">1:57p</td>
-<td class="gt_row gt_right gt_striped">2:54p</td>
-<td class="gt_row gt_right gt_striped">4:53p</td>
-<td class="gt_row gt_right gt_striped">6:25p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Richard Allen Lane</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">6:56a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:13a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:54a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:54a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">1:57p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:54p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:53p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:25p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Carpenter</td>
-<td class="gt_row gt_right">6:58a</td>
-<td class="gt_row gt_right">8:15a</td>
-<td class="gt_row gt_right">8:56a</td>
-<td class="gt_row gt_right">9:56a</td>
-<td class="gt_row gt_right">1:59p</td>
-<td class="gt_row gt_right">2:56p</td>
-<td class="gt_row gt_right">4:55p</td>
-<td class="gt_row gt_right">6:27p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Carpenter</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:58a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:15a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:56a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:56a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:59p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:56p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:55p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:27p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Upsal</td>
-<td class="gt_row gt_right gt_striped">7:00a</td>
-<td class="gt_row gt_right gt_striped">8:17a</td>
-<td class="gt_row gt_right gt_striped">8:58a</td>
-<td class="gt_row gt_right gt_striped">9:58a</td>
-<td class="gt_row gt_right gt_striped">2:01p</td>
-<td class="gt_row gt_right gt_striped">2:58p</td>
-<td class="gt_row gt_right gt_striped">4:57p</td>
-<td class="gt_row gt_right gt_striped">6:29p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Upsal</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:00a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:17a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:58a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:58a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:01p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:58p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:57p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:29p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Tulpehocken</td>
-<td class="gt_row gt_right">7:02a</td>
-<td class="gt_row gt_right">8:19a</td>
-<td class="gt_row gt_right">9:00a</td>
-<td class="gt_row gt_right">10:00a</td>
-<td class="gt_row gt_right">2:03p</td>
-<td class="gt_row gt_right">3:00p</td>
-<td class="gt_row gt_right">4:59p</td>
-<td class="gt_row gt_right">6:31p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Tulpehocken</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">7:02a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:19a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">9:00a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">10:00a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">2:03p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">3:00p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:59p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:31p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Chelten Avenue</td>
-<td class="gt_row gt_right gt_striped">7:04a</td>
-<td class="gt_row gt_right gt_striped">8:21a</td>
-<td class="gt_row gt_right gt_striped">9:02a</td>
-<td class="gt_row gt_right gt_striped">10:02a</td>
-<td class="gt_row gt_right gt_striped">2:05p</td>
-<td class="gt_row gt_right gt_striped">3:02p</td>
-<td class="gt_row gt_right gt_striped">5:01p</td>
-<td class="gt_row gt_right gt_striped">6:33p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Chelten Avenue</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:04a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:21a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:02a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:02a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:05p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:02p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:01p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:33p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Queen Lane</td>
-<td class="gt_row gt_right">7:06a</td>
-<td class="gt_row gt_right">8:23a</td>
-<td class="gt_row gt_right">9:04a</td>
-<td class="gt_row gt_right">10:04a</td>
-<td class="gt_row gt_right">2:07p</td>
-<td class="gt_row gt_right">3:04p</td>
-<td class="gt_row gt_right">5:03p</td>
-<td class="gt_row gt_right">6:35p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Queen Lane</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">7:06a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:23a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">9:04a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">10:04a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">2:07p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">3:04p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">5:03p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:35p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">North Philadelphia</td>
-<td class="gt_row gt_right gt_striped">7:12a</td>
-<td class="gt_row gt_right gt_striped">8:29a</td>
-<td class="gt_row gt_right gt_striped">9:12a</td>
-<td class="gt_row gt_right gt_striped">10:12a</td>
-<td class="gt_row gt_right gt_striped">2:15p</td>
-<td class="gt_row gt_right gt_striped">3:12p</td>
-<td class="gt_row gt_right gt_striped">5:09p</td>
-<td class="gt_row gt_right gt_striped">6:41p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">North Philadelphia</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:29a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:15p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:12p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:09p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:41p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Gray 30th Street</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:42a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:26p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:23p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:20p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">6:54p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Gray 30th Street</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:42a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:26p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:23p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:20p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">6:54p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Suburban Station</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:47a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:31p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:28p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:25p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">6:59p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Suburban Station</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:47a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:31p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:28p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:25p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">6:59p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Jefferson Station</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:52a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:36p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:33p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:30p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:04p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Jefferson Station</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:52a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:36p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:33p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:30p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">7:04p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Temple University</td>
-<td class="gt_row gt_right gt_striped">7:37a</td>
-<td class="gt_row gt_right gt_striped">8:57a</td>
-<td class="gt_row gt_right gt_striped">9:37a</td>
-<td class="gt_row gt_right gt_striped">10:37a</td>
-<td class="gt_row gt_right gt_striped">2:40p</td>
-<td class="gt_row gt_right gt_striped">3:37p</td>
-<td class="gt_row gt_right gt_striped">5:35p</td>
-<td class="gt_row gt_right gt_striped">7:08p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Temple University</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:57a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:40p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:37p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:35p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">7:08p</td>
 </tr>
 </tbody>
 </table>
@@ -635,72 +635,72 @@ transit_table
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
-#mvtbmwdhxc table {
+#uoikszthdi table {
           font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#mvtbmwdhxc thead, tbody, tfoot, tr, td, th { border-style: none; }
+#uoikszthdi thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#mvtbmwdhxc p { margin: 0; padding: 0; }
- #mvtbmwdhxc .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D3D3D3; border-right-style: solid; border-right-width: 3px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D3D3D3; border-left-style: solid; border-left-width: 3px; border-left-color: #D3D3D3; }
- #mvtbmwdhxc .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #mvtbmwdhxc .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #mvtbmwdhxc .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #mvtbmwdhxc .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #mvtbmwdhxc .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #mvtbmwdhxc .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #mvtbmwdhxc .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #mvtbmwdhxc .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #mvtbmwdhxc .gt_column_spanner_outer:first-child { padding-left: 0; }
- #mvtbmwdhxc .gt_column_spanner_outer:last-child { padding-right: 0; }
- #mvtbmwdhxc .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #mvtbmwdhxc .gt_spanner_row { border-bottom-style: hidden; }
- #mvtbmwdhxc .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #mvtbmwdhxc .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #mvtbmwdhxc .gt_from_md> :first-child { margin-top: 0; }
- #mvtbmwdhxc .gt_from_md> :last-child { margin-bottom: 0; }
- #mvtbmwdhxc .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #mvtbmwdhxc .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #mvtbmwdhxc .gt_indent_1 { text-indent: 5px; }
- #mvtbmwdhxc .gt_indent_2 { text-indent: calc(5px * 2); }
- #mvtbmwdhxc .gt_indent_3 { text-indent: calc(5px * 3); }
- #mvtbmwdhxc .gt_indent_4 { text-indent: calc(5px * 4); }
- #mvtbmwdhxc .gt_indent_5 { text-indent: calc(5px * 5); }
- #mvtbmwdhxc .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #mvtbmwdhxc .gt_row_group_first td { border-top-width: 2px; }
- #mvtbmwdhxc .gt_row_group_first th { border-top-width: 2px; }
- #mvtbmwdhxc .gt_striped { color: #333333; background-color: #A9A9A9; }
- #mvtbmwdhxc .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #mvtbmwdhxc .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #mvtbmwdhxc .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #mvtbmwdhxc .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #mvtbmwdhxc .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #mvtbmwdhxc .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #mvtbmwdhxc .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #mvtbmwdhxc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #mvtbmwdhxc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #mvtbmwdhxc .gt_left { text-align: left; }
- #mvtbmwdhxc .gt_center { text-align: center; }
- #mvtbmwdhxc .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #mvtbmwdhxc .gt_font_normal { font-weight: normal; }
- #mvtbmwdhxc .gt_font_bold { font-weight: bold; }
- #mvtbmwdhxc .gt_font_italic { font-style: italic; }
- #mvtbmwdhxc .gt_super { font-size: 65%; }
- #mvtbmwdhxc .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #mvtbmwdhxc .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #mvtbmwdhxc .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #mvtbmwdhxc .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #mvtbmwdhxc .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #mvtbmwdhxc .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#uoikszthdi p { margin: 0; padding: 0; }
+ #uoikszthdi .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 3px; border-top-color: #D3D3D3; border-right-style: solid; border-right-width: 3px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 3px; border-bottom-color: #D3D3D3; border-left-style: solid; border-left-width: 3px; border-left-color: #D3D3D3; }
+ #uoikszthdi .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #uoikszthdi .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #uoikszthdi .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #uoikszthdi .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #uoikszthdi .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #uoikszthdi .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #uoikszthdi .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #uoikszthdi .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #uoikszthdi .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #uoikszthdi .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #uoikszthdi .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #uoikszthdi .gt_spanner_row { border-bottom-style: hidden; }
+ #uoikszthdi .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #uoikszthdi .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #uoikszthdi .gt_from_md> :first-child { margin-top: 0; }
+ #uoikszthdi .gt_from_md> :last-child { margin-bottom: 0; }
+ #uoikszthdi .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #uoikszthdi .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #uoikszthdi .gt_indent_1 { text-indent: 5px; }
+ #uoikszthdi .gt_indent_2 { text-indent: calc(5px * 2); }
+ #uoikszthdi .gt_indent_3 { text-indent: calc(5px * 3); }
+ #uoikszthdi .gt_indent_4 { text-indent: calc(5px * 4); }
+ #uoikszthdi .gt_indent_5 { text-indent: calc(5px * 5); }
+ #uoikszthdi .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #uoikszthdi .gt_row_group_first td { border-top-width: 2px; }
+ #uoikszthdi .gt_row_group_first th { border-top-width: 2px; }
+ #uoikszthdi .gt_striped { color: #FFFFFF; background-color: #A9A9A9; }
+ #uoikszthdi .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #uoikszthdi .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #uoikszthdi .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #uoikszthdi .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #uoikszthdi .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #uoikszthdi .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #uoikszthdi .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #uoikszthdi .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #uoikszthdi .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #uoikszthdi .gt_left { text-align: left; }
+ #uoikszthdi .gt_center { text-align: center; }
+ #uoikszthdi .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #uoikszthdi .gt_font_normal { font-weight: normal; }
+ #uoikszthdi .gt_font_bold { font-weight: bold; }
+ #uoikszthdi .gt_font_italic { font-style: italic; }
+ #uoikszthdi .gt_super { font-size: 65%; }
+ #uoikszthdi .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #uoikszthdi .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #uoikszthdi .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #uoikszthdi .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #uoikszthdi .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #uoikszthdi .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" style="table-layout: fixed;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" style="table-layout: fixed;" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="14" class="gt_heading gt_title gt_font_normal" style="background-color: rgb(66, 99, 128) !important; color: white !important; font-size: 24px !important; font-weight: bold !important; border-width: 0px !important">Saturdays, Sundays, and Major Holidays</th>
+<th colspan="14" id="title" class="gt_heading gt_title gt_font_normal" style="background-color: rgb(66, 99, 128) !important; color: white !important; font-size: 24px !important; font-weight: bold !important; border-width: 0px !important">Saturdays, Sundays, and Major Holidays</th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -726,215 +726,215 @@ Zone</th>
 </thead>
 <tbody class="gt_table_body">
 <tr class="gt_row_group_first">
-<th rowspan="14" class="gt_row gt_left gt_stub_row_group" style="writing-mode: sideways-lr; padding-bottom: 25% !important; font-size: 24px !important; font-weight: bold !important; text-transform: uppercase !important">To Center City</th>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Chestnut Hill West</td>
-<td class="gt_row gt_right">6:51a</td>
-<td class="gt_row gt_right">8:08a</td>
-<td class="gt_row gt_right">8:49a</td>
-<td class="gt_row gt_right">9:49a</td>
-<td class="gt_row gt_right">1:52p</td>
-<td class="gt_row gt_right">2:49p</td>
-<td class="gt_row gt_right">4:48p</td>
-<td class="gt_row gt_right">6:20p</td>
+<th rowspan="14" id="To-Center-City" class="gt_row gt_left gt_stub_row_group" style="writing-mode: sideways-lr; padding-bottom: 25% !important; font-size: 24px !important; font-weight: bold !important; text-transform: uppercase !important" scope="rowgroup">To Center City</th>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Chestnut Hill West</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:51a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:08a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:49a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:49a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:52p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:49p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:48p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:20p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Highland</td>
-<td class="gt_row gt_right gt_striped">6:52a</td>
-<td class="gt_row gt_right gt_striped">8:09a</td>
-<td class="gt_row gt_right gt_striped">8:50a</td>
-<td class="gt_row gt_right gt_striped">9:50a</td>
-<td class="gt_row gt_right gt_striped">1:53p</td>
-<td class="gt_row gt_right gt_striped">2:50p</td>
-<td class="gt_row gt_right gt_striped">4:49p</td>
-<td class="gt_row gt_right gt_striped">6:21p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Highland</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">6:52a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:09a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:50a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:50a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">1:53p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:50p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:49p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:21p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">St. Martins</td>
-<td class="gt_row gt_right">6:54a</td>
-<td class="gt_row gt_right">8:11a</td>
-<td class="gt_row gt_right">8:52a</td>
-<td class="gt_row gt_right">9:52a</td>
-<td class="gt_row gt_right">1:55p</td>
-<td class="gt_row gt_right">2:52p</td>
-<td class="gt_row gt_right">4:51p</td>
-<td class="gt_row gt_right">6:23p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">St. Martins</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:54a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:11a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:52a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:52a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:55p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:52p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:51p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:23p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Richard Allen Lane</td>
-<td class="gt_row gt_right gt_striped">6:56a</td>
-<td class="gt_row gt_right gt_striped">8:13a</td>
-<td class="gt_row gt_right gt_striped">8:54a</td>
-<td class="gt_row gt_right gt_striped">9:54a</td>
-<td class="gt_row gt_right gt_striped">1:57p</td>
-<td class="gt_row gt_right gt_striped">2:54p</td>
-<td class="gt_row gt_right gt_striped">4:53p</td>
-<td class="gt_row gt_right gt_striped">6:25p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Richard Allen Lane</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">6:56a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:13a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:54a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:54a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">1:57p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:54p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:53p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:25p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Carpenter</td>
-<td class="gt_row gt_right">6:58a</td>
-<td class="gt_row gt_right">8:15a</td>
-<td class="gt_row gt_right">8:56a</td>
-<td class="gt_row gt_right">9:56a</td>
-<td class="gt_row gt_right">1:59p</td>
-<td class="gt_row gt_right">2:56p</td>
-<td class="gt_row gt_right">4:55p</td>
-<td class="gt_row gt_right">6:27p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Carpenter</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">6:58a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:15a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">8:56a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">9:56a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">1:59p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">2:56p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:55p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:27p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">1</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Upsal</td>
-<td class="gt_row gt_right gt_striped">7:00a</td>
-<td class="gt_row gt_right gt_striped">8:17a</td>
-<td class="gt_row gt_right gt_striped">8:58a</td>
-<td class="gt_row gt_right gt_striped">9:58a</td>
-<td class="gt_row gt_right gt_striped">2:01p</td>
-<td class="gt_row gt_right gt_striped">2:58p</td>
-<td class="gt_row gt_right gt_striped">4:57p</td>
-<td class="gt_row gt_right gt_striped">6:29p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">1</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Upsal</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:00a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:17a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">8:58a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">9:58a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:01p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">2:58p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">4:57p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:29p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Tulpehocken</td>
-<td class="gt_row gt_right">7:02a</td>
-<td class="gt_row gt_right">8:19a</td>
-<td class="gt_row gt_right">9:00a</td>
-<td class="gt_row gt_right">10:00a</td>
-<td class="gt_row gt_right">2:03p</td>
-<td class="gt_row gt_right">3:00p</td>
-<td class="gt_row gt_right">4:59p</td>
-<td class="gt_row gt_right">6:31p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Tulpehocken</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">7:02a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:19a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">9:00a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">10:00a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">2:03p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">3:00p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">4:59p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:31p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Chelten Avenue</td>
-<td class="gt_row gt_right gt_striped">7:04a</td>
-<td class="gt_row gt_right gt_striped">8:21a</td>
-<td class="gt_row gt_right gt_striped">9:02a</td>
-<td class="gt_row gt_right gt_striped">10:02a</td>
-<td class="gt_row gt_right gt_striped">2:05p</td>
-<td class="gt_row gt_right gt_striped">3:02p</td>
-<td class="gt_row gt_right gt_striped">5:01p</td>
-<td class="gt_row gt_right gt_striped">6:33p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Chelten Avenue</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:04a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:21a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:02a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:02a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:05p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:02p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:01p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:33p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left" style="border-right: solid black 2px !important">Queen Lane</td>
-<td class="gt_row gt_right">7:06a</td>
-<td class="gt_row gt_right">8:23a</td>
-<td class="gt_row gt_right">9:04a</td>
-<td class="gt_row gt_right">10:04a</td>
-<td class="gt_row gt_right">2:07p</td>
-<td class="gt_row gt_right">3:04p</td>
-<td class="gt_row gt_right">5:03p</td>
-<td class="gt_row gt_right">6:35p</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash">✓</td>
+<td class="gt_row gt_right" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Queen Lane</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8210">7:06a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8716">8:23a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8318">9:04a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8322">10:04a</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8338">2:07p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8242">3:04p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8750">5:03p</td>
+<td class="gt_row gt_right" headers="To-Center-City Train-Number 8756">6:35p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">C</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">North Philadelphia</td>
-<td class="gt_row gt_right gt_striped">7:12a</td>
-<td class="gt_row gt_right gt_striped">8:29a</td>
-<td class="gt_row gt_right gt_striped">9:12a</td>
-<td class="gt_row gt_right gt_striped">10:12a</td>
-<td class="gt_row gt_right gt_striped">2:15p</td>
-<td class="gt_row gt_right gt_striped">3:12p</td>
-<td class="gt_row gt_right gt_striped">5:09p</td>
-<td class="gt_row gt_right gt_striped">6:41p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park"></td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">C</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">North Philadelphia</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:29a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:12a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:15p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:12p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:09p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">6:41p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Gray 30th Street</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:42a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:23a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:26p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:23p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:20p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">6:54p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Gray 30th Street</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:42a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:23a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:26p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:23p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:20p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">6:54p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Suburban Station</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:47a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:28a</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:31p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:28p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:25p</td>
-<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">6:59p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Suburban Station</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:47a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:28a</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:31p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:28p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:25p</td>
+<td class="gt_row gt_right gt_striped" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">6:59p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important"></td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">✓</td>
-<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">2</td>
-<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important">Jefferson Station</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">8:52a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">9:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">10:33a</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">2:36p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">3:33p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">5:30p</td>
-<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important">7:04p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_access"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important; border-top: none !important; border-bottom: none !important; border-right: solid white 2px !important; color: white !important" headers="To-Center-City stop_name">Jefferson Station</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8210">7:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8716">8:52a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8318">9:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8322">10:33a</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8338">2:36p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8242">3:33p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8750">5:30p</td>
+<td class="gt_row gt_right" style="background-color: black !important; color: white !important; border-top: none !important; border-bottom: none !important" headers="To-Center-City Train-Number 8756">7:04p</td>
 </tr>
 <tr>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important"></td>
-<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important">✓</td>
-<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important">2</td>
-<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important">Temple University</td>
-<td class="gt_row gt_right gt_striped">7:37a</td>
-<td class="gt_row gt_right gt_striped">8:57a</td>
-<td class="gt_row gt_right gt_striped">9:37a</td>
-<td class="gt_row gt_right gt_striped">10:37a</td>
-<td class="gt_row gt_right gt_striped">2:40p</td>
-<td class="gt_row gt_right gt_striped">3:37p</td>
-<td class="gt_row gt_right gt_striped">5:35p</td>
-<td class="gt_row gt_right gt_striped">7:08p</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_access">✓</td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_cash"></td>
+<td class="gt_row gt_right gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City Services service_park">✓</td>
+<td class="gt_row gt_center gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City fare_zone">2</td>
+<td class="gt_row gt_left gt_striped" style="border-right: solid black 2px !important" headers="To-Center-City stop_name">Temple University</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8210">7:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8716">8:57a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8318">9:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8322">10:37a</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8338">2:40p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8242">3:37p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8750">5:35p</td>
+<td class="gt_row gt_right gt_striped" headers="To-Center-City Train-Number 8756">7:08p</td>
 </tr>
 </tbody>
 </table>
@@ -944,19 +944,19 @@ Zone</th>
 
 MetroTransit in Minneapolis uses a transposed format, with stops as columns and trips as rows. Here's an example from their [Route 2 bus timetable](https://www.metrotransit.org/route/2):
 
-<img src="./metrotransit-route2.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
+<img src="metrotransit-route2.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
 
 This is useful when there a lot of trips, because with trips on the rows readers can scroll down (versus needing to scroll sideways).
 
 The MTA in New York City is similar. Here's an example of their [bx1 bus route timetable](https://www.mta.info/schedules/bus/bx1):
 
-<img src="./mta-route-bx1.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
+<img src="mta-route-bx1.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
 
 What I like about all these tables is they highlight the structure behind bus and train routes. Sometimes they skip certain stops. But realistically, what makes them a route is that trips tend to make the same stops over and over.
 
 A common alternative to using these tables is to do routing from a set start to end point. For example, below is a form for selecting a start and end point on SEPTA's website, with a resulting table of departure and arrival times.
 
-<img src="./septa-routing.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
+<img src="septa-routing.png" class="img-fluid" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;" />
 
 Notice that the table has removed a lot of information about intermediate stops people might not care about.
 

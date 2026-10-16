@@ -22,7 +22,9 @@ GT.fmt_email(
 ```
 
 
-The `fmt_email()` method transforms email addresses in the table body into clickable `mailto:` links. Like `fmt_url()`, the links can be styled as buttons or as plain underlined text, with customizable colors.
+The <a href="../reference/GT.fmt_email.html#great_tables.GT.fmt_email" class="gdls-link"><code>fmt_email()</code></a> method transforms email addresses in the table body into clickable `mailto:` links. Like <a href="../reference/GT.fmt_url.html#great_tables.GT.fmt_url" class="gdls-link"><code>fmt_url()</code></a>, the links can be styled as buttons or as plain underlined text, with customizable colors.
+
+In LaTeX output, the links are written with the `href` command (so the **hyperref** package needs to be loaded) and the styling options only apply to HTML output.
 
 
 ## Parameters
@@ -31,8 +33,8 @@ The `fmt_email()` method transforms email addresses in the table body into click
 `columns: SelectExpr = None`  
 The columns to target. Can either be a single column name or a series of column names provided in a list.
 
-`rows: int | list[int] | None = None`  
-In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a list of row indices.
+`rows: RowSelectExpr = None`  
+In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a row index, a list of row indices, or (for Polars DataFrames) a Polars expression such as `pl.col("x") > 0`.
 
 `display_name: str | Callable[[str], str] | None = None`  
 An optional display name to use instead of the raw email address. If a string is provided, it will be used as the visible text for all links. If a callable is provided, it will be called with the email address and should return the display text.
@@ -102,72 +104,72 @@ peeps_aus = (
 
 
 <style>
-#beidhujodt table {
+#neosfchafo table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#beidhujodt thead, tbody, tfoot, tr, td, th { border-style: none; }
+#neosfchafo thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#beidhujodt p { margin: 0; padding: 0; }
- #beidhujodt .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #beidhujodt .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #beidhujodt .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #beidhujodt .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #beidhujodt .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #beidhujodt .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #beidhujodt .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #beidhujodt .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #beidhujodt .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #beidhujodt .gt_column_spanner_outer:first-child { padding-left: 0; }
- #beidhujodt .gt_column_spanner_outer:last-child { padding-right: 0; }
- #beidhujodt .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #beidhujodt .gt_spanner_row { border-bottom-style: hidden; }
- #beidhujodt .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #beidhujodt .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #beidhujodt .gt_from_md> :first-child { margin-top: 0; }
- #beidhujodt .gt_from_md> :last-child { margin-bottom: 0; }
- #beidhujodt .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #beidhujodt .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #beidhujodt .gt_indent_1 { text-indent: 5px; }
- #beidhujodt .gt_indent_2 { text-indent: calc(5px * 2); }
- #beidhujodt .gt_indent_3 { text-indent: calc(5px * 3); }
- #beidhujodt .gt_indent_4 { text-indent: calc(5px * 4); }
- #beidhujodt .gt_indent_5 { text-indent: calc(5px * 5); }
- #beidhujodt .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #beidhujodt .gt_row_group_first td { border-top-width: 2px; }
- #beidhujodt .gt_row_group_first th { border-top-width: 2px; }
- #beidhujodt .gt_striped { color: #333333; background-color: #F4F4F4; }
- #beidhujodt .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #beidhujodt .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #beidhujodt .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #beidhujodt .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #beidhujodt .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #beidhujodt .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #beidhujodt .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #beidhujodt .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #beidhujodt .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #beidhujodt .gt_left { text-align: left; }
- #beidhujodt .gt_center { text-align: center; }
- #beidhujodt .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #beidhujodt .gt_font_normal { font-weight: normal; }
- #beidhujodt .gt_font_bold { font-weight: bold; }
- #beidhujodt .gt_font_italic { font-style: italic; }
- #beidhujodt .gt_super { font-size: 65%; }
- #beidhujodt .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #beidhujodt .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #beidhujodt .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #beidhujodt .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #beidhujodt .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #beidhujodt .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#neosfchafo p { margin: 0; padding: 0; }
+ #neosfchafo .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #neosfchafo .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #neosfchafo .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #neosfchafo .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #neosfchafo .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #neosfchafo .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #neosfchafo .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #neosfchafo .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #neosfchafo .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #neosfchafo .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #neosfchafo .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #neosfchafo .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #neosfchafo .gt_spanner_row { border-bottom-style: hidden; }
+ #neosfchafo .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #neosfchafo .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #neosfchafo .gt_from_md> :first-child { margin-top: 0; }
+ #neosfchafo .gt_from_md> :last-child { margin-bottom: 0; }
+ #neosfchafo .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #neosfchafo .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #neosfchafo .gt_indent_1 { text-indent: 5px; }
+ #neosfchafo .gt_indent_2 { text-indent: calc(5px * 2); }
+ #neosfchafo .gt_indent_3 { text-indent: calc(5px * 3); }
+ #neosfchafo .gt_indent_4 { text-indent: calc(5px * 4); }
+ #neosfchafo .gt_indent_5 { text-indent: calc(5px * 5); }
+ #neosfchafo .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #neosfchafo .gt_row_group_first td { border-top-width: 2px; }
+ #neosfchafo .gt_row_group_first th { border-top-width: 2px; }
+ #neosfchafo .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #neosfchafo .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #neosfchafo .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #neosfchafo .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #neosfchafo .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #neosfchafo .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #neosfchafo .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #neosfchafo .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #neosfchafo .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #neosfchafo .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #neosfchafo .gt_left { text-align: left; }
+ #neosfchafo .gt_center { text-align: center; }
+ #neosfchafo .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #neosfchafo .gt_font_normal { font-weight: normal; }
+ #neosfchafo .gt_font_bold { font-weight: bold; }
+ #neosfchafo .gt_font_italic { font-style: italic; }
+ #neosfchafo .gt_super { font-size: 65%; }
+ #neosfchafo .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #neosfchafo .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #neosfchafo .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #neosfchafo .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #neosfchafo .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #neosfchafo .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="8" class="gt_heading gt_title gt_font_normal">Our Contacts in Australia</th>
+<th colspan="8" id="title" class="gt_heading gt_title gt_font_normal">Our Contacts in Australia</th>
 </tr>
 <tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -182,104 +184,104 @@ peeps_aus = (
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<th class="gt_row gt_left gt_stub">Christison</th>
-<td class="gt_row gt_left">Milla</td>
-<td class="gt_row gt_left">34 McGregor Street</td>
-<td class="gt_row gt_left">Kinalung</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2880</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[milla_c@example.com](mailto:milla_c@example.com)</span></td>
+<th id="stub-1" class="gt_row gt_left gt_stub" scope="row">Christison</th>
+<td class="gt_row gt_left" headers="stub-1 name_given">Milla</td>
+<td class="gt_row gt_left" headers="stub-1 address">34 McGregor Street</td>
+<td class="gt_row gt_left" headers="stub-1 city">Kinalung</td>
+<td class="gt_row gt_left" headers="stub-1 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-1 postcode">2880</td>
+<td class="gt_row gt_left" headers="stub-1 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-1 email_addr"><span style="white-space:pre;">[milla_c@example.com](mailto:milla_c@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Stead</th>
-<td class="gt_row gt_left">Alannah</td>
-<td class="gt_row gt_left">44 Mt Berryman Road</td>
-<td class="gt_row gt_left">Ropeley</td>
-<td class="gt_row gt_left">QLD</td>
-<td class="gt_row gt_left">4343</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[alannahstead@example.com](mailto:alannahstead@example.com)</span></td>
+<th id="stub-2" class="gt_row gt_left gt_stub" scope="row">Stead</th>
+<td class="gt_row gt_left" headers="stub-2 name_given">Alannah</td>
+<td class="gt_row gt_left" headers="stub-2 address">44 Mt Berryman Road</td>
+<td class="gt_row gt_left" headers="stub-2 city">Ropeley</td>
+<td class="gt_row gt_left" headers="stub-2 state_prov">QLD</td>
+<td class="gt_row gt_left" headers="stub-2 postcode">4343</td>
+<td class="gt_row gt_left" headers="stub-2 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-2 email_addr"><span style="white-space:pre;">[alannahstead@example.com](mailto:alannahstead@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Fitzhardinge</th>
-<td class="gt_row gt_left">Lucas</td>
-<td class="gt_row gt_left">88 Dossiter Street</td>
-<td class="gt_row gt_left">Waterloo</td>
-<td class="gt_row gt_left">TAS</td>
-<td class="gt_row gt_left">7109</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[lucas_fitz@example.com](mailto:lucas_fitz@example.com)</span></td>
+<th id="stub-3" class="gt_row gt_left gt_stub" scope="row">Fitzhardinge</th>
+<td class="gt_row gt_left" headers="stub-3 name_given">Lucas</td>
+<td class="gt_row gt_left" headers="stub-3 address">88 Dossiter Street</td>
+<td class="gt_row gt_left" headers="stub-3 city">Waterloo</td>
+<td class="gt_row gt_left" headers="stub-3 state_prov">TAS</td>
+<td class="gt_row gt_left" headers="stub-3 postcode">7109</td>
+<td class="gt_row gt_left" headers="stub-3 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-3 email_addr"><span style="white-space:pre;">[lucas_fitz@example.com](mailto:lucas_fitz@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Goldhar</th>
-<td class="gt_row gt_left">Lucinda</td>
-<td class="gt_row gt_left">24 Settlement Road</td>
-<td class="gt_row gt_left">Dargo</td>
-<td class="gt_row gt_left">VIC</td>
-<td class="gt_row gt_left">3862</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[lucinda_g@example.com](mailto:lucinda_g@example.com)</span></td>
+<th id="stub-4" class="gt_row gt_left gt_stub" scope="row">Goldhar</th>
+<td class="gt_row gt_left" headers="stub-4 name_given">Lucinda</td>
+<td class="gt_row gt_left" headers="stub-4 address">24 Settlement Road</td>
+<td class="gt_row gt_left" headers="stub-4 city">Dargo</td>
+<td class="gt_row gt_left" headers="stub-4 state_prov">VIC</td>
+<td class="gt_row gt_left" headers="stub-4 postcode">3862</td>
+<td class="gt_row gt_left" headers="stub-4 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-4 email_addr"><span style="white-space:pre;">[lucinda_g@example.com](mailto:lucinda_g@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Dearth</th>
-<td class="gt_row gt_left">Alexis</td>
-<td class="gt_row gt_left">60 Sunnyside Road</td>
-<td class="gt_row gt_left">Taylorville</td>
-<td class="gt_row gt_left">SA</td>
-<td class="gt_row gt_left">5330</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[alexisdearth@example.com](mailto:alexisdearth@example.com)</span></td>
+<th id="stub-5" class="gt_row gt_left gt_stub" scope="row">Dearth</th>
+<td class="gt_row gt_left" headers="stub-5 name_given">Alexis</td>
+<td class="gt_row gt_left" headers="stub-5 address">60 Sunnyside Road</td>
+<td class="gt_row gt_left" headers="stub-5 city">Taylorville</td>
+<td class="gt_row gt_left" headers="stub-5 state_prov">SA</td>
+<td class="gt_row gt_left" headers="stub-5 postcode">5330</td>
+<td class="gt_row gt_left" headers="stub-5 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-5 email_addr"><span style="white-space:pre;">[alexisdearth@example.com](mailto:alexisdearth@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Hansen</th>
-<td class="gt_row gt_left">Christopher</td>
-<td class="gt_row gt_left">99 Weemala Avenue</td>
-<td class="gt_row gt_left">Gooloogong</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2805</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[chrishansen85@example.com](mailto:chrishansen85@example.com)</span></td>
+<th id="stub-6" class="gt_row gt_left gt_stub" scope="row">Hansen</th>
+<td class="gt_row gt_left" headers="stub-6 name_given">Christopher</td>
+<td class="gt_row gt_left" headers="stub-6 address">99 Weemala Avenue</td>
+<td class="gt_row gt_left" headers="stub-6 city">Gooloogong</td>
+<td class="gt_row gt_left" headers="stub-6 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-6 postcode">2805</td>
+<td class="gt_row gt_left" headers="stub-6 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-6 email_addr"><span style="white-space:pre;">[chrishansen85@example.com](mailto:chrishansen85@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Kaczmarek</th>
-<td class="gt_row gt_left">Scott</td>
-<td class="gt_row gt_left">94 Peninsula Drive</td>
-<td class="gt_row gt_left">Illawong</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2234</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[scott_kaczmarek@example.com](mailto:scott_kaczmarek@example.com)</span></td>
+<th id="stub-7" class="gt_row gt_left gt_stub" scope="row">Kaczmarek</th>
+<td class="gt_row gt_left" headers="stub-7 name_given">Scott</td>
+<td class="gt_row gt_left" headers="stub-7 address">94 Peninsula Drive</td>
+<td class="gt_row gt_left" headers="stub-7 city">Illawong</td>
+<td class="gt_row gt_left" headers="stub-7 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-7 postcode">2234</td>
+<td class="gt_row gt_left" headers="stub-7 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-7 email_addr"><span style="white-space:pre;">[scott_kaczmarek@example.com](mailto:scott_kaczmarek@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Pugliesi</th>
-<td class="gt_row gt_left">Brandon</td>
-<td class="gt_row gt_left">83 McDowall Street</td>
-<td class="gt_row gt_left">Balmoral Ridge</td>
-<td class="gt_row gt_left">QLD</td>
-<td class="gt_row gt_left">4552</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[brandon_pugliesi@example.com](mailto:brandon_pugliesi@example.com)</span></td>
+<th id="stub-8" class="gt_row gt_left gt_stub" scope="row">Pugliesi</th>
+<td class="gt_row gt_left" headers="stub-8 name_given">Brandon</td>
+<td class="gt_row gt_left" headers="stub-8 address">83 McDowall Street</td>
+<td class="gt_row gt_left" headers="stub-8 city">Balmoral Ridge</td>
+<td class="gt_row gt_left" headers="stub-8 state_prov">QLD</td>
+<td class="gt_row gt_left" headers="stub-8 postcode">4552</td>
+<td class="gt_row gt_left" headers="stub-8 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-8 email_addr"><span style="white-space:pre;">[brandon_pugliesi@example.com](mailto:brandon_pugliesi@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Bremer</th>
-<td class="gt_row gt_left">Rachel</td>
-<td class="gt_row gt_left">80 Argyle Street</td>
-<td class="gt_row gt_left">Stratford</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2422</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[rachel_bremer@example.com](mailto:rachel_bremer@example.com)</span></td>
+<th id="stub-9" class="gt_row gt_left gt_stub" scope="row">Bremer</th>
+<td class="gt_row gt_left" headers="stub-9 name_given">Rachel</td>
+<td class="gt_row gt_left" headers="stub-9 address">80 Argyle Street</td>
+<td class="gt_row gt_left" headers="stub-9 city">Stratford</td>
+<td class="gt_row gt_left" headers="stub-9 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-9 postcode">2422</td>
+<td class="gt_row gt_left" headers="stub-9 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-9 email_addr"><span style="white-space:pre;">[rachel_bremer@example.com](mailto:rachel_bremer@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Kerferd</th>
-<td class="gt_row gt_left">Kaitlyn</td>
-<td class="gt_row gt_left">15 Souttar Terrace</td>
-<td class="gt_row gt_left">Kingsley</td>
-<td class="gt_row gt_left">WA</td>
-<td class="gt_row gt_left">6026</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[kaitlyn_kerferd@example.com](mailto:kaitlyn_kerferd@example.com)</span></td>
+<th id="stub-10" class="gt_row gt_left gt_stub" scope="row">Kerferd</th>
+<td class="gt_row gt_left" headers="stub-10 name_given">Kaitlyn</td>
+<td class="gt_row gt_left" headers="stub-10 address">15 Souttar Terrace</td>
+<td class="gt_row gt_left" headers="stub-10 city">Kingsley</td>
+<td class="gt_row gt_left" headers="stub-10 state_prov">WA</td>
+<td class="gt_row gt_left" headers="stub-10 postcode">6026</td>
+<td class="gt_row gt_left" headers="stub-10 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-10 email_addr"><span style="white-space:pre;">[kaitlyn_kerferd@example.com](mailto:kaitlyn_kerferd@example.com)</span></td>
 </tr>
 </tbody>
 </table>
@@ -311,72 +313,72 @@ We can use `display_name=` with a callable to show just the local part of the em
 
 
 <style>
-#sverrproaa table {
+#fawyiogivw table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#sverrproaa thead, tbody, tfoot, tr, td, th { border-style: none; }
+#fawyiogivw thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#sverrproaa p { margin: 0; padding: 0; }
- #sverrproaa .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #sverrproaa .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #sverrproaa .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #sverrproaa .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #sverrproaa .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #sverrproaa .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #sverrproaa .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #sverrproaa .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #sverrproaa .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #sverrproaa .gt_column_spanner_outer:first-child { padding-left: 0; }
- #sverrproaa .gt_column_spanner_outer:last-child { padding-right: 0; }
- #sverrproaa .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #sverrproaa .gt_spanner_row { border-bottom-style: hidden; }
- #sverrproaa .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #sverrproaa .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #sverrproaa .gt_from_md> :first-child { margin-top: 0; }
- #sverrproaa .gt_from_md> :last-child { margin-bottom: 0; }
- #sverrproaa .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #sverrproaa .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #sverrproaa .gt_indent_1 { text-indent: 5px; }
- #sverrproaa .gt_indent_2 { text-indent: calc(5px * 2); }
- #sverrproaa .gt_indent_3 { text-indent: calc(5px * 3); }
- #sverrproaa .gt_indent_4 { text-indent: calc(5px * 4); }
- #sverrproaa .gt_indent_5 { text-indent: calc(5px * 5); }
- #sverrproaa .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #sverrproaa .gt_row_group_first td { border-top-width: 2px; }
- #sverrproaa .gt_row_group_first th { border-top-width: 2px; }
- #sverrproaa .gt_striped { color: #333333; background-color: #F4F4F4; }
- #sverrproaa .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #sverrproaa .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #sverrproaa .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #sverrproaa .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #sverrproaa .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #sverrproaa .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #sverrproaa .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #sverrproaa .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #sverrproaa .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #sverrproaa .gt_left { text-align: left; }
- #sverrproaa .gt_center { text-align: center; }
- #sverrproaa .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #sverrproaa .gt_font_normal { font-weight: normal; }
- #sverrproaa .gt_font_bold { font-weight: bold; }
- #sverrproaa .gt_font_italic { font-style: italic; }
- #sverrproaa .gt_super { font-size: 65%; }
- #sverrproaa .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #sverrproaa .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #sverrproaa .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #sverrproaa .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #sverrproaa .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #sverrproaa .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#fawyiogivw p { margin: 0; padding: 0; }
+ #fawyiogivw .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #fawyiogivw .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #fawyiogivw .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #fawyiogivw .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #fawyiogivw .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fawyiogivw .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fawyiogivw .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #fawyiogivw .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #fawyiogivw .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #fawyiogivw .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #fawyiogivw .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #fawyiogivw .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #fawyiogivw .gt_spanner_row { border-bottom-style: hidden; }
+ #fawyiogivw .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #fawyiogivw .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #fawyiogivw .gt_from_md> :first-child { margin-top: 0; }
+ #fawyiogivw .gt_from_md> :last-child { margin-bottom: 0; }
+ #fawyiogivw .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #fawyiogivw .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #fawyiogivw .gt_indent_1 { text-indent: 5px; }
+ #fawyiogivw .gt_indent_2 { text-indent: calc(5px * 2); }
+ #fawyiogivw .gt_indent_3 { text-indent: calc(5px * 3); }
+ #fawyiogivw .gt_indent_4 { text-indent: calc(5px * 4); }
+ #fawyiogivw .gt_indent_5 { text-indent: calc(5px * 5); }
+ #fawyiogivw .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #fawyiogivw .gt_row_group_first td { border-top-width: 2px; }
+ #fawyiogivw .gt_row_group_first th { border-top-width: 2px; }
+ #fawyiogivw .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #fawyiogivw .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fawyiogivw .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #fawyiogivw .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #fawyiogivw .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #fawyiogivw .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #fawyiogivw .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #fawyiogivw .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #fawyiogivw .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fawyiogivw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #fawyiogivw .gt_left { text-align: left; }
+ #fawyiogivw .gt_center { text-align: center; }
+ #fawyiogivw .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #fawyiogivw .gt_font_normal { font-weight: normal; }
+ #fawyiogivw .gt_font_bold { font-weight: bold; }
+ #fawyiogivw .gt_font_italic { font-style: italic; }
+ #fawyiogivw .gt_super { font-size: 65%; }
+ #fawyiogivw .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fawyiogivw .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #fawyiogivw .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #fawyiogivw .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #fawyiogivw .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #fawyiogivw .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="8" class="gt_heading gt_title gt_font_normal">Our Contacts in Australia</th>
+<th colspan="8" id="title" class="gt_heading gt_title gt_font_normal">Our Contacts in Australia</th>
 </tr>
 <tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -391,104 +393,104 @@ We can use `display_name=` with a callable to show just the local part of the em
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<th class="gt_row gt_left gt_stub">Christison</th>
-<td class="gt_row gt_left">Milla</td>
-<td class="gt_row gt_left">34 McGregor Street</td>
-<td class="gt_row gt_left">Kinalung</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2880</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[milla_c](mailto:milla_c@example.com)</span></td>
+<th id="stub-1" class="gt_row gt_left gt_stub" scope="row">Christison</th>
+<td class="gt_row gt_left" headers="stub-1 name_given">Milla</td>
+<td class="gt_row gt_left" headers="stub-1 address">34 McGregor Street</td>
+<td class="gt_row gt_left" headers="stub-1 city">Kinalung</td>
+<td class="gt_row gt_left" headers="stub-1 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-1 postcode">2880</td>
+<td class="gt_row gt_left" headers="stub-1 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-1 email_addr"><span style="white-space:pre;">[milla_c](mailto:milla_c@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Stead</th>
-<td class="gt_row gt_left">Alannah</td>
-<td class="gt_row gt_left">44 Mt Berryman Road</td>
-<td class="gt_row gt_left">Ropeley</td>
-<td class="gt_row gt_left">QLD</td>
-<td class="gt_row gt_left">4343</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[alannahstead](mailto:alannahstead@example.com)</span></td>
+<th id="stub-2" class="gt_row gt_left gt_stub" scope="row">Stead</th>
+<td class="gt_row gt_left" headers="stub-2 name_given">Alannah</td>
+<td class="gt_row gt_left" headers="stub-2 address">44 Mt Berryman Road</td>
+<td class="gt_row gt_left" headers="stub-2 city">Ropeley</td>
+<td class="gt_row gt_left" headers="stub-2 state_prov">QLD</td>
+<td class="gt_row gt_left" headers="stub-2 postcode">4343</td>
+<td class="gt_row gt_left" headers="stub-2 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-2 email_addr"><span style="white-space:pre;">[alannahstead](mailto:alannahstead@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Fitzhardinge</th>
-<td class="gt_row gt_left">Lucas</td>
-<td class="gt_row gt_left">88 Dossiter Street</td>
-<td class="gt_row gt_left">Waterloo</td>
-<td class="gt_row gt_left">TAS</td>
-<td class="gt_row gt_left">7109</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[lucas_fitz](mailto:lucas_fitz@example.com)</span></td>
+<th id="stub-3" class="gt_row gt_left gt_stub" scope="row">Fitzhardinge</th>
+<td class="gt_row gt_left" headers="stub-3 name_given">Lucas</td>
+<td class="gt_row gt_left" headers="stub-3 address">88 Dossiter Street</td>
+<td class="gt_row gt_left" headers="stub-3 city">Waterloo</td>
+<td class="gt_row gt_left" headers="stub-3 state_prov">TAS</td>
+<td class="gt_row gt_left" headers="stub-3 postcode">7109</td>
+<td class="gt_row gt_left" headers="stub-3 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-3 email_addr"><span style="white-space:pre;">[lucas_fitz](mailto:lucas_fitz@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Goldhar</th>
-<td class="gt_row gt_left">Lucinda</td>
-<td class="gt_row gt_left">24 Settlement Road</td>
-<td class="gt_row gt_left">Dargo</td>
-<td class="gt_row gt_left">VIC</td>
-<td class="gt_row gt_left">3862</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[lucinda_g](mailto:lucinda_g@example.com)</span></td>
+<th id="stub-4" class="gt_row gt_left gt_stub" scope="row">Goldhar</th>
+<td class="gt_row gt_left" headers="stub-4 name_given">Lucinda</td>
+<td class="gt_row gt_left" headers="stub-4 address">24 Settlement Road</td>
+<td class="gt_row gt_left" headers="stub-4 city">Dargo</td>
+<td class="gt_row gt_left" headers="stub-4 state_prov">VIC</td>
+<td class="gt_row gt_left" headers="stub-4 postcode">3862</td>
+<td class="gt_row gt_left" headers="stub-4 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-4 email_addr"><span style="white-space:pre;">[lucinda_g](mailto:lucinda_g@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Dearth</th>
-<td class="gt_row gt_left">Alexis</td>
-<td class="gt_row gt_left">60 Sunnyside Road</td>
-<td class="gt_row gt_left">Taylorville</td>
-<td class="gt_row gt_left">SA</td>
-<td class="gt_row gt_left">5330</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[alexisdearth](mailto:alexisdearth@example.com)</span></td>
+<th id="stub-5" class="gt_row gt_left gt_stub" scope="row">Dearth</th>
+<td class="gt_row gt_left" headers="stub-5 name_given">Alexis</td>
+<td class="gt_row gt_left" headers="stub-5 address">60 Sunnyside Road</td>
+<td class="gt_row gt_left" headers="stub-5 city">Taylorville</td>
+<td class="gt_row gt_left" headers="stub-5 state_prov">SA</td>
+<td class="gt_row gt_left" headers="stub-5 postcode">5330</td>
+<td class="gt_row gt_left" headers="stub-5 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-5 email_addr"><span style="white-space:pre;">[alexisdearth](mailto:alexisdearth@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Hansen</th>
-<td class="gt_row gt_left">Christopher</td>
-<td class="gt_row gt_left">99 Weemala Avenue</td>
-<td class="gt_row gt_left">Gooloogong</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2805</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[chrishansen85](mailto:chrishansen85@example.com)</span></td>
+<th id="stub-6" class="gt_row gt_left gt_stub" scope="row">Hansen</th>
+<td class="gt_row gt_left" headers="stub-6 name_given">Christopher</td>
+<td class="gt_row gt_left" headers="stub-6 address">99 Weemala Avenue</td>
+<td class="gt_row gt_left" headers="stub-6 city">Gooloogong</td>
+<td class="gt_row gt_left" headers="stub-6 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-6 postcode">2805</td>
+<td class="gt_row gt_left" headers="stub-6 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-6 email_addr"><span style="white-space:pre;">[chrishansen85](mailto:chrishansen85@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Kaczmarek</th>
-<td class="gt_row gt_left">Scott</td>
-<td class="gt_row gt_left">94 Peninsula Drive</td>
-<td class="gt_row gt_left">Illawong</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2234</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[scott_kaczmarek](mailto:scott_kaczmarek@example.com)</span></td>
+<th id="stub-7" class="gt_row gt_left gt_stub" scope="row">Kaczmarek</th>
+<td class="gt_row gt_left" headers="stub-7 name_given">Scott</td>
+<td class="gt_row gt_left" headers="stub-7 address">94 Peninsula Drive</td>
+<td class="gt_row gt_left" headers="stub-7 city">Illawong</td>
+<td class="gt_row gt_left" headers="stub-7 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-7 postcode">2234</td>
+<td class="gt_row gt_left" headers="stub-7 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-7 email_addr"><span style="white-space:pre;">[scott_kaczmarek](mailto:scott_kaczmarek@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Pugliesi</th>
-<td class="gt_row gt_left">Brandon</td>
-<td class="gt_row gt_left">83 McDowall Street</td>
-<td class="gt_row gt_left">Balmoral Ridge</td>
-<td class="gt_row gt_left">QLD</td>
-<td class="gt_row gt_left">4552</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[brandon_pugliesi](mailto:brandon_pugliesi@example.com)</span></td>
+<th id="stub-8" class="gt_row gt_left gt_stub" scope="row">Pugliesi</th>
+<td class="gt_row gt_left" headers="stub-8 name_given">Brandon</td>
+<td class="gt_row gt_left" headers="stub-8 address">83 McDowall Street</td>
+<td class="gt_row gt_left" headers="stub-8 city">Balmoral Ridge</td>
+<td class="gt_row gt_left" headers="stub-8 state_prov">QLD</td>
+<td class="gt_row gt_left" headers="stub-8 postcode">4552</td>
+<td class="gt_row gt_left" headers="stub-8 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-8 email_addr"><span style="white-space:pre;">[brandon_pugliesi](mailto:brandon_pugliesi@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Bremer</th>
-<td class="gt_row gt_left">Rachel</td>
-<td class="gt_row gt_left">80 Argyle Street</td>
-<td class="gt_row gt_left">Stratford</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2422</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[rachel_bremer](mailto:rachel_bremer@example.com)</span></td>
+<th id="stub-9" class="gt_row gt_left gt_stub" scope="row">Bremer</th>
+<td class="gt_row gt_left" headers="stub-9 name_given">Rachel</td>
+<td class="gt_row gt_left" headers="stub-9 address">80 Argyle Street</td>
+<td class="gt_row gt_left" headers="stub-9 city">Stratford</td>
+<td class="gt_row gt_left" headers="stub-9 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-9 postcode">2422</td>
+<td class="gt_row gt_left" headers="stub-9 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-9 email_addr"><span style="white-space:pre;">[rachel_bremer](mailto:rachel_bremer@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Kerferd</th>
-<td class="gt_row gt_left">Kaitlyn</td>
-<td class="gt_row gt_left">15 Souttar Terrace</td>
-<td class="gt_row gt_left">Kingsley</td>
-<td class="gt_row gt_left">WA</td>
-<td class="gt_row gt_left">6026</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[kaitlyn_kerferd](mailto:kaitlyn_kerferd@example.com)</span></td>
+<th id="stub-10" class="gt_row gt_left gt_stub" scope="row">Kerferd</th>
+<td class="gt_row gt_left" headers="stub-10 name_given">Kaitlyn</td>
+<td class="gt_row gt_left" headers="stub-10 address">15 Souttar Terrace</td>
+<td class="gt_row gt_left" headers="stub-10 city">Kingsley</td>
+<td class="gt_row gt_left" headers="stub-10 state_prov">WA</td>
+<td class="gt_row gt_left" headers="stub-10 postcode">6026</td>
+<td class="gt_row gt_left" headers="stub-10 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-10 email_addr"><span style="white-space:pre;">[kaitlyn_kerferd](mailto:kaitlyn_kerferd@example.com)</span></td>
 </tr>
 </tbody>
 </table>
@@ -521,72 +523,72 @@ Button-styled email links are also supported.
 
 
 <style>
-#luhqsiqcjh table {
+#lclcqdpoge table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#luhqsiqcjh thead, tbody, tfoot, tr, td, th { border-style: none; }
+#lclcqdpoge thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#luhqsiqcjh p { margin: 0; padding: 0; }
- #luhqsiqcjh .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #luhqsiqcjh .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #luhqsiqcjh .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #luhqsiqcjh .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #luhqsiqcjh .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #luhqsiqcjh .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #luhqsiqcjh .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #luhqsiqcjh .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #luhqsiqcjh .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #luhqsiqcjh .gt_column_spanner_outer:first-child { padding-left: 0; }
- #luhqsiqcjh .gt_column_spanner_outer:last-child { padding-right: 0; }
- #luhqsiqcjh .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #luhqsiqcjh .gt_spanner_row { border-bottom-style: hidden; }
- #luhqsiqcjh .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #luhqsiqcjh .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #luhqsiqcjh .gt_from_md> :first-child { margin-top: 0; }
- #luhqsiqcjh .gt_from_md> :last-child { margin-bottom: 0; }
- #luhqsiqcjh .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #luhqsiqcjh .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #luhqsiqcjh .gt_indent_1 { text-indent: 5px; }
- #luhqsiqcjh .gt_indent_2 { text-indent: calc(5px * 2); }
- #luhqsiqcjh .gt_indent_3 { text-indent: calc(5px * 3); }
- #luhqsiqcjh .gt_indent_4 { text-indent: calc(5px * 4); }
- #luhqsiqcjh .gt_indent_5 { text-indent: calc(5px * 5); }
- #luhqsiqcjh .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #luhqsiqcjh .gt_row_group_first td { border-top-width: 2px; }
- #luhqsiqcjh .gt_row_group_first th { border-top-width: 2px; }
- #luhqsiqcjh .gt_striped { color: #333333; background-color: #F4F4F4; }
- #luhqsiqcjh .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #luhqsiqcjh .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #luhqsiqcjh .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #luhqsiqcjh .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #luhqsiqcjh .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #luhqsiqcjh .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #luhqsiqcjh .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #luhqsiqcjh .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #luhqsiqcjh .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #luhqsiqcjh .gt_left { text-align: left; }
- #luhqsiqcjh .gt_center { text-align: center; }
- #luhqsiqcjh .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #luhqsiqcjh .gt_font_normal { font-weight: normal; }
- #luhqsiqcjh .gt_font_bold { font-weight: bold; }
- #luhqsiqcjh .gt_font_italic { font-style: italic; }
- #luhqsiqcjh .gt_super { font-size: 65%; }
- #luhqsiqcjh .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #luhqsiqcjh .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #luhqsiqcjh .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #luhqsiqcjh .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #luhqsiqcjh .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #luhqsiqcjh .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#lclcqdpoge p { margin: 0; padding: 0; }
+ #lclcqdpoge .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #lclcqdpoge .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #lclcqdpoge .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #lclcqdpoge .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #lclcqdpoge .gt_heading { background-color: #FFFFFF; text-align: center; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #lclcqdpoge .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #lclcqdpoge .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #lclcqdpoge .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #lclcqdpoge .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #lclcqdpoge .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #lclcqdpoge .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #lclcqdpoge .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #lclcqdpoge .gt_spanner_row { border-bottom-style: hidden; }
+ #lclcqdpoge .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #lclcqdpoge .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #lclcqdpoge .gt_from_md> :first-child { margin-top: 0; }
+ #lclcqdpoge .gt_from_md> :last-child { margin-bottom: 0; }
+ #lclcqdpoge .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #lclcqdpoge .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #lclcqdpoge .gt_indent_1 { text-indent: 5px; }
+ #lclcqdpoge .gt_indent_2 { text-indent: calc(5px * 2); }
+ #lclcqdpoge .gt_indent_3 { text-indent: calc(5px * 3); }
+ #lclcqdpoge .gt_indent_4 { text-indent: calc(5px * 4); }
+ #lclcqdpoge .gt_indent_5 { text-indent: calc(5px * 5); }
+ #lclcqdpoge .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #lclcqdpoge .gt_row_group_first td { border-top-width: 2px; }
+ #lclcqdpoge .gt_row_group_first th { border-top-width: 2px; }
+ #lclcqdpoge .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #lclcqdpoge .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #lclcqdpoge .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #lclcqdpoge .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #lclcqdpoge .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #lclcqdpoge .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #lclcqdpoge .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #lclcqdpoge .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #lclcqdpoge .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #lclcqdpoge .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #lclcqdpoge .gt_left { text-align: left; }
+ #lclcqdpoge .gt_center { text-align: center; }
+ #lclcqdpoge .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #lclcqdpoge .gt_font_normal { font-weight: normal; }
+ #lclcqdpoge .gt_font_bold { font-weight: bold; }
+ #lclcqdpoge .gt_font_italic { font-style: italic; }
+ #lclcqdpoge .gt_super { font-size: 65%; }
+ #lclcqdpoge .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #lclcqdpoge .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #lclcqdpoge .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #lclcqdpoge .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #lclcqdpoge .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #lclcqdpoge .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="8" class="gt_heading gt_title gt_font_normal">Contact Us</th>
+<th colspan="8" id="title" class="gt_heading gt_title gt_font_normal">Contact Us</th>
 </tr>
 <tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" scope="col"></th>
@@ -601,54 +603,54 @@ Button-styled email links are also supported.
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<th class="gt_row gt_left gt_stub">Christison</th>
-<td class="gt_row gt_left">Milla</td>
-<td class="gt_row gt_left">34 McGregor Street</td>
-<td class="gt_row gt_left">Kinalung</td>
-<td class="gt_row gt_left">NSW</td>
-<td class="gt_row gt_left">2880</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[Send Email](mailto:milla_c@example.com)</span></td>
+<th id="stub-1" class="gt_row gt_left gt_stub" scope="row">Christison</th>
+<td class="gt_row gt_left" headers="stub-1 name_given">Milla</td>
+<td class="gt_row gt_left" headers="stub-1 address">34 McGregor Street</td>
+<td class="gt_row gt_left" headers="stub-1 city">Kinalung</td>
+<td class="gt_row gt_left" headers="stub-1 state_prov">NSW</td>
+<td class="gt_row gt_left" headers="stub-1 postcode">2880</td>
+<td class="gt_row gt_left" headers="stub-1 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-1 email_addr"><span style="white-space:pre;">[Send Email](mailto:milla_c@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Stead</th>
-<td class="gt_row gt_left">Alannah</td>
-<td class="gt_row gt_left">44 Mt Berryman Road</td>
-<td class="gt_row gt_left">Ropeley</td>
-<td class="gt_row gt_left">QLD</td>
-<td class="gt_row gt_left">4343</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[Send Email](mailto:alannahstead@example.com)</span></td>
+<th id="stub-2" class="gt_row gt_left gt_stub" scope="row">Stead</th>
+<td class="gt_row gt_left" headers="stub-2 name_given">Alannah</td>
+<td class="gt_row gt_left" headers="stub-2 address">44 Mt Berryman Road</td>
+<td class="gt_row gt_left" headers="stub-2 city">Ropeley</td>
+<td class="gt_row gt_left" headers="stub-2 state_prov">QLD</td>
+<td class="gt_row gt_left" headers="stub-2 postcode">4343</td>
+<td class="gt_row gt_left" headers="stub-2 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-2 email_addr"><span style="white-space:pre;">[Send Email](mailto:alannahstead@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Fitzhardinge</th>
-<td class="gt_row gt_left">Lucas</td>
-<td class="gt_row gt_left">88 Dossiter Street</td>
-<td class="gt_row gt_left">Waterloo</td>
-<td class="gt_row gt_left">TAS</td>
-<td class="gt_row gt_left">7109</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[Send Email](mailto:lucas_fitz@example.com)</span></td>
+<th id="stub-3" class="gt_row gt_left gt_stub" scope="row">Fitzhardinge</th>
+<td class="gt_row gt_left" headers="stub-3 name_given">Lucas</td>
+<td class="gt_row gt_left" headers="stub-3 address">88 Dossiter Street</td>
+<td class="gt_row gt_left" headers="stub-3 city">Waterloo</td>
+<td class="gt_row gt_left" headers="stub-3 state_prov">TAS</td>
+<td class="gt_row gt_left" headers="stub-3 postcode">7109</td>
+<td class="gt_row gt_left" headers="stub-3 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-3 email_addr"><span style="white-space:pre;">[Send Email](mailto:lucas_fitz@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Goldhar</th>
-<td class="gt_row gt_left">Lucinda</td>
-<td class="gt_row gt_left">24 Settlement Road</td>
-<td class="gt_row gt_left">Dargo</td>
-<td class="gt_row gt_left">VIC</td>
-<td class="gt_row gt_left">3862</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[Send Email](mailto:lucinda_g@example.com)</span></td>
+<th id="stub-4" class="gt_row gt_left gt_stub" scope="row">Goldhar</th>
+<td class="gt_row gt_left" headers="stub-4 name_given">Lucinda</td>
+<td class="gt_row gt_left" headers="stub-4 address">24 Settlement Road</td>
+<td class="gt_row gt_left" headers="stub-4 city">Dargo</td>
+<td class="gt_row gt_left" headers="stub-4 state_prov">VIC</td>
+<td class="gt_row gt_left" headers="stub-4 postcode">3862</td>
+<td class="gt_row gt_left" headers="stub-4 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-4 email_addr"><span style="white-space:pre;">[Send Email](mailto:lucinda_g@example.com)</span></td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub">Dearth</th>
-<td class="gt_row gt_left">Alexis</td>
-<td class="gt_row gt_left">60 Sunnyside Road</td>
-<td class="gt_row gt_left">Taylorville</td>
-<td class="gt_row gt_left">SA</td>
-<td class="gt_row gt_left">5330</td>
-<td class="gt_row gt_left">AUS</td>
-<td class="gt_row gt_left"><span style="white-space:pre;">[Send Email](mailto:alexisdearth@example.com)</span></td>
+<th id="stub-5" class="gt_row gt_left gt_stub" scope="row">Dearth</th>
+<td class="gt_row gt_left" headers="stub-5 name_given">Alexis</td>
+<td class="gt_row gt_left" headers="stub-5 address">60 Sunnyside Road</td>
+<td class="gt_row gt_left" headers="stub-5 city">Taylorville</td>
+<td class="gt_row gt_left" headers="stub-5 state_prov">SA</td>
+<td class="gt_row gt_left" headers="stub-5 postcode">5330</td>
+<td class="gt_row gt_left" headers="stub-5 country">AUS</td>
+<td class="gt_row gt_left" headers="stub-5 email_addr"><span style="white-space:pre;">[Send Email](mailto:alexisdearth@example.com)</span></td>
 </tr>
 </tbody>
 </table>

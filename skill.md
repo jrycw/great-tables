@@ -49,7 +49,7 @@ A table can contain a few useful components for conveying additional information
 
 ### Formatting column data
 
-Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the [`fmt()`](`great_tables.GT.fmt`) method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and `data_color()` provides a lot of power for colorizing body cells based on their data values.
+Columns of data can be formatted with the `fmt_*()` methods. We can specify the rows of these columns quite precisely with the `rows` argument. We get to apply these methods exactly once to each data cell (last call wins). Need to do custom formatting? Use the [`fmt()`](`great_tables.GT.fmt`) method and define your own formatter. The `sub_*()` methods allow you to perform substitution operations and `data_color()` provides a lot of power for colorizing body cells based on their data values. The `col_numeric()`, `col_bin()`, and `col_factor()` helpers create color-mapping functions for use with its `fn=` argument.
 
 
 - `GT.fmt_number`
@@ -86,6 +86,9 @@ Columns of data can be formatted with the `fmt_*()` methods. We can specify the 
 - `GT.sub_large_vals`
 - `GT.sub_values`
 - `GT.data_color`
+- `col_numeric`: Create a color-mapping function for continuous numeric values
+- `col_bin`: Create a color-mapping function for numeric values cut into bins
+- `col_factor`: Create a color-mapping function for categorical values
 
 ### Text transformation
 
@@ -103,6 +106,7 @@ The `cols_*()` methods allow for modifications that act on entire columns. This 
 
 
 - `GT.cols_align`
+- `GT.cols_align_decimal`
 - `GT.cols_width`
 - `GT.cols_label`
 - `GT.cols_label_with`
@@ -230,7 +234,7 @@ If you have single values (or lists of them) in need of formatting, we have a se
 
 ### Built-in Datasets
 
-The Great Tables package is equipped with sixteen datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The `load_dataset()` function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
+The Great Tables package is equipped with 16 datasets that come in all shapes and sizes. Many examples throughout the help docs use these datasets to quickly demonstrate the features of the package. The `load_dataset()` function provides a convenient way to load any dataset as either a Pandas or Polars DataFrame.
 
 
 - `load_dataset`: Load a dataset from the library as a specified table type

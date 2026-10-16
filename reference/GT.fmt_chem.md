@@ -14,7 +14,7 @@ GT.fmt_chem(
 ```
 
 
-With `fmt_chem()` you can format chemical formulas and reactions in the table body. Often the input text will be in a common form representing single compounds (like `"C2H4O"` for acetaldehyde) but chemical reactions can also be used (e.g., `"2 CH3OH -> CH3OCH3 + H2O"`). So long as the text within the targeted cells conforms to the specialized chemistry notation, the appropriate conversions will occur. Details on chemistry notation can be found in the section entitled *How to use chemistry notation*.
+With <a href="../reference/GT.fmt_chem.html#great_tables.GT.fmt_chem" class="gdls-link"><code>fmt_chem()</code></a> you can format chemical formulas and reactions in the table body. Often the input text will be in a common form representing single compounds (like `"C2H4O"` for acetaldehyde) but chemical reactions can also be used (e.g., `"2 CH3OH -> CH3OCH3 + H2O"`). So long as the text within the targeted cells conforms to the specialized chemistry notation, the appropriate conversions will occur. Details on chemistry notation can be found in the section entitled *How to use chemistry notation*.
 
 
 ## Parameters
@@ -23,8 +23,8 @@ With `fmt_chem()` you can format chemical formulas and reactions in the table bo
 `columns: SelectExpr = None`  
 The columns to target. Can either be a single column name or a series of column names provided in a list.
 
-`rows: int | list[int] | None = None`  
-In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a list of row indices.
+`rows: RowSelectExpr = None`  
+In conjunction with `columns=`, we can specify which of their rows should undergo formatting. The default is all rows, resulting in all rows in targeted columns being formatted. Alternatively, we can supply a row index, a list of row indices, or (for Polars DataFrames) a Polars expression such as `pl.col("x") > 0`.
 
 
 ## Returns
@@ -59,7 +59,7 @@ The chemistry notation involves a shorthand for writing chemical formulas and re
 
 ## Examples
 
-Let's use the [reactions](data.reactions.md#great_tables.data.reactions) dataset and create a table of gas-phase reaction rate constants for selected terminal alkenes. The `cmpd_formula` column contains chemical formulas and `fmt_chem()` will render them with properly subscripted numerals. Notice that the column labels for O₃ and NO₃ use the `{%...%}` chemistry notation within [cols_label()](GT.cols_label.md#great_tables.GT.cols_label).
+Let's use the [reactions](data.reactions.md#great_tables.data.reactions) dataset and create a table of gas-phase reaction rate constants for selected terminal alkenes. The `cmpd_formula` column contains chemical formulas and <a href="../reference/GT.fmt_chem.html#great_tables.GT.fmt_chem" class="gdls-link"><code>fmt_chem()</code></a> will render them with properly subscripted numerals. Notice that the column labels for O₃ and NO₃ use the `{%...%}` chemistry notation within [cols_label()](GT.cols_label.md#great_tables.GT.cols_label).
 
 
 ``` python
@@ -100,72 +100,72 @@ reactions_mini = (
 
 
 <style>
-#qnyrycxaal table {
+#durddkdfax table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#qnyrycxaal thead, tbody, tfoot, tr, td, th { border-style: none; }
+#durddkdfax thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#qnyrycxaal p { margin: 0; padding: 0; }
- #qnyrycxaal .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #qnyrycxaal .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #qnyrycxaal .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #qnyrycxaal .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #qnyrycxaal .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #qnyrycxaal .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #qnyrycxaal .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #qnyrycxaal .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #qnyrycxaal .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #qnyrycxaal .gt_column_spanner_outer:first-child { padding-left: 0; }
- #qnyrycxaal .gt_column_spanner_outer:last-child { padding-right: 0; }
- #qnyrycxaal .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #qnyrycxaal .gt_spanner_row { border-bottom-style: hidden; }
- #qnyrycxaal .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #qnyrycxaal .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #qnyrycxaal .gt_from_md> :first-child { margin-top: 0; }
- #qnyrycxaal .gt_from_md> :last-child { margin-bottom: 0; }
- #qnyrycxaal .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #qnyrycxaal .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #qnyrycxaal .gt_indent_1 { text-indent: 5px; }
- #qnyrycxaal .gt_indent_2 { text-indent: calc(5px * 2); }
- #qnyrycxaal .gt_indent_3 { text-indent: calc(5px * 3); }
- #qnyrycxaal .gt_indent_4 { text-indent: calc(5px * 4); }
- #qnyrycxaal .gt_indent_5 { text-indent: calc(5px * 5); }
- #qnyrycxaal .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #qnyrycxaal .gt_row_group_first td { border-top-width: 2px; }
- #qnyrycxaal .gt_row_group_first th { border-top-width: 2px; }
- #qnyrycxaal .gt_striped { color: #333333; background-color: #F4F4F4; }
- #qnyrycxaal .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #qnyrycxaal .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #qnyrycxaal .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #qnyrycxaal .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #qnyrycxaal .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #qnyrycxaal .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #qnyrycxaal .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #qnyrycxaal .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #qnyrycxaal .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #qnyrycxaal .gt_left { text-align: left; }
- #qnyrycxaal .gt_center { text-align: center; }
- #qnyrycxaal .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #qnyrycxaal .gt_font_normal { font-weight: normal; }
- #qnyrycxaal .gt_font_bold { font-weight: bold; }
- #qnyrycxaal .gt_font_italic { font-style: italic; }
- #qnyrycxaal .gt_super { font-size: 65%; }
- #qnyrycxaal .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #qnyrycxaal .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #qnyrycxaal .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #qnyrycxaal .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #qnyrycxaal .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #qnyrycxaal .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#durddkdfax p { margin: 0; padding: 0; }
+ #durddkdfax .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #durddkdfax .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #durddkdfax .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #durddkdfax .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #durddkdfax .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #durddkdfax .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #durddkdfax .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #durddkdfax .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #durddkdfax .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #durddkdfax .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #durddkdfax .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #durddkdfax .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #durddkdfax .gt_spanner_row { border-bottom-style: hidden; }
+ #durddkdfax .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #durddkdfax .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #durddkdfax .gt_from_md> :first-child { margin-top: 0; }
+ #durddkdfax .gt_from_md> :last-child { margin-bottom: 0; }
+ #durddkdfax .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #durddkdfax .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #durddkdfax .gt_indent_1 { text-indent: 5px; }
+ #durddkdfax .gt_indent_2 { text-indent: calc(5px * 2); }
+ #durddkdfax .gt_indent_3 { text-indent: calc(5px * 3); }
+ #durddkdfax .gt_indent_4 { text-indent: calc(5px * 4); }
+ #durddkdfax .gt_indent_5 { text-indent: calc(5px * 5); }
+ #durddkdfax .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #durddkdfax .gt_row_group_first td { border-top-width: 2px; }
+ #durddkdfax .gt_row_group_first th { border-top-width: 2px; }
+ #durddkdfax .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #durddkdfax .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #durddkdfax .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #durddkdfax .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #durddkdfax .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #durddkdfax .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #durddkdfax .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #durddkdfax .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #durddkdfax .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #durddkdfax .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #durddkdfax .gt_left { text-align: left; }
+ #durddkdfax .gt_center { text-align: center; }
+ #durddkdfax .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #durddkdfax .gt_font_normal { font-weight: normal; }
+ #durddkdfax .gt_font_bold { font-weight: bold; }
+ #durddkdfax .gt_font_italic { font-style: italic; }
+ #durddkdfax .gt_super { font-size: 65%; }
+ #durddkdfax .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #durddkdfax .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #durddkdfax .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #durddkdfax .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #durddkdfax .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #durddkdfax .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="6" class="gt_heading gt_title gt_font_normal">Gas-Phase Reactions of Selected Terminal Alkenes</th>
+<th colspan="6" id="title" class="gt_heading gt_title gt_font_normal">Gas-Phase Reactions of Selected Terminal Alkenes</th>
 </tr>
 <tr class="gt_col_headings gt_spanner_row">
 <th rowspan="2" id="cmpd_name" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">Alkene</th>
@@ -181,98 +181,98 @@ reactions_mini = (
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">1-butene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>4</sub></span>H<span style="white-space:nowrap;"><sub>8</sub></span></td>
-<td class="gt_row gt_right">3.10 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.00 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">1.30 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">3.00 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-butene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>4</sub></span>H<span style="white-space:nowrap;"><sub>8</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">3.10 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.00 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">1.30 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">3.00 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-pentene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>5</sub></span>H<span style="white-space:nowrap;"><sub>10</sub></span></td>
-<td class="gt_row gt_right">3.22 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.06 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">1.50 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">4.20 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-pentene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>5</sub></span>H<span style="white-space:nowrap;"><sub>10</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">3.22 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.06 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">1.50 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">4.20 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-hexene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>6</sub></span>H<span style="white-space:nowrap;"><sub>12</sub></span></td>
-<td class="gt_row gt_right">3.70 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.15 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">1.80 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">4.00 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-hexene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>6</sub></span>H<span style="white-space:nowrap;"><sub>12</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">3.70 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.15 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">1.80 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">4.00 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-heptene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>7</sub></span>H<span style="white-space:nowrap;"><sub>14</sub></span></td>
-<td class="gt_row gt_right">3.88 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.16 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">2.00 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">4.40 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-heptene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>7</sub></span>H<span style="white-space:nowrap;"><sub>14</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">3.88 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.16 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">2.00 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">4.40 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-octene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>8</sub></span>H<span style="white-space:nowrap;"><sub>16</sub></span></td>
-<td class="gt_row gt_right">3.44 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.01 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">2.50 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">5.50 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-octene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>8</sub></span>H<span style="white-space:nowrap;"><sub>16</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">3.44 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.01 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">2.50 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">5.50 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-nonene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>9</sub></span>H<span style="white-space:nowrap;"><sub>18</sub></span></td>
-<td class="gt_row gt_right">4.32 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">9.90 × 10<sup>−18</sup></td>
-<td class="gt_row gt_right">--</td>
-<td class="gt_row gt_right">5.90 × 10<sup>−10</sup></td>
+<td class="gt_row gt_left" headers="cmpd_name">1-nonene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>9</sub></span>H<span style="white-space:nowrap;"><sub>18</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">4.32 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">9.90 × 10<sup>−18</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">--</td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">5.90 × 10<sup>−10</sup></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-decene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>10</sub></span>H<span style="white-space:nowrap;"><sub>20</sub></span></td>
-<td class="gt_row gt_right">4.61 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.11 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">2.60 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">--</td>
+<td class="gt_row gt_left" headers="cmpd_name">1-decene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>10</sub></span>H<span style="white-space:nowrap;"><sub>20</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">4.61 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.11 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">2.60 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">--</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-undecene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>11</sub></span>H<span style="white-space:nowrap;"><sub>22</sub></span></td>
-<td class="gt_row gt_right">4.79 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.03 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">--</td>
-<td class="gt_row gt_right">--</td>
+<td class="gt_row gt_left" headers="cmpd_name">1-undecene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>11</sub></span>H<span style="white-space:nowrap;"><sub>22</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">4.79 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.03 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">--</td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">--</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-dodecene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>12</sub></span>H<span style="white-space:nowrap;"><sub>24</sub></span></td>
-<td class="gt_row gt_right">5.03 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">1.03 × 10<sup>−17</sup></td>
-<td class="gt_row gt_right">2.80 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">--</td>
+<td class="gt_row gt_left" headers="cmpd_name">1-dodecene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>12</sub></span>H<span style="white-space:nowrap;"><sub>24</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">5.03 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">1.03 × 10<sup>−17</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">2.80 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">--</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-tridecene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>13</sub></span>H<span style="white-space:nowrap;"><sub>26</sub></span></td>
-<td class="gt_row gt_right">5.09 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">9.60 × 10<sup>−18</sup></td>
-<td class="gt_row gt_right">--</td>
-<td class="gt_row gt_right">--</td>
+<td class="gt_row gt_left" headers="cmpd_name">1-tridecene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>13</sub></span>H<span style="white-space:nowrap;"><sub>26</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">5.09 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">9.60 × 10<sup>−18</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">--</td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">--</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">1-tetradecene</td>
-<td class="gt_row gt_left">C<span style="white-space:nowrap;"><sub>14</sub></span>H<span style="white-space:nowrap;"><sub>28</sub></span></td>
-<td class="gt_row gt_right">4.96 × 10<sup>−11</sup></td>
-<td class="gt_row gt_right">9.70 × 10<sup>−18</sup></td>
-<td class="gt_row gt_right">2.80 × 10<sup>−14</sup></td>
-<td class="gt_row gt_right">--</td>
+<td class="gt_row gt_left" headers="cmpd_name">1-tetradecene</td>
+<td class="gt_row gt_left" headers="cmpd_formula">C<span style="white-space:nowrap;"><sub>14</sub></span>H<span style="white-space:nowrap;"><sub>28</sub></span></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K OH_k298">4.96 × 10<sup>−11</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K O3_k298">9.70 × 10<sup>−18</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K NO3_k298">2.80 × 10<sup>−14</sup></td>
+<td class="gt_row gt_right" headers="Reaction-Rate-Constant-at-298-K Cl_k298">--</td>
 </tr>
 </tbody>
 </table>
 
 
-The [photolysis](data.photolysis.md#great_tables.data.photolysis) dataset contains photolysis pathways where both the `cmpd_formula` and `products` columns hold chemistry notation. We can format both columns with `fmt_chem()` and use [cols_merge()](GT.cols_merge.md#great_tables.GT.cols_merge) to combine the compound name with its formatted formula.
+The [photolysis](data.photolysis.md#great_tables.data.photolysis) dataset contains photolysis pathways where both the `cmpd_formula` and `products` columns hold chemistry notation. We can format both columns with <a href="../reference/GT.fmt_chem.html#great_tables.GT.fmt_chem" class="gdls-link"><code>fmt_chem()</code></a> and use [cols_merge()](GT.cols_merge.md#great_tables.GT.cols_merge) to combine the compound name with its formatted formula.
 
 
 ``` python
@@ -303,72 +303,72 @@ photolysis_mini = (
 
 
 <style>
-#rhmlsnmfdd table {
+#qqqezmipbg table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#rhmlsnmfdd thead, tbody, tfoot, tr, td, th { border-style: none; }
+#qqqezmipbg thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#rhmlsnmfdd p { margin: 0; padding: 0; }
- #rhmlsnmfdd .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #rhmlsnmfdd .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #rhmlsnmfdd .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #rhmlsnmfdd .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #rhmlsnmfdd .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #rhmlsnmfdd .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #rhmlsnmfdd .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #rhmlsnmfdd .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #rhmlsnmfdd .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #rhmlsnmfdd .gt_column_spanner_outer:first-child { padding-left: 0; }
- #rhmlsnmfdd .gt_column_spanner_outer:last-child { padding-right: 0; }
- #rhmlsnmfdd .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #rhmlsnmfdd .gt_spanner_row { border-bottom-style: hidden; }
- #rhmlsnmfdd .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #rhmlsnmfdd .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #rhmlsnmfdd .gt_from_md> :first-child { margin-top: 0; }
- #rhmlsnmfdd .gt_from_md> :last-child { margin-bottom: 0; }
- #rhmlsnmfdd .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #rhmlsnmfdd .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #rhmlsnmfdd .gt_indent_1 { text-indent: 5px; }
- #rhmlsnmfdd .gt_indent_2 { text-indent: calc(5px * 2); }
- #rhmlsnmfdd .gt_indent_3 { text-indent: calc(5px * 3); }
- #rhmlsnmfdd .gt_indent_4 { text-indent: calc(5px * 4); }
- #rhmlsnmfdd .gt_indent_5 { text-indent: calc(5px * 5); }
- #rhmlsnmfdd .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #rhmlsnmfdd .gt_row_group_first td { border-top-width: 2px; }
- #rhmlsnmfdd .gt_row_group_first th { border-top-width: 2px; }
- #rhmlsnmfdd .gt_striped { color: #333333; background-color: #F4F4F4; }
- #rhmlsnmfdd .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #rhmlsnmfdd .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #rhmlsnmfdd .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #rhmlsnmfdd .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #rhmlsnmfdd .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #rhmlsnmfdd .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #rhmlsnmfdd .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #rhmlsnmfdd .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #rhmlsnmfdd .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #rhmlsnmfdd .gt_left { text-align: left; }
- #rhmlsnmfdd .gt_center { text-align: center; }
- #rhmlsnmfdd .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #rhmlsnmfdd .gt_font_normal { font-weight: normal; }
- #rhmlsnmfdd .gt_font_bold { font-weight: bold; }
- #rhmlsnmfdd .gt_font_italic { font-style: italic; }
- #rhmlsnmfdd .gt_super { font-size: 65%; }
- #rhmlsnmfdd .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #rhmlsnmfdd .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #rhmlsnmfdd .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #rhmlsnmfdd .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #rhmlsnmfdd .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #rhmlsnmfdd .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#qqqezmipbg p { margin: 0; padding: 0; }
+ #qqqezmipbg .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #qqqezmipbg .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #qqqezmipbg .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #qqqezmipbg .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 3px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #qqqezmipbg .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #qqqezmipbg .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #qqqezmipbg .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #qqqezmipbg .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #qqqezmipbg .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #qqqezmipbg .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #qqqezmipbg .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #qqqezmipbg .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #qqqezmipbg .gt_spanner_row { border-bottom-style: hidden; }
+ #qqqezmipbg .gt_group_heading { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #qqqezmipbg .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #qqqezmipbg .gt_from_md> :first-child { margin-top: 0; }
+ #qqqezmipbg .gt_from_md> :last-child { margin-bottom: 0; }
+ #qqqezmipbg .gt_row { padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #qqqezmipbg .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #qqqezmipbg .gt_indent_1 { text-indent: 5px; }
+ #qqqezmipbg .gt_indent_2 { text-indent: calc(5px * 2); }
+ #qqqezmipbg .gt_indent_3 { text-indent: calc(5px * 3); }
+ #qqqezmipbg .gt_indent_4 { text-indent: calc(5px * 4); }
+ #qqqezmipbg .gt_indent_5 { text-indent: calc(5px * 5); }
+ #qqqezmipbg .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #qqqezmipbg .gt_row_group_first td { border-top-width: 2px; }
+ #qqqezmipbg .gt_row_group_first th { border-top-width: 2px; }
+ #qqqezmipbg .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #qqqezmipbg .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #qqqezmipbg .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #qqqezmipbg .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #qqqezmipbg .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #qqqezmipbg .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #qqqezmipbg .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #qqqezmipbg .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #qqqezmipbg .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #qqqezmipbg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #qqqezmipbg .gt_left { text-align: left; }
+ #qqqezmipbg .gt_center { text-align: center; }
+ #qqqezmipbg .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #qqqezmipbg .gt_font_normal { font-weight: normal; }
+ #qqqezmipbg .gt_font_bold { font-weight: bold; }
+ #qqqezmipbg .gt_font_italic { font-style: italic; }
+ #qqqezmipbg .gt_super { font-size: 65%; }
+ #qqqezmipbg .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #qqqezmipbg .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #qqqezmipbg .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #qqqezmipbg .gt_sourcenote { font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #qqqezmipbg .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #qqqezmipbg .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading">
-<th colspan="2" class="gt_heading gt_title gt_font_normal">Photolysis Pathways of Selected VOCs</th>
+<th colspan="2" id="title" class="gt_heading gt_title gt_font_normal">Photolysis Pathways of Selected VOCs</th>
 </tr>
 <tr class="gt_col_headings">
 <th id="cmpd_name" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">Compound</th>
@@ -377,42 +377,42 @@ photolysis_mini = (
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<td class="gt_row gt_left">hydrogen peroxide, H<span style="white-space:nowrap;"><sub>2</sub></span>O<span style="white-space:nowrap;"><sub>2</sub></span></td>
-<td class="gt_row gt_left">→ OH + OH</td>
+<td class="gt_row gt_left" headers="cmpd_name">hydrogen peroxide, H<span style="white-space:nowrap;"><sub>2</sub></span>O<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="products">→ OH + OH</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">nitrous acid, HONO</td>
-<td class="gt_row gt_left">→ OH + NO</td>
+<td class="gt_row gt_left" headers="cmpd_name">nitrous acid, HONO</td>
+<td class="gt_row gt_left" headers="products">→ OH + NO</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">nitric acid, HNO<span style="white-space:nowrap;"><sub>3</sub></span></td>
-<td class="gt_row gt_left">→ OH + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="cmpd_name">nitric acid, HNO<span style="white-space:nowrap;"><sub>3</sub></span></td>
+<td class="gt_row gt_left" headers="products">→ OH + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">acetaldehyde, CH<span style="white-space:nowrap;"><sub>3</sub></span>CHO</td>
-<td class="gt_row gt_left">→ HCO + CH<span style="white-space:nowrap;"><sub>3</sub></span></td>
+<td class="gt_row gt_left" headers="cmpd_name">acetaldehyde, CH<span style="white-space:nowrap;"><sub>3</sub></span>CHO</td>
+<td class="gt_row gt_left" headers="products">→ HCO + CH<span style="white-space:nowrap;"><sub>3</sub></span></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">methyl peroxide, CH<span style="white-space:nowrap;"><sub>3</sub></span>OOH</td>
-<td class="gt_row gt_left">→ CH<span style="white-space:nowrap;"><sub>3</sub></span>O + OH</td>
+<td class="gt_row gt_left" headers="cmpd_name">methyl peroxide, CH<span style="white-space:nowrap;"><sub>3</sub></span>OOH</td>
+<td class="gt_row gt_left" headers="products">→ CH<span style="white-space:nowrap;"><sub>3</sub></span>O + OH</td>
 </tr>
 <tr>
-<td class="gt_row gt_left">methyl nitrate, CH<span style="white-space:nowrap;"><sub>3</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
-<td class="gt_row gt_left">→ CH<span style="white-space:nowrap;"><sub>3</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="cmpd_name">methyl nitrate, CH<span style="white-space:nowrap;"><sub>3</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="products">→ CH<span style="white-space:nowrap;"><sub>3</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">ethyl nitrate, C<span style="white-space:nowrap;"><sub>2</sub></span>H<span style="white-space:nowrap;"><sub>5</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
-<td class="gt_row gt_left">→ C<span style="white-space:nowrap;"><sub>2</sub></span>H<span style="white-space:nowrap;"><sub>5</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="cmpd_name">ethyl nitrate, C<span style="white-space:nowrap;"><sub>2</sub></span>H<span style="white-space:nowrap;"><sub>5</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="products">→ C<span style="white-space:nowrap;"><sub>2</sub></span>H<span style="white-space:nowrap;"><sub>5</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
 </tr>
 <tr>
-<td class="gt_row gt_left">isopropyl nitrate, i-C<span style="white-space:nowrap;"><sub>3</sub></span>H<span style="white-space:nowrap;"><sub>7</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
-<td class="gt_row gt_left">→ i-C<span style="white-space:nowrap;"><sub>3</sub></span>H<span style="white-space:nowrap;"><sub>7</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="cmpd_name">isopropyl nitrate, i-C<span style="white-space:nowrap;"><sub>3</sub></span>H<span style="white-space:nowrap;"><sub>7</sub></span>ONO<span style="white-space:nowrap;"><sub>2</sub></span></td>
+<td class="gt_row gt_left" headers="products">→ i-C<span style="white-space:nowrap;"><sub>3</sub></span>H<span style="white-space:nowrap;"><sub>7</sub></span>O + NO<span style="white-space:nowrap;"><sub>2</sub></span></td>
 </tr>
 </tbody>
 </table>
 
 
-The [nuclides](data.nuclides.md#great_tables.data.nuclides) dataset contains isotope data with nuclide notation (e.g., `"^{12}_{6}C"`) that `fmt_chem()` renders with properly overstruck mass and atomic numbers. Here we show isotopes of hydrogen and carbon.
+The [nuclides](data.nuclides.md#great_tables.data.nuclides) dataset contains isotope data with nuclide notation (e.g., `"^{12}_{6}C"`) that <a href="../reference/GT.fmt_chem.html#great_tables.GT.fmt_chem" class="gdls-link"><code>fmt_chem()</code></a> renders with properly overstruck mass and atomic numbers. Here we show isotopes of hydrogen and carbon.
 
 
 ``` python
@@ -456,69 +456,69 @@ unstable = (
 
 
 <style>
-#vtkkuplxqs table {
+#imacbgajsg table {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
         }
 
-#vtkkuplxqs thead, tbody, tfoot, tr, td, th { border-style: none; }
+#imacbgajsg thead, tbody, tfoot, tr, td, th { border-style: none; }
  tr { background-color: transparent; }
-#vtkkuplxqs p { margin: 0; padding: 0; }
- #vtkkuplxqs .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
- #vtkkuplxqs .gt_caption { padding-top: 4px; padding-bottom: 4px; }
- #vtkkuplxqs .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
- #vtkkuplxqs .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 1px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
- #vtkkuplxqs .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vtkkuplxqs .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vtkkuplxqs .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
- #vtkkuplxqs .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 2.5px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
- #vtkkuplxqs .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
- #vtkkuplxqs .gt_column_spanner_outer:first-child { padding-left: 0; }
- #vtkkuplxqs .gt_column_spanner_outer:last-child { padding-right: 0; }
- #vtkkuplxqs .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 2.5px; padding-bottom: 2.5px; overflow-x: hidden; display: inline-block; width: 100%; }
- #vtkkuplxqs .gt_spanner_row { border-bottom-style: hidden; }
- #vtkkuplxqs .gt_group_heading { padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
- #vtkkuplxqs .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
- #vtkkuplxqs .gt_from_md> :first-child { margin-top: 0; }
- #vtkkuplxqs .gt_from_md> :last-child { margin-bottom: 0; }
- #vtkkuplxqs .gt_row { padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
- #vtkkuplxqs .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
- #vtkkuplxqs .gt_indent_1 { text-indent: 5px; }
- #vtkkuplxqs .gt_indent_2 { text-indent: calc(5px * 2); }
- #vtkkuplxqs .gt_indent_3 { text-indent: calc(5px * 3); }
- #vtkkuplxqs .gt_indent_4 { text-indent: calc(5px * 4); }
- #vtkkuplxqs .gt_indent_5 { text-indent: calc(5px * 5); }
- #vtkkuplxqs .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
- #vtkkuplxqs .gt_row_group_first td { border-top-width: 2px; }
- #vtkkuplxqs .gt_row_group_first th { border-top-width: 2px; }
- #vtkkuplxqs .gt_striped { color: #333333; background-color: #F4F4F4; }
- #vtkkuplxqs .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vtkkuplxqs .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vtkkuplxqs .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
- #vtkkuplxqs .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
- #vtkkuplxqs .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
- #vtkkuplxqs .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
- #vtkkuplxqs .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
- #vtkkuplxqs .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vtkkuplxqs .gt_sourcenote { font-size: 90%; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vtkkuplxqs .gt_left { text-align: left; }
- #vtkkuplxqs .gt_center { text-align: center; }
- #vtkkuplxqs .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
- #vtkkuplxqs .gt_font_normal { font-weight: normal; }
- #vtkkuplxqs .gt_font_bold { font-weight: bold; }
- #vtkkuplxqs .gt_font_italic { font-style: italic; }
- #vtkkuplxqs .gt_super { font-size: 65%; }
- #vtkkuplxqs .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vtkkuplxqs .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
- #vtkkuplxqs .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
- #vtkkuplxqs .gt_sourcenote { font-size: 90%; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: left; }
- #vtkkuplxqs .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
- #vtkkuplxqs .gt_asterisk { font-size: 100%; vertical-align: 0; }
+#imacbgajsg p { margin: 0; padding: 0; }
+ #imacbgajsg .gt_table { display: table; border-collapse: collapse; line-height: normal; margin-left: auto; margin-right: auto; color: #333333; font-size: 16px; font-weight: normal; font-style: normal; background-color: #FFFFFF; width: auto; border-top-style: solid; border-top-width: 2px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; }
+ #imacbgajsg .gt_caption { padding-top: 4px; padding-bottom: 4px; }
+ #imacbgajsg .gt_title { color: #333333; font-size: 125%; font-weight: initial; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom-color: #FFFFFF; border-bottom-width: 0; }
+ #imacbgajsg .gt_subtitle { color: #333333; font-size: 85%; font-weight: initial; padding-top: 1px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; border-top-color: #FFFFFF; border-top-width: 0; }
+ #imacbgajsg .gt_heading { background-color: #FFFFFF; text-align: left; border-bottom-color: #FFFFFF; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #imacbgajsg .gt_bottom_border { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #imacbgajsg .gt_col_headings { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; }
+ #imacbgajsg .gt_col_heading { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 2.5px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; }
+ #imacbgajsg .gt_column_spanner_outer { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: normal; text-transform: inherit; padding-top: 0; padding-bottom: 0; padding-left: 4px; padding-right: 4px; }
+ #imacbgajsg .gt_column_spanner_outer:first-child { padding-left: 0; }
+ #imacbgajsg .gt_column_spanner_outer:last-child { padding-right: 0; }
+ #imacbgajsg .gt_column_spanner { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: bottom; padding-top: 2.5px; padding-bottom: 2.5px; overflow-x: hidden; display: inline-block; width: 100%; }
+ #imacbgajsg .gt_spanner_row { border-bottom-style: hidden; }
+ #imacbgajsg .gt_group_heading { padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; }
+ #imacbgajsg .gt_empty_group_heading { padding: 0.5px; color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; vertical-align: middle; }
+ #imacbgajsg .gt_from_md> :first-child { margin-top: 0; }
+ #imacbgajsg .gt_from_md> :last-child { margin-bottom: 0; }
+ #imacbgajsg .gt_row { padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; }
+ #imacbgajsg .gt_stub { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; }
+ #imacbgajsg .gt_indent_1 { text-indent: 5px; }
+ #imacbgajsg .gt_indent_2 { text-indent: calc(5px * 2); }
+ #imacbgajsg .gt_indent_3 { text-indent: calc(5px * 3); }
+ #imacbgajsg .gt_indent_4 { text-indent: calc(5px * 4); }
+ #imacbgajsg .gt_indent_5 { text-indent: calc(5px * 5); }
+ #imacbgajsg .gt_stub_row_group { color: #333333; background-color: #FFFFFF; font-size: 100%; font-weight: initial; text-transform: inherit; border-right-style: solid; border-right-width: 2px; border-right-color: #D3D3D3; padding-left: 5px; padding-right: 5px; vertical-align: top; }
+ #imacbgajsg .gt_row_group_first td { border-top-width: 2px; }
+ #imacbgajsg .gt_row_group_first th { border-top-width: 2px; }
+ #imacbgajsg .gt_striped { color: #333333; background-color: #F4F4F4; }
+ #imacbgajsg .gt_table_body { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #imacbgajsg .gt_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #imacbgajsg .gt_first_summary_row { border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; }
+ #imacbgajsg .gt_last_summary_row_top { border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3; }
+ #imacbgajsg .gt_grand_summary_row { color: #333333; background-color: #FFFFFF; text-transform: inherit; padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; }
+ #imacbgajsg .gt_first_grand_summary_row_bottom { border-top-style: double; border-top-width: 6px; border-top-color: #D3D3D3; }
+ #imacbgajsg .gt_last_grand_summary_row_top { border-bottom-style: double; border-bottom-width: 6px; border-bottom-color: #D3D3D3; }
+ #imacbgajsg .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #imacbgajsg .gt_sourcenote { font-size: 90%; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #imacbgajsg .gt_left { text-align: left; }
+ #imacbgajsg .gt_center { text-align: center; }
+ #imacbgajsg .gt_right { text-align: right; font-variant-numeric: tabular-nums; }
+ #imacbgajsg .gt_font_normal { font-weight: normal; }
+ #imacbgajsg .gt_font_bold { font-weight: bold; }
+ #imacbgajsg .gt_font_italic { font-style: italic; }
+ #imacbgajsg .gt_super { font-size: 65%; }
+ #imacbgajsg .gt_footnotes { color: font-color(#FFFFFF); background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #imacbgajsg .gt_footnote { margin: 0px; font-size: 90%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; }
+ #imacbgajsg .gt_sourcenotes { color: #333333; background-color: #FFFFFF; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; }
+ #imacbgajsg .gt_sourcenote { font-size: 90%; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; text-align: left; }
+ #imacbgajsg .gt_footnote_marks { font-size: 75%; vertical-align: 0.4em; position: initial; }
+ #imacbgajsg .gt_asterisk { font-size: 100%; vertical-align: 0; }
  
 </style>
 
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<table class="gt_table" aria-labelledby="title" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -527,7 +527,7 @@ unstable = (
 </colgroup>
 <thead>
 <tr class="gt_heading">
-<th colspan="4" class="gt_heading gt_title gt_font_normal">Isotopes of Hydrogen and Carbon</th>
+<th colspan="4" id="title" class="gt_heading gt_title gt_font_normal">Isotopes of Hydrogen and Carbon</th>
 </tr>
 <tr class="gt_col_headings">
 <th id="Isotope" class="gt_col_heading gt_columns_bottom_border gt_left" scope="col">Isotope</th>
@@ -538,151 +538,151 @@ unstable = (
 </thead>
 <tbody class="gt_table_body">
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">1<br />
+<th id="stub-1" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">1<br />
 1</span>H</th>
-<td class="gt_row gt_right">1.0078</td>
-<td class="gt_row gt_right"><strong>STABLE</strong></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-1 atomic_mass">1.0078</td>
+<td class="gt_row gt_right" headers="stub-1 half_life"><strong>STABLE</strong></td>
+<td class="gt_row gt_center" headers="stub-1 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">2<br />
+<th id="stub-2" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">2<br />
 1</span>H</th>
-<td class="gt_row gt_right">2.0141</td>
-<td class="gt_row gt_right"><strong>STABLE</strong></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-2 atomic_mass">2.0141</td>
+<td class="gt_row gt_right" headers="stub-2 half_life"><strong>STABLE</strong></td>
+<td class="gt_row gt_center" headers="stub-2 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">3<br />
+<th id="stub-3" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">3<br />
 1</span>H</th>
-<td class="gt_row gt_right">3.0160</td>
-<td class="gt_row gt_right">3.89 × 10<sup>8</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-3 atomic_mass">3.0160</td>
+<td class="gt_row gt_right" headers="stub-3 half_life">3.89 × 10<sup>8</sup></td>
+<td class="gt_row gt_center" headers="stub-3 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">4<br />
+<th id="stub-4" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">4<br />
 1</span>H</th>
-<td class="gt_row gt_right">4.0264</td>
-<td class="gt_row gt_right">--</td>
-<td class="gt_row gt_center">N</td>
+<td class="gt_row gt_right" headers="stub-4 atomic_mass">4.0264</td>
+<td class="gt_row gt_right" headers="stub-4 half_life">--</td>
+<td class="gt_row gt_center" headers="stub-4 decay_1">N</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">5<br />
+<th id="stub-5" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">5<br />
 1</span>H</th>
-<td class="gt_row gt_right">5.0353</td>
-<td class="gt_row gt_right">8.61 × 10<sup>−23</sup></td>
-<td class="gt_row gt_center">2N</td>
+<td class="gt_row gt_right" headers="stub-5 atomic_mass">5.0353</td>
+<td class="gt_row gt_right" headers="stub-5 half_life">8.61 × 10<sup>−23</sup></td>
+<td class="gt_row gt_center" headers="stub-5 decay_1">2N</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">6<br />
+<th id="stub-6" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">6<br />
 1</span>H</th>
-<td class="gt_row gt_right">6.0450</td>
-<td class="gt_row gt_right">2.94 × 10<sup>−22</sup></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-6 atomic_mass">6.0450</td>
+<td class="gt_row gt_right" headers="stub-6 half_life">2.94 × 10<sup>−22</sup></td>
+<td class="gt_row gt_center" headers="stub-6 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">7<br />
+<th id="stub-7" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">7<br />
 1</span>H</th>
-<td class="gt_row gt_right">7.0527</td>
-<td class="gt_row gt_right">5.07 × 10<sup>−21</sup></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-7 atomic_mass">7.0527</td>
+<td class="gt_row gt_right" headers="stub-7 half_life">5.07 × 10<sup>−21</sup></td>
+<td class="gt_row gt_center" headers="stub-7 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">8<br />
+<th id="stub-8" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">8<br />
 6</span>C</th>
-<td class="gt_row gt_right">8.0376</td>
-<td class="gt_row gt_right">3.51 × 10<sup>−21</sup></td>
-<td class="gt_row gt_center">2P</td>
+<td class="gt_row gt_right" headers="stub-8 atomic_mass">8.0376</td>
+<td class="gt_row gt_right" headers="stub-8 half_life">3.51 × 10<sup>−21</sup></td>
+<td class="gt_row gt_center" headers="stub-8 decay_1">2P</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">9<br />
+<th id="stub-9" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">9<br />
 6</span>C</th>
-<td class="gt_row gt_right">9.0310</td>
-<td class="gt_row gt_right">1.26 × 10<sup>−1</sup></td>
-<td class="gt_row gt_center">EC+B+</td>
+<td class="gt_row gt_right" headers="stub-9 atomic_mass">9.0310</td>
+<td class="gt_row gt_right" headers="stub-9 half_life">1.26 × 10<sup>−1</sup></td>
+<td class="gt_row gt_center" headers="stub-9 decay_1">EC+B+</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">10<br />
+<th id="stub-10" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">10<br />
 6</span>C</th>
-<td class="gt_row gt_right">10.0169</td>
-<td class="gt_row gt_right">1.93 × 10<sup>1</sup></td>
-<td class="gt_row gt_center">EC+B+</td>
+<td class="gt_row gt_right" headers="stub-10 atomic_mass">10.0169</td>
+<td class="gt_row gt_right" headers="stub-10 half_life">1.93 × 10<sup>1</sup></td>
+<td class="gt_row gt_center" headers="stub-10 decay_1">EC+B+</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">11<br />
+<th id="stub-11" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">11<br />
 6</span>C</th>
-<td class="gt_row gt_right">11.0114</td>
-<td class="gt_row gt_right">1.22 × 10<sup>3</sup></td>
-<td class="gt_row gt_center">EC+B+</td>
+<td class="gt_row gt_right" headers="stub-11 atomic_mass">11.0114</td>
+<td class="gt_row gt_right" headers="stub-11 half_life">1.22 × 10<sup>3</sup></td>
+<td class="gt_row gt_center" headers="stub-11 decay_1">EC+B+</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">12<br />
+<th id="stub-12" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">12<br />
 6</span>C</th>
-<td class="gt_row gt_right">12.0000</td>
-<td class="gt_row gt_right"><strong>STABLE</strong></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-12 atomic_mass">12.0000</td>
+<td class="gt_row gt_right" headers="stub-12 half_life"><strong>STABLE</strong></td>
+<td class="gt_row gt_center" headers="stub-12 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">13<br />
+<th id="stub-13" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">13<br />
 6</span>C</th>
-<td class="gt_row gt_right">13.0034</td>
-<td class="gt_row gt_right"><strong>STABLE</strong></td>
-<td class="gt_row gt_center">--</td>
+<td class="gt_row gt_right" headers="stub-13 atomic_mass">13.0034</td>
+<td class="gt_row gt_right" headers="stub-13 half_life"><strong>STABLE</strong></td>
+<td class="gt_row gt_center" headers="stub-13 decay_1">--</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">14<br />
+<th id="stub-14" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">14<br />
 6</span>C</th>
-<td class="gt_row gt_right">14.0032</td>
-<td class="gt_row gt_right">1.80 × 10<sup>11</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-14 atomic_mass">14.0032</td>
+<td class="gt_row gt_right" headers="stub-14 half_life">1.80 × 10<sup>11</sup></td>
+<td class="gt_row gt_center" headers="stub-14 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">15<br />
+<th id="stub-15" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">15<br />
 6</span>C</th>
-<td class="gt_row gt_right">15.0106</td>
-<td class="gt_row gt_right">2.45</td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-15 atomic_mass">15.0106</td>
+<td class="gt_row gt_right" headers="stub-15 half_life">2.45</td>
+<td class="gt_row gt_center" headers="stub-15 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">16<br />
+<th id="stub-16" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">16<br />
 6</span>C</th>
-<td class="gt_row gt_right">16.0147</td>
-<td class="gt_row gt_right">7.47 × 10<sup>−1</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-16 atomic_mass">16.0147</td>
+<td class="gt_row gt_right" headers="stub-16 half_life">7.47 × 10<sup>−1</sup></td>
+<td class="gt_row gt_center" headers="stub-16 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">17<br />
+<th id="stub-17" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">17<br />
 6</span>C</th>
-<td class="gt_row gt_right">17.0226</td>
-<td class="gt_row gt_right">1.93 × 10<sup>−1</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-17 atomic_mass">17.0226</td>
+<td class="gt_row gt_right" headers="stub-17 half_life">1.93 × 10<sup>−1</sup></td>
+<td class="gt_row gt_center" headers="stub-17 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">18<br />
+<th id="stub-18" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">18<br />
 6</span>C</th>
-<td class="gt_row gt_right">18.0268</td>
-<td class="gt_row gt_right">9.20 × 10<sup>−2</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-18 atomic_mass">18.0268</td>
+<td class="gt_row gt_right" headers="stub-18 half_life">9.20 × 10<sup>−2</sup></td>
+<td class="gt_row gt_center" headers="stub-18 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">19<br />
+<th id="stub-19" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">19<br />
 6</span>C</th>
-<td class="gt_row gt_right">19.0348</td>
-<td class="gt_row gt_right">4.63 × 10<sup>−2</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-19 atomic_mass">19.0348</td>
+<td class="gt_row gt_right" headers="stub-19 half_life">4.63 × 10<sup>−2</sup></td>
+<td class="gt_row gt_center" headers="stub-19 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">20<br />
+<th id="stub-20" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">20<br />
 6</span>C</th>
-<td class="gt_row gt_right">20.0403</td>
-<td class="gt_row gt_right">1.63 × 10<sup>−2</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-20 atomic_mass">20.0403</td>
+<td class="gt_row gt_right" headers="stub-20 half_life">1.63 × 10<sup>−2</sup></td>
+<td class="gt_row gt_center" headers="stub-20 decay_1">B-</td>
 </tr>
 <tr>
-<th class="gt_row gt_left gt_stub"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">22<br />
+<th id="stub-21" class="gt_row gt_left gt_stub" scope="row"><span style="display:inline-block;line-height:1em;text-align:left;font-size:60%;vertical-align:-0.25em;margin-left:0.1em;">22<br />
 6</span>C</th>
-<td class="gt_row gt_right">22.0576</td>
-<td class="gt_row gt_right">6.10 × 10<sup>−3</sup></td>
-<td class="gt_row gt_center">B-</td>
+<td class="gt_row gt_right" headers="stub-21 atomic_mass">22.0576</td>
+<td class="gt_row gt_right" headers="stub-21 half_life">6.10 × 10<sup>−3</sup></td>
+<td class="gt_row gt_center" headers="stub-21 decay_1">B-</td>
 </tr>
 </tbody>
 </table>
